@@ -1,10 +1,15 @@
 /* Import Google Fonts first */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* Tailwind CSS v3 imports */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind CSS v4.1 import */
+@import "tailwindcss";
+
+/* Tailwind v4.1 theme configuration */
+@theme {
+  --font-family-sans: Poppins, ui-sans-serif, system-ui, sans-serif;
+  --color-sage-50: #f0f3f0;
+  --color-sage-primary: #5a6f5a;
+}
 
 /* Custom CSS variables */
 :root {
