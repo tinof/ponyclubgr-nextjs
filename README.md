@@ -77,11 +77,25 @@ cd ponyclub-acheron
 # Install dependencies
 npm install
 
+# Set up environment variables (for weather widget)
+cp .env.local.example .env.local
+# Edit .env.local and add your WeatherAPI.com API key
+
 # Start development server
 npm run dev
 
 # Open browser to http://localhost:3000
 ```
+
+### Weather Widget Setup
+
+The application includes a real-time weather widget for Glyki, Greece. To enable it:
+
+1. **Get a free API key** from [WeatherAPI.com](https://www.weatherapi.com/signup.aspx)
+2. **Configure environment variables** as shown in the Quick Start section
+3. **For production deployment**, add the `WEATHER_API_KEY` to your Vercel environment variables
+
+For detailed setup instructions, see [Weather Setup Guide](docs/WEATHER_SETUP.md).
 
 ### Available Scripts
 

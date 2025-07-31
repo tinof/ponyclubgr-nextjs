@@ -1,4 +1,6 @@
 import React from 'react';
+import { WeatherWidget } from './WeatherWidget';
+
 export function Header() {
   return <header className="flex justify-between items-start px-2 pt-4 relative">
       <div className="flex items-center space-x-3">
@@ -15,7 +17,13 @@ export function Header() {
           <p className="text-sm text-gray-500">Acheron River, Greece</p>
         </div>
       </div>
-      {/* Decorative element */}
+
+      {/* Weather Widget */}
+      <div className="relative z-10">
+        <WeatherWidget />
+      </div>
+
+      {/* Decorative element - moved behind weather widget */}
       <div className="absolute top-0 right-0 h-16 w-16 bg-[#f0f3f0] rounded-full -z-10 opacity-70 translate-x-1/4 -translate-y-1/4"></div>
     </header>;
 }
