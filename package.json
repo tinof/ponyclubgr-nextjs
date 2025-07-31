@@ -13,6 +13,7 @@
     "vercel-build": "next build"
   },
   "dependencies": {
+    "babel-plugin-react-compiler": "^19.1.0-rc.2",
     "lucide-react": "^0.441.0",
     "next": "^15.4.5",
     "react": "^19.1.1",

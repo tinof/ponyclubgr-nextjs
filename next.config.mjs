@@ -25,6 +25,7 @@ const nextConfig = {
     minimumCacheTTL: 60,
   },
   experimental: {
+    reactCompiler: true, // Enable React Compiler for automatic optimizations
     staleTimes: {
       dynamic: 30,   // Dynamic content is considered fresh for 30 seconds
       static: 180,  // Static content is considered fresh for 180 seconds
