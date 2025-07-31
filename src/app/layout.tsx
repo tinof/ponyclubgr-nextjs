@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { Poppins } from 'next/font/google'
+import Script from 'next/script'
 import '../index.css'
 
 const poppins = Poppins({
@@ -41,6 +42,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <body className="font-sans">
+        <Script
+          src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=c078b762-6f7f-474f-8edb-bdd1bdb7d12a"
+          strategy="afterInteractive"
+          id="bokun-loader"
+        />
         <div id="root">{children}</div>
       </body>
     </html>

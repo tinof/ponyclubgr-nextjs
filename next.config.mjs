@@ -24,6 +24,12 @@ const nextConfig = {
     // Cache optimization for Vercel
     minimumCacheTTL: 60,
   },
+  experimental: {
+    staleTimes: {
+      dynamic: 30,   // Dynamic content is considered fresh for 30 seconds
+      static: 180,  // Static content is considered fresh for 180 seconds
+    },
+  },
 }
 
 export default nextConfig

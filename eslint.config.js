@@ -19,6 +19,9 @@ export default [
         Response: 'readonly',
         Request: 'readonly',
         Headers: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        window: 'readonly',
       },
     },
     plugins: {
@@ -50,6 +53,9 @@ export default [
         Response: 'readonly',
         Request: 'readonly',
         Headers: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        window: 'readonly',
       },
     },
     plugins: {
