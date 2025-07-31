@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Home, Map, Phone, Tag, Waves, Menu } from 'lucide-react';
+import { Home, Map as MapIcon, Phone, Tag, Waves, Menu } from 'lucide-react';
 export function BottomNav() {
   const [moreMenuOpen, setMoreMenuOpen] = useState(false);
   return <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[calc(24rem-2rem)] z-50">
       <nav className="bg-white/90 backdrop-blur-md rounded-2xl shadow-premium flex items-center justify-around p-2 border border-white/40">
         <NavItem icon={<Home size={20} />} label="Home" active />
-        <NavItem icon={<Map size={20} />} label="Map" />
+        <NavItem icon={<MapIcon size={20} />} label="Map" />
         <NavItem icon={<Waves size={20} />} label="Activities" />
         <NavItem icon={<Tag size={20} />} label="Offers" />
         <div className="relative">
@@ -46,12 +46,19 @@ export function BottomNav() {
       </nav>
     </div>;
 }
+interface NavItemProps {
+  icon: React.ReactNode;
+  label: string;
+  active?: boolean;
+  onClick?: () => void;
+}
+
 function NavItem({
   icon,
   label,
   active = false,
   onClick
-}) {
+}: NavItemProps) {
   return <button className={`flex flex-col items-center justify-center px-3 py-2 rounded-xl ${active ? 'text-[#5a6f5a] bg-[#f0f3f0]' : 'text-gray-500'}`} onClick={onClick}>
       <div className={active ? 'text-[#5a6f5a]' : 'text-gray-400'}>{icon}</div>
       <span className={`text-xs mt-1 ${active ? 'font-medium' : ''}`}>
