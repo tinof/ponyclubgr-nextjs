@@ -11,11 +11,6 @@ const PackageCards = dynamic(() => import('../../components/PackageCards').then(
   ssr: false // Disable SSR for this component since it's client-interactive
 })
 
-const PackageDetails = dynamic(() => import('../../components/PackageDetails').then(mod => ({ default: mod.PackageDetails })), {
-  loading: () => <div className="text-center p-4">Loading details...</div>,
-  ssr: false
-})
-
 const BottomNav = dynamic(() => import('../../components/BottomNav').then(mod => ({ default: mod.BottomNav })), {
   ssr: false
 })
@@ -32,10 +27,6 @@ export function ClientOnly() {
         <main id="main-content" className="flex-grow space-y-6 pt-6 pb-20">
           <WelcomeSection />
           <PackageCards />
-          <div className="px-3">
-            <h2 className="text-lg font-bold text-gray-800 mb-2">Package Details Demo (React 19 `use` hook)</h2>
-            <PackageDetails packageId="package-1" />
-          </div>
         </main>
         <BottomNav />
       </div>

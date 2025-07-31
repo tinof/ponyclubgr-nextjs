@@ -3,8 +3,6 @@
 ## Objective
 Improve Search Engine Optimization (SEO) by adding structured data (JSON-LD) and generating dynamic metadata. This helps search engines better understand the content of your pages, which can lead to improved search rankings and richer search results.
 
-## Prerequisites
-- Completion of Step 8 (Accessibility Improvements).
 
 ## Task Details
 **Effort**: 2 hours
