@@ -1,12 +1,12 @@
-/* Import Google Fonts first */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Remove Google Fonts import - now handled by Next.js */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); */
 
 /* Tailwind CSS v4.1 import */
 @import "tailwindcss";
 
 /* Tailwind v4.1 theme configuration */
 @theme {
-  --font-family-sans: Poppins, ui-sans-serif, system-ui, sans-serif;
+  --font-family-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --color-sage-50: #f0f3f0;
   --color-sage-primary: #5a6f5a;
 }
@@ -16,8 +16,8 @@
   --sage-50: #f0f3f0;
   --sage-primary: #5a6f5a;
 }
+
 body {
-  font-family: 'Poppins', sans-serif;
   background-color: var(--sage-50);
   min-height: max(884px, 100vh);
 }
