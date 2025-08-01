@@ -21,5 +21,5 @@ export const getPackageDetails = cache(
           ],
         });
       }, 1500);
-    })
+    }),
 );

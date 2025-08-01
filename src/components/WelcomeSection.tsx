@@ -1,10 +1,10 @@
-import React from 'react';
 import Image from 'next/image';
-import { WeatherWidget } from './WeatherWidget';
+import React from 'react';
 import type { Dictionary } from '../lib/dictionaries';
+import { WeatherWidget } from './WeatherWidget';
 
 interface WelcomeSectionProps {
-  dictionary: Dictionary
+  dictionary: Dictionary;
 }
 
 export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
@@ -15,9 +15,9 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
         <Image
           src="/images/hero-image.webp"
           alt="Acheron River Adventure"
-          fill
+          fill={true}
           className="object-cover"
-          priority
+          priority={true}
         />
         {/* Enhanced gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
@@ -33,10 +33,12 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
                 width={140}
                 height={46}
                 className="h-10 w-auto"
-                priority
+                priority={true}
               />
             </div>
-            <p className="text-sm text-white/90 ml-1 drop-shadow-sm">{dictionary.header.location}</p>
+            <p className="text-sm text-white/90 ml-1 drop-shadow-sm">
+              {dictionary.header.location}
+            </p>
           </div>
 
           {/* Weather Widget */}
@@ -68,7 +70,9 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
             </div>
             <div className="text-white">
               <h1 className="text-lg font-bold drop-shadow-sm">Pony Club</h1>
-              <p className="text-sm text-white/90 drop-shadow-sm">Acheron River, Greece</p>
+              <p className="text-sm text-white/90 drop-shadow-sm">
+                Acheron River, Greece
+              </p>
             </div>
           </div>
 
@@ -96,7 +100,6 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
         </div>
       </div>
 
-
       {/* Content Section with improved spacing */}
       <div className="px-4 sm:px-6 -mt-4 relative z-10">
         <div className="bg-white rounded-[2rem] shadow-card border border-white/60 overflow-hidden">
@@ -106,12 +109,16 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
               {/* Decorative element */}
               <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full" />
 
-              <h3 className="text-lg font-bold mb-3">{dictionary.welcome.title}</h3>
+              <h3 className="text-lg font-bold mb-3">
+                {dictionary.welcome.title}
+              </h3>
 
               <div className="space-y-3 text-sm leading-relaxed text-white/90">
                 <p>{dictionary.welcome.intro}</p>
                 <p>{dictionary.welcome.history}</p>
-                <p className="font-medium text-white">{dictionary.welcome.callToAction}</p>
+                <p className="font-medium text-white">
+                  {dictionary.welcome.callToAction}
+                </p>
               </div>
 
               {/* Feature highlights */}
@@ -126,7 +133,9 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
                       className="filter brightness-0 invert"
                     />
                   </div>
-                  <span className="text-xs text-white/90">{dictionary.welcome.features.safety}</span>
+                  <span className="text-xs text-white/90">
+                    {dictionary.welcome.features.safety}
+                  </span>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-white/20 p-2 rounded-full mb-2">
@@ -138,7 +147,9 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
                       className="filter brightness-0 invert"
                     />
                   </div>
-                  <span className="text-xs text-white/90">{dictionary.welcome.features.family}</span>
+                  <span className="text-xs text-white/90">
+                    {dictionary.welcome.features.family}
+                  </span>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-white/20 p-2 rounded-full mb-2">
@@ -150,7 +161,9 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
                       className="filter brightness-0 invert"
                     />
                   </div>
-                  <span className="text-xs text-white/90">{dictionary.welcome.features.memorable}</span>
+                  <span className="text-xs text-white/90">
+                    {dictionary.welcome.features.memorable}
+                  </span>
                 </div>
               </div>
             </div>

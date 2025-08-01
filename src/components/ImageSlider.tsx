@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 interface ImageSliderProps {
   images: string[];
@@ -11,7 +11,7 @@ interface ImageSliderProps {
 export function ImageSlider({
   images,
   alt,
-  smallDots = false
+  smallDots = false,
 }: ImageSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hasPlayedIntro, setHasPlayedIntro] = useState(false);
@@ -30,16 +30,21 @@ export function ImageSlider({
   const goToPrevious = useCallback(() => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length,
+    );
     setTimeout(() => setIsTransitioning(false), 300);
   }, [images.length, isTransitioning]);
 
-  const goToSlide = useCallback((index: number) => {
-    if (isTransitioning || index === currentIndex) return;
-    setIsTransitioning(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsTransitioning(false), 300);
-  }, [currentIndex, isTransitioning]);
+  const goToSlide = useCallback(
+    (index: number) => {
+      if (isTransitioning || index === currentIndex) return;
+      setIsTransitioning(true);
+      setCurrentIndex(index);
+      setTimeout(() => setIsTransitioning(false), 300);
+    },
+    [currentIndex, isTransitioning],
+  );
 
   // Auto-play introduction animation
   const startIntroAnimation = useCallback(() => {
@@ -73,7 +78,7 @@ export function ImageSlider({
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (containerRef.current) {
@@ -107,7 +112,7 @@ export function ImageSlider({
         <Image
           src={images[currentIndex]}
           alt={alt}
-          fill
+          fill={true}
           className={`object-cover transition-opacity duration-300 ${
             isTransitioning ? 'opacity-75' : 'opacity-100'
           }`}
@@ -153,7 +158,9 @@ export function ImageSlider({
             className={`${smallDots ? 'w-1.5 h-1.5' : 'w-2 h-2'} rounded-full ${
               index === currentIndex ? 'bg-white' : 'bg-white/50'
             } transition-all duration-200 hover:bg-white/80 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/20 ${
-              isTransitioning ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
+              isTransitioning
+                ? 'cursor-not-allowed opacity-50'
+                : 'cursor-pointer'
             }`}
             onClick={() => goToSlide(index)}
             onKeyDown={(e) => {
@@ -169,8 +176,12 @@ export function ImageSlider({
           />
         ))}
         {/* Decorative dots */}
-        <div className={`${smallDots ? 'w-1.5 h-1.5' : 'w-2 h-2'} rounded-full bg-white/50`} />
-        <div className={`${smallDots ? 'w-1.5 h-1.5' : 'w-2 h-2'} rounded-full bg-white/50`} />
+        <div
+          className={`${smallDots ? 'w-1.5 h-1.5' : 'w-2 h-2'} rounded-full bg-white/50`}
+        />
+        <div
+          className={`${smallDots ? 'w-1.5 h-1.5' : 'w-2 h-2'} rounded-full bg-white/50`}
+        />
       </div>
     </div>
   );

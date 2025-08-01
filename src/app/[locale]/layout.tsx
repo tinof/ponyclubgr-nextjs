@@ -1,34 +1,38 @@
-import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
-import { Poppins } from 'next/font/google'
-import Script from 'next/script'
-import '../../index.css'
-import { ErrorBoundary } from '../../components/ErrorBoundary'
-import { getDictionary, type Locale, isValidLocale } from '../../lib/dictionaries'
-import { notFound } from 'next/navigation'
+import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
+import Script from 'next/script';
+import type { ReactNode } from 'react';
+import '../../index.css';
+import { notFound } from 'next/navigation';
+import { ErrorBoundary } from '../../components/ErrorBoundary';
+import {
+  getDictionary,
+  isValidLocale,
+  type Locale,
+} from '../../lib/dictionaries';
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-poppins',
-})
+});
 
 // Generate metadata dynamically based on locale
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string }>
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params
-  
+  const { locale } = await params;
+
   // Validate locale
   if (!isValidLocale(locale as Locale)) {
-    return {}
+    return {};
   }
 
-  const dictionary = await getDictionary(locale as Locale)
-  
+  const dictionary = await getDictionary(locale as Locale);
+
   return {
     metadataBase: new globalThis.URL('https://www.ponyclubacheron.com'),
     title: dictionary.metadata.title,
@@ -86,37 +90,34 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://www.ponyclubacheron.com/${locale}`,
       languages: {
-        'en': 'https://www.ponyclubacheron.com/en',
-        'el': 'https://www.ponyclubacheron.com/el',
+        en: 'https://www.ponyclubacheron.com/en',
+        el: 'https://www.ponyclubacheron.com/el',
         'x-default': 'https://www.ponyclubacheron.com/en',
       },
     },
-  }
+  };
 }
 
 // Generate static params for supported locales
 export async function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'el' },
-  ]
+  return [{ locale: 'en' }, { locale: 'el' }];
 }
 
 export default async function LocaleLayout({
   children,
   params,
 }: {
-  children: ReactNode
-  params: Promise<{ locale: string }>
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params
-  
+  const { locale } = await params;
+
   // Validate locale and redirect to 404 if invalid
   if (!isValidLocale(locale as Locale)) {
-    notFound()
+    notFound();
   }
 
-  const dictionary = await getDictionary(locale as Locale)
+  const dictionary = await getDictionary(locale as Locale);
 
   // JSON-LD structured data for SEO
   const jsonLd = {
@@ -141,7 +142,7 @@ export default async function LocaleLayout({
       ratingValue: '4.9',
       reviewCount: '88',
     },
-  }
+  };
 
   return (
     <html lang={locale as Locale} className={poppins.variable}>
@@ -166,5 +167,5 @@ export default async function LocaleLayout({
         </ErrorBoundary>
       </body>
     </html>
-  )
+  );
 }

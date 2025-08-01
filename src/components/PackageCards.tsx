@@ -1,20 +1,22 @@
-'use client'
+'use client';
 
-import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { ImageSlider } from './ImageSlider';
+import React, { useEffect } from 'react';
 import type { Dictionary } from '../lib/dictionaries';
+import { ImageSlider } from './ImageSlider';
 
 interface PackageCardsProps {
-  dictionary: Dictionary
+  dictionary: Dictionary;
 }
 
 export function PackageCards({ dictionary }: PackageCardsProps) {
-
   // Debug: Check if Bokun script is loaded
   useEffect(() => {
     const checkBokunScript = () => {
-      if (typeof window !== 'undefined' && (window as unknown as { BokunWidgets?: unknown }).BokunWidgets) {
+      if (
+        typeof window !== 'undefined' &&
+        (window as unknown as { BokunWidgets?: unknown }).BokunWidgets
+      ) {
         console.log('✅ Bokun script loaded successfully');
       } else {
         console.log('⏳ Bokun script not yet loaded, retrying...');
@@ -23,7 +25,8 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
     };
     checkBokunScript();
   }, []);
-  return <div className="space-y-6 px-4">
+  return (
+    <div className="space-y-6 px-4">
       {/* Package 1 - Premium Card */}
       <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden relative">
         {/* Premium tag */}
@@ -34,11 +37,14 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
         {/* Image section with dots indicator */}
         <div className="relative">
           <div className="relative h-56">
-            <ImageSlider images={[
-              '/images/packages/Package1/rafting.jpeg',
-              '/images/packages/Package1/horse_girl.jpg',
-              '/images/packages/Package1/river_girl.jpg'
-            ]} alt="Rafting and horse riding activities" />
+            <ImageSlider
+              images={[
+                '/images/packages/Package1/rafting.jpeg',
+                '/images/packages/Package1/horse_girl.jpg',
+                '/images/packages/Package1/river_girl.jpg',
+              ]}
+              alt="Rafting and horse riding activities"
+            />
           </div>
 
           {/* Dots indicator overlay */}
@@ -71,7 +77,9 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
             </div>
           </div>
           {/* Title and family-friendly badge */}
-          <h3 className="text-xl font-bold text-gray-800 mb-2">{dictionary.packages.raftingRiding.title}</h3>
+          <h3 className="text-xl font-bold text-gray-800 mb-2">
+            {dictionary.packages.raftingRiding.title}
+          </h3>
 
           <div className="flex items-center gap-2 mb-4">
             <div className="flex items-center gap-1">
@@ -97,7 +105,9 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
                 width={16}
                 height={16}
               />
-              <span>{dictionary.packages.raftingRiding.activities.rafting}</span>
+              <span>
+                {dictionary.packages.raftingRiding.activities.rafting}
+              </span>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <Image
@@ -136,8 +146,12 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {/* Price and booking */}
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-2xl font-bold text-gray-800">{dictionary.packages.raftingRiding.price}</p>
-              <p className="text-sm text-gray-500">{dictionary.common.perPerson}</p>
+              <p className="text-2xl font-bold text-gray-800">
+                {dictionary.packages.raftingRiding.price}
+              </p>
+              <p className="text-sm text-gray-500">
+                {dictionary.common.perPerson}
+              </p>
             </div>
             <button
               className="bokunButton bg-sage-600 text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-sage-700 transition shadow-md min-w-[120px]"
@@ -154,12 +168,16 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
       <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden">
         <div className="relative">
           <div className="relative h-48">
-            <ImageSlider images={[
-              '/images/packages/Package2/kayak.jpg',
-              '/images/packages/Package2/grouponriver.jpg',
-              '/images/packages/Package2/riding.jpg',
-              '/images/packages/Package2/riding2.jpg'
-            ]} alt="Kayaking, group activities and horse riding" smallDots={true} />
+            <ImageSlider
+              images={[
+                '/images/packages/Package2/kayak.jpg',
+                '/images/packages/Package2/grouponriver.jpg',
+                '/images/packages/Package2/riding.jpg',
+                '/images/packages/Package2/riding2.jpg',
+              ]}
+              alt="Kayaking, group activities and horse riding"
+              smallDots={true}
+            />
           </div>
 
           {/* Dots indicator overlay */}
@@ -227,7 +245,9 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
                 width={14}
                 height={14}
               />
-              <span>{dictionary.packages.kayakingRidingTrekking.activities.kayak}</span>
+              <span>
+                {dictionary.packages.kayakingRidingTrekking.activities.kayak}
+              </span>
             </div>
             <div className="flex items-center gap-2 text-xs text-gray-600">
               <Image
@@ -236,7 +256,9 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
                 width={14}
                 height={14}
               />
-              <span>{dictionary.packages.kayakingRidingTrekking.activities.riding}</span>
+              <span>
+                {dictionary.packages.kayakingRidingTrekking.activities.riding}
+              </span>
             </div>
             <div className="flex items-center gap-2 text-xs text-gray-600">
               <Image
@@ -245,7 +267,9 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
                 width={14}
                 height={14}
               />
-              <span>{dictionary.packages.kayakingRidingTrekking.activities.trekking}</span>
+              <span>
+                {dictionary.packages.kayakingRidingTrekking.activities.trekking}
+              </span>
             </div>
           </div>
 
@@ -266,8 +290,12 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {/* Price and booking */}
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-xl font-bold text-gray-800">{dictionary.packages.kayakingRidingTrekking.price}</p>
-              <p className="text-xs text-gray-500">{dictionary.common.perPerson}</p>
+              <p className="text-xl font-bold text-gray-800">
+                {dictionary.packages.kayakingRidingTrekking.price}
+              </p>
+              <p className="text-xs text-gray-500">
+                {dictionary.common.perPerson}
+              </p>
             </div>
             <button
               className="bokunButton bg-sage-600 text-white font-bold py-2 px-4 rounded-xl text-sm hover:bg-sage-700 transition shadow-md min-w-[100px]"
@@ -280,5 +308,6 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 }

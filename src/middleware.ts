@@ -1,43 +1,43 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server';
 
 // Supported locales
-const locales = ['en', 'el']
-const defaultLocale = 'en'
+const locales = ['en', 'el'];
+const defaultLocale = 'en';
 
 // Get locale from pathname
 function getLocaleFromPathname(pathname: string): string | null {
-  const segments = pathname.split('/')
-  const firstSegment = segments[1]
-  
+  const segments = pathname.split('/');
+  const firstSegment = segments[1];
+
   if (locales.includes(firstSegment)) {
-    return firstSegment
+    return firstSegment;
   }
-  
-  return null
+
+  return null;
 }
 
 // Get preferred locale from Accept-Language header
 function getPreferredLocale(request: NextRequest): string {
-  const acceptLanguage = request.headers.get('accept-language')
-  
+  const acceptLanguage = request.headers.get('accept-language');
+
   if (!acceptLanguage) {
-    return defaultLocale
+    return defaultLocale;
   }
-  
+
   // Simple language detection - check if Greek is preferred
   if (acceptLanguage.toLowerCase().includes('el')) {
-    return 'el'
+    return 'el';
   }
-  
-  return defaultLocale
+
+  return defaultLocale;
 }
 
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname
-  
+  const pathname = request.nextUrl.pathname;
+
   // Check if pathname already has a locale
-  const currentLocale = getLocaleFromPathname(pathname)
-  
+  const currentLocale = getLocaleFromPathname(pathname);
+
   // Skip middleware for API routes, static files, and special Next.js paths
   if (
     pathname.startsWith('/api/') ||
@@ -48,18 +48,21 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/dictionaries/') ||
     pathname.includes('.')
   ) {
-    return NextResponse.next()
+    return NextResponse.next();
   }
-  
+
   // If no locale in pathname, redirect to preferred locale
   if (!currentLocale) {
-    const preferredLocale = getPreferredLocale(request)
-    const newUrl = new globalThis.URL(`/${preferredLocale}${pathname}`, request.url)
-    return NextResponse.redirect(newUrl)
+    const preferredLocale = getPreferredLocale(request);
+    const newUrl = new globalThis.URL(
+      `/${preferredLocale}${pathname}`,
+      request.url,
+    );
+    return NextResponse.redirect(newUrl);
   }
-  
+
   // If locale is present and valid, continue
-  return NextResponse.next()
+  return NextResponse.next();
 }
 
 export const config = {
@@ -72,4 +75,4 @@ export const config = {
     // - public files (images, icons, etc.)
     '/((?!api|_next/static|_next/image|favicon.ico|images|icons|dictionaries).*)',
   ],
-}
+};

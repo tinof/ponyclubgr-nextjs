@@ -1,7 +1,11 @@
-import { use, Suspense } from 'react';
-import { getPackageDetails, PackageDetailsData } from '@/lib/data';
+import { Suspense, use } from 'react';
+import { getPackageDetails, type PackageDetailsData } from '@/lib/data';
 
-function Details({ detailsPromise }: { detailsPromise: Promise<PackageDetailsData> }) {
+function Details({
+  detailsPromise,
+}: {
+  detailsPromise: Promise<PackageDetailsData>;
+}) {
   const details = use(detailsPromise);
 
   return (
@@ -19,7 +23,9 @@ function Details({ detailsPromise }: { detailsPromise: Promise<PackageDetailsDat
 export function PackageDetails({ packageId }: { packageId: string }) {
   const detailsPromise = getPackageDetails(packageId);
   return (
-    <Suspense fallback={<div className="text-center p-4">Loading details...</div>}>
+    <Suspense
+      fallback={<div className="text-center p-4">Loading details...</div>}
+    >
       <Details detailsPromise={detailsPromise} />
     </Suspense>
   );

@@ -4,6 +4,11 @@ const nextConfig = {
   // Vercel handles deployment automatically without static export
   trailingSlash: true, // Ensures compatibility with static hosting
 
+  // Disable ESLint checking during builds since we're using Biome
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   // Note: i18n config is not compatible with app router
   // Using manual locale routing with [locale] folder structure instead
   images: {

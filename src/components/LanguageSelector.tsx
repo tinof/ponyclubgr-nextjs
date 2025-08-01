@@ -1,46 +1,46 @@
-'use client'
+'use client';
 
-import React, { useState, useEffect } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
-import { Globe, Check } from 'lucide-react'
-import type { Locale } from '../lib/dictionaries'
+import { Check, Globe } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import type { Locale } from '../lib/dictionaries';
 
 interface LanguageSelectorProps {
-  currentLocale: Locale
+  currentLocale: Locale;
 }
 
 const languages = [
   { code: 'en' as Locale, name: 'English', flag: '🇺🇸' },
   { code: 'el' as Locale, name: 'Ελληνικά', flag: '🇬🇷' },
-]
+];
 
 export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isClient, setIsClient] = useState(false)
-  const router = useRouter()
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   // Ensure component only renders on client to avoid hydration issues
   useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
   const handleLanguageChange = (newLocale: Locale) => {
     // Store preference in localStorage
     if (typeof window !== 'undefined') {
-      window.localStorage.setItem('preferred-locale', newLocale)
+      window.localStorage.setItem('preferred-locale', newLocale);
     }
 
     // Close dropdown
-    setIsOpen(false)
+    setIsOpen(false);
 
     // Navigate to the new locale
     // Remove current locale from pathname and add new one
-    const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/'
-    const newPath = `/${newLocale}${pathWithoutLocale}`
-    
-    router.push(newPath)
-  }
+    const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/';
+    const newPath = `/${newLocale}${pathWithoutLocale}`;
+
+    router.push(newPath);
+  };
 
   // Don't render on server to avoid hydration mismatch
   if (!isClient) {
@@ -54,10 +54,11 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
           <div className="h-4 w-16 bg-gray-200 rounded animate-pulse"></div>
         </div>
       </div>
-    )
+    );
   }
 
-  const currentLanguage = languages.find(lang => lang.code === currentLocale) || languages[0]
+  const currentLanguage =
+    languages.find((lang) => lang.code === currentLocale) || languages[0];
 
   return (
     <div className="relative">
@@ -74,7 +75,11 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
             <span className="text-sm font-medium text-gray-700">Language</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-lg" role="img" aria-label={currentLanguage.name}>
+            <span
+              className="text-lg"
+              role="img"
+              aria-label={currentLanguage.name}
+            >
               {currentLanguage.flag}
             </span>
             <span className="text-sm font-medium text-gray-800">
@@ -88,7 +93,12 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </div>
         </div>
@@ -102,7 +112,7 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
             onClick={() => setIsOpen(false)}
             aria-hidden="true"
           />
-          
+
           {/* Dropdown */}
           <div
             className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-premium border border-white/40 z-20 overflow-hidden"
@@ -120,7 +130,11 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
                 aria-selected={language.code === currentLocale}
               >
                 <div className="flex items-center space-x-3">
-                  <span className="text-lg" role="img" aria-label={language.name}>
+                  <span
+                    className="text-lg"
+                    role="img"
+                    aria-label={language.name}
+                  >
                     {language.flag}
                   </span>
                   <div>
@@ -141,5 +155,5 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
         </>
       )}
     </div>
-  )
+  );
 }

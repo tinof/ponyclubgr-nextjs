@@ -1,5 +1,5 @@
+import { Quote, Star } from 'lucide-react';
 import React from 'react';
-import { Star, Quote } from 'lucide-react';
 import type { Dictionary } from '../lib/dictionaries';
 
 interface GuestReviewsProps {
@@ -68,7 +68,9 @@ export function GuestReviews({ dictionary: _dictionary }: GuestReviewsProps) {
                 {review.source}
               </div>
             </div>
-            <p className="text-sm text-gray-600 mb-3">&ldquo;{review.text}&rdquo;</p>
+            <p className="text-sm text-gray-600 mb-3">
+              &ldquo;{review.text}&rdquo;
+            </p>
             <div className="flex items-center">
               {[...Array(5)].map((_, i) => (
                 <Star
