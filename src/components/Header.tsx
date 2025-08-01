@@ -20,7 +20,7 @@ export function Header({ dictionary }: HeaderProps) {
             priority
           />
         </div>
-        <p className="text-sm text-[#333333] ml-1 opacity-70">{dictionary.header.location}</p>
+        <p className="text-sm text-gray-500 ml-1">{dictionary.header.location}</p>
       </div>
 
       {/* Weather Widget */}
@@ -29,6 +29,6 @@ export function Header({ dictionary }: HeaderProps) {
       </div>
 
       {/* Decorative element - moved behind weather widget */}
-      <div className="absolute top-0 right-0 h-16 w-16 bg-[#F3F8EC] rounded-full -z-10 opacity-70 translate-x-1/4 -translate-y-1/4"></div>
+      <div className="absolute top-0 right-0 h-16 w-16 bg-[#f0f3f0] rounded-full -z-10 opacity-70 translate-x-1/4 -translate-y-1/4"></div>
     </header>;
 }
