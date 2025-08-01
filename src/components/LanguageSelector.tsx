@@ -2,7 +2,7 @@
 
 import { Check, Globe } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Locale } from '../lib/dictionaries';
 
 interface LanguageSelectorProps {
@@ -63,6 +63,7 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
   return (
     <div className="relative">
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="w-full bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40 hover:shadow-premium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#5a6f5a] focus:ring-opacity-50"
         aria-label="Select language"
@@ -92,6 +93,8 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              role="img"
+              aria-label="Dropdown arrow"
             >
               <path
                 strokeLinecap="round"
@@ -121,6 +124,7 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
           >
             {languages.map((language) => (
               <button
+                type="button"
                 key={language.code}
                 onClick={() => handleLanguageChange(language.code)}
                 className={`w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors duration-150 flex items-center justify-between ${

@@ -1,5 +1,4 @@
 import { Quote, Star } from 'lucide-react';
-import React from 'react';
 import type { Dictionary } from '../lib/dictionaries';
 
 interface GuestReviewsProps {
@@ -46,9 +45,9 @@ export function GuestReviews({ dictionary: _dictionary }: GuestReviewsProps) {
         <span className="absolute bottom-0 left-0 w-16 h-1 bg-sage-600/30 rounded-full"></span>
       </h3>
       <div className="space-y-4">
-        {reviews.map((review, index) => (
+        {reviews.map((review) => (
           <div
-            key={index}
+            key={`${review.name}-${review.location}`}
             className="bg-white rounded-2xl shadow-card p-4 border border-white/60 relative"
           >
             <div className="absolute -top-2 -right-2 bg-sage-600 rounded-full p-1.5">
@@ -74,7 +73,7 @@ export function GuestReviews({ dictionary: _dictionary }: GuestReviewsProps) {
             <div className="flex items-center">
               {[...Array(5)].map((_, i) => (
                 <Star
-                  key={i}
+                  key={`${review.name}-star-${i}`}
                   size={14}
                   fill={i < review.rating ? '#FFD700' : 'none'}
                   stroke={i < review.rating ? '#FFD700' : '#D1D5DB'}

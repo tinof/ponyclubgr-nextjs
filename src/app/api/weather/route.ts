@@ -82,8 +82,7 @@ function getCacheKey(): string {
 function isValidWeatherData(data: unknown): data is WeatherAPIResponse {
   const weatherData = data as WeatherAPIResponse;
   return (
-    weatherData &&
-    weatherData.location &&
+    weatherData?.location &&
     weatherData.current &&
     typeof weatherData.current.temp_c === 'number' &&
     weatherData.current.condition &&

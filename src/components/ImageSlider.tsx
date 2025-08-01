@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface ImageSliderProps {
   images: string[];
@@ -153,7 +153,7 @@ export function ImageSlider({
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
         {images.map((image, index) => (
           <button
-            key={`${image}-${index}`}
+            key={image}
             type="button"
             className={`${smallDots ? 'w-1.5 h-1.5' : 'w-2 h-2'} rounded-full ${
               index === currentIndex ? 'bg-white' : 'bg-white/50'

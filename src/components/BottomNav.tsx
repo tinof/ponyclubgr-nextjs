@@ -42,14 +42,14 @@ export function BottomNav({ dictionary }: BottomNavProps) {
               <div className="space-y-3">
                 <a
                   className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
-                  href="#"
+                  href="tel:+302651099220"
                 >
                   <Phone className="text-sage-600" size={18} />
                   <span>{dictionary.navigation.contactUs}</span>
                 </a>
                 <a
                   className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
-                  href="#"
+                  href="#family-packages"
                 >
                   <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-600">
                     <svg
@@ -58,6 +58,8 @@ export function BottomNav({ dictionary }: BottomNavProps) {
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      role="img"
+                      aria-label="WhatsApp"
                     >
                       <path
                         d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
@@ -93,7 +95,7 @@ export function BottomNav({ dictionary }: BottomNavProps) {
                 </a>
                 <a
                   className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
-                  href="#"
+                  href="#safety-info"
                 >
                   <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-600">
                     <svg
@@ -102,6 +104,8 @@ export function BottomNav({ dictionary }: BottomNavProps) {
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      role="img"
+                      aria-label="Settings"
                     >
                       <path
                         d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
@@ -143,6 +147,7 @@ interface NavItemProps {
 function NavItem({ icon, label, active = false, onClick }: NavItemProps) {
   return (
     <button
+      type="button"
       className={`flex flex-col items-center justify-center px-3 py-2 rounded-xl transition-colors ${active ? 'text-sage-600 bg-sage-50' : 'text-gray-500 hover:text-sage-600'}`}
       onClick={onClick}
     >

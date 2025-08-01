@@ -1,5 +1,4 @@
 import { Calendar, CheckCircle, Shield } from 'lucide-react';
-import React from 'react';
 import type { Dictionary } from '../lib/dictionaries';
 
 interface WhyChooseUsProps {

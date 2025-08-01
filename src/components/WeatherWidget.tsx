@@ -8,7 +8,7 @@ import {
   Thermometer,
   Wind,
 } from 'lucide-react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useSWR from 'swr';
 import type { Dictionary } from '../lib/dictionaries';
 
@@ -111,6 +111,7 @@ const WeatherError = ({
         </span>
       </div>
       <button
+        type="button"
         onClick={onRetry}
         className="text-xs text-red-600 hover:text-red-700 font-medium underline"
       >
@@ -259,11 +260,14 @@ export function WeatherWidget({ dictionary }: WeatherWidgetProps) {
 
   return (
     <div className="relative">
-      <div
-        className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40 cursor-pointer hover:shadow-premium transition-all duration-200"
+      <button
+        type="button"
+        className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40 cursor-pointer hover:shadow-premium transition-all duration-200 w-full text-left"
         onClick={() => setShowTooltip(!showTooltip)}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
+        aria-label="Toggle weather details"
+        aria-expanded={showTooltip}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -278,7 +282,7 @@ export function WeatherWidget({ dictionary }: WeatherWidgetProps) {
             {dictionary.weather.location}
           </div>
         </div>
-      </div>
+      </button>
 
       <WeatherTooltip
         data={weatherData}

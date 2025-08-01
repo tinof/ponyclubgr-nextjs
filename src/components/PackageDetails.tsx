@@ -12,8 +12,8 @@ function Details({
     <div className="mt-4 p-4 bg-gray-100 rounded-lg">
       <h4 className="font-bold text-lg">{details.title}</h4>
       <ul className="list-disc list-inside mt-2 text-gray-700">
-        {details.details.map((detail, i) => (
-          <li key={i}>{detail}</li>
+        {details.details.map((detail) => (
+          <li key={detail}>{detail}</li>
         ))}
       </ul>
     </div>

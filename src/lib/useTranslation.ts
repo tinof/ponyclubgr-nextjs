@@ -13,8 +13,9 @@ const clientDictionaries: Record<Locale, Dictionary | null> = {
 // Client-side dictionary loader
 const loadClientDictionary = async (locale: Locale): Promise<Dictionary> => {
   // Return cached dictionary if available
-  if (clientDictionaries[locale]) {
-    return clientDictionaries[locale]!;
+  const cachedDictionary = clientDictionaries[locale];
+  if (cachedDictionary) {
+    return cachedDictionary;
   }
 
   try {

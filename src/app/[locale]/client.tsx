@@ -1,7 +1,6 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import React from 'react';
 import { LanguageSelector } from '../../components/LanguageSelector';
 import { WelcomeSection } from '../../components/WelcomeSection';
 import type { Dictionary, Locale } from '../../lib/dictionaries';

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import type { Dictionary } from '../lib/dictionaries';
 import { ImageSlider } from './ImageSlider';
 
@@ -154,6 +154,7 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
               </p>
             </div>
             <button
+              type="button"
               className="bokunButton bg-sage-600 text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-sage-700 transition shadow-md min-w-[120px]"
               id="bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4"
               data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020598?partialView=1"
@@ -298,6 +299,7 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
               </p>
             </div>
             <button
+              type="button"
               className="bokunButton bg-sage-600 text-white font-bold py-2 px-4 rounded-xl text-sm hover:bg-sage-700 transition shadow-md min-w-[100px]"
               id="bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d"
               data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020569?partialView=1"

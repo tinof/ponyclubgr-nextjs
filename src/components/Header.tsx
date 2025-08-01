@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 import type { Dictionary } from '../lib/dictionaries';
 import { WeatherWidget } from './WeatherWidget';
 

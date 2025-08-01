@@ -113,8 +113,9 @@ const dictionaries: Record<Locale, Dictionary | null> = {
 // Function to get dictionary for a specific locale
 export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
   // Return cached dictionary if available
-  if (dictionaries[locale]) {
-    return dictionaries[locale]!;
+  const cachedDictionary = dictionaries[locale];
+  if (cachedDictionary) {
+    return cachedDictionary;
   }
 
   try {

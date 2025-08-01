@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 import type { Dictionary } from '../lib/dictionaries';
 import { WeatherWidget } from './WeatherWidget';
 
@@ -90,6 +89,8 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
             className="w-full h-full"
+            role="img"
+            aria-label="Decorative curved transition"
           >
             <path
               d="M0,0 C300,80 900,80 1200,0 L1200,120 L0,120 Z"
