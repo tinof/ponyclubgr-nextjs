@@ -19,6 +19,9 @@
       "security": {
         "noDangerouslySetInnerHtml": "warn"
       }
+    },
+    "domains": {
+      "next": "recommended"
     }
   },
   "javascript": {
