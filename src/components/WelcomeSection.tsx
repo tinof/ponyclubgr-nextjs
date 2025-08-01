@@ -1,16 +1,18 @@
 import Image from 'next/image';
-import type { Dictionary } from '../lib/dictionaries';
+import type { Dictionary, Locale } from '../lib/dictionaries';
 import { WeatherWidget } from './WeatherWidget';
+import { LanguageSelector } from './LanguageSelector';
 
 interface WelcomeSectionProps {
   dictionary: Dictionary;
+  locale: Locale;
 }
 
-export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
+export function WelcomeSection({ dictionary, locale }: WelcomeSectionProps) {
   return (
     <div className="relative -mx-4 sm:-mx-6">
       {/* Full-width Hero Image Section */}
-      <div className="relative h-80 sm:h-96 overflow-hidden rounded-t-[2rem]">
+      <div className="relative h-96 sm:h-[28rem] md:h-[32rem] overflow-hidden rounded-t-[2rem]">
         <Image
           src="/images/hero-image.webp"
           alt="Acheron River Adventure"
@@ -40,41 +42,15 @@ export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
             </p>
           </div>
 
-          {/* Weather Widget */}
-          <div className="relative z-10">
+          {/* Weather Widget and Language Selector */}
+          <div className="relative z-10 flex flex-col items-end space-y-2">
             <WeatherWidget dictionary={dictionary} />
+            <LanguageSelector currentLocale={locale} />
           </div>
         </div>
 
         {/* Main Hero Content Overlay */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
-          {/* Star Rating and Title */}
-          <div className="flex items-center gap-3 mb-6">
-            <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full">
-              <div className="w-8 h-8 flex items-center justify-center">
-                {/* Star rating icons */}
-                <div className="flex gap-0.5">
-                  {[1, 2, 3, 4].map((star) => (
-                    <Image
-                      key={star}
-                      src="/images/figma-assets/star-rating-1.svg"
-                      alt=""
-                      width={12}
-                      height={12}
-                      className="text-yellow-400"
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="text-white">
-              <h1 className="text-lg font-bold drop-shadow-sm">Pony Club</h1>
-              <p className="text-sm text-white/90 drop-shadow-sm">
-                Acheron River, Greece
-              </p>
-            </div>
-          </div>
-
           {/* Main Hero Text */}
           <div className="text-white max-w-md">
             <p className="text-lg leading-relaxed drop-shadow-sm font-medium">

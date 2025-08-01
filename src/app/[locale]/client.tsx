@@ -1,7 +1,6 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { LanguageSelector } from '../../components/LanguageSelector';
 import { WelcomeSection } from '../../components/WelcomeSection';
 import type { Dictionary, Locale } from '../../lib/dictionaries';
 
@@ -110,15 +109,10 @@ export function LocalizedClientPage({
 
         {/* Main content card with hero extending to edges */}
         <div className="bg-gradient-card backdrop-blur-card rounded-[2rem] shadow-elevated border border-white/50 overflow-hidden relative">
-          {/* Language Selector - positioned over hero */}
-          <div className="absolute top-20 left-4 z-30">
-            <LanguageSelector currentLocale={locale} />
-          </div>
-
           <main id="main-content" className="pb-20">
             {/* Content sections with improved spacing */}
             <div className="space-y-6">
-              <WelcomeSection dictionary={dictionary} />
+              <WelcomeSection dictionary={dictionary} locale={locale} />
               <PackageCards dictionary={dictionary} />
               <WhyChooseUs dictionary={dictionary} />
               <GuestReviews dictionary={dictionary} />
