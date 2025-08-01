@@ -65,7 +65,7 @@ src/
 ### Prerequisites
 
 - Node.js 18.0 or higher
-- npm 9.0 or higher
+- pnpm 8.0 or higher
 
 ### Quick Start
 
@@ -75,14 +75,14 @@ git clone https://github.com/your-username/ponyclub-acheron.git
 cd ponyclub-acheron
 
 # Install dependencies
-npm install
+pnpm install
 
 # Set up environment variables (for weather widget)
 cp .env.local.example .env.local
 # Edit .env.local and add your WeatherAPI.com API key
 
 # Start development server
-npm run dev
+pnpm run dev
 
 # Open browser to http://localhost:3000
 ```
@@ -100,10 +100,10 @@ For detailed setup instructions, see [Weather Setup Guide](docs/WEATHER_SETUP.md
 ### Available Scripts
 
 ```bash
-npm run dev      # Start development server
-npm run build    # Create production build
-npm run start    # Start production server
-npm run preview  # Preview production build locally
+pnpm run dev      # Start development server
+pnpm run build    # Create production build
+pnpm run start    # Start production server
+pnpm run preview  # Preview production build locally
 ```
 
 ## 🏗 Build & Deployment
@@ -128,7 +128,7 @@ const nextConfig = {
 
 ```bash
 # Build for production
-npm run build
+pnpm run build
 
 # Deploy the ./dist folder to your hosting service
 # Compatible with: Vercel, Netlify, GitHub Pages, AWS S3, etc.
@@ -278,9 +278,9 @@ git clone https://github.com/your-username/ponyclub-acheron.git
 git checkout -b feature/your-feature-name
 
 # Make your changes and test thoroughly
-npm run dev
-npm run build
-npm run lint
+pnpm run dev
+pnpm run build
+pnpm run lint
 
 # Commit with conventional commit format
 git commit -m "feat: add new booking component"
@@ -300,7 +300,7 @@ git push origin feature/your-feature-name
 
 ### Security Best Practices
 
-- **Dependency Scanning**: Regular security audits with `npm audit`
+- **Dependency Scanning**: Regular security audits with `pnpm audit`
 - **Static Analysis**: TypeScript strict mode and type checking
 - **Build Security**: Secure build pipeline with integrity checks
 

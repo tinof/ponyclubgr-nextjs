@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "preview": "next start",
-    "analyze": "ANALYZE=true npm run build",
+    "analyze": "ANALYZE=true pnpm run build",
     "vercel-build": "next build",
     "lint": "biome lint src/",
     "lint:fix": "biome lint --write src/",
