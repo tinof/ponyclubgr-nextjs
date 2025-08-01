@@ -20,7 +20,6 @@ This document outlines the complete development workflow, CI/CD pipeline, and co
 The project enforces code quality through automated tools that run before commits:
 
 #### Required Dependencies
-- **ESLint:** Already configured for TypeScript and React
 - **Prettier:** Code formatting (to be added)
 - **Husky:** Git hooks automation (to be added)
 - **lint-staged:** Run tools on staged files only (to be added)
@@ -28,15 +27,13 @@ The project enforces code quality through automated tools that run before commit
 #### Pre-commit Hooks
 Every commit automatically triggers:
 1. **Prettier formatting** on staged files (`.js`, `.ts`, `.tsx`, `.css`, `.json`)
-2. **ESLint validation** on staged TypeScript/JavaScript files
-3. **Commit blocks** if any errors are found
+2. **Commit blocks** if any errors are found
 
 ### Available Scripts
 ```bash
 npm run dev          # Start development server
 npm run build        # Production build
 npm run start        # Start production server
-npm run lint         # Run ESLint checks
 npm run preview      # Preview production build
 ```
 
@@ -82,7 +79,7 @@ The CI pipeline (`.github/workflows/ci.yml`) performs:
 
 3. **Code Quality Checks**
    ```bash
-   npm run lint                    # ESLint validation
+   # ESLint has been removed from this project
    npx prettier --check .          # Format validation
    ```
 
@@ -143,7 +140,6 @@ src/
 
 ### Pre-commit (Local)
 - ✅ Prettier formatting
-- ✅ ESLint validation
 - ✅ Type checking
 
 ### Pre-merge (CI)

@@ -12,7 +12,7 @@ If you prefer to do it manually, ensure that you're installing the latest Next &
 
 Terminal
 
-    npm i next@latest react@latest react-dom@latest eslint-config-next@latest
+    npm i next@latest react@latest react-dom@latest
 
 > **Good to know:**
 > 

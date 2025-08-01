@@ -1,7 +1,7 @@
 # Step 1: Update Dependencies (High Priority)
 
 ## Objective
-Update TypeScript types and ESLint to ensure full compatibility with React 19. This step prevents type-related issues and ensures the linter works correctly with the new React version.
+Update TypeScript types to ensure full compatibility with React 19. This step prevents type-related issues with the new React version.
 
 ## Prerequisites
 - Node.js and npm installed.
@@ -20,10 +20,7 @@ Execute the following commands in your terminal to update the necessary developm
     npm install @types/react@^19.1.9 @types/react-dom@^19.1.7
     ```
 
-2.  **Update ESLint and its related packages (Recommended):**
-    ```bash
-    npm install eslint@^9.32.0 @typescript-eslint/eslint-plugin@^8.38.0 @typescript-eslint/parser@^8.38.0 eslint-plugin-react-hooks@^5.2.0
-    ```
+2.  **ESLint has been removed from this project** - no longer needed
 
 ## Verification
 After the installation is complete, run the following commands to ensure that the project builds successfully and passes all linting checks:
@@ -34,11 +31,7 @@ After the installation is complete, run the following commands to ensure that th
     ```
     *Expected Outcome*: The build process should complete without any errors.
 
-2.  **Run the linter:**
-    ```bash
-    npm run lint
-    ```
-    *Expected Outcome*: The linter should run without reporting any new errors related to the updated packages.
+2.  **ESLint has been removed** - no linting step needed
 
 ## Rollback Procedure
 If you encounter issues, you can revert the changes by checking out the previous version of `package.json` and `package-lock.json` and reinstalling dependencies:
