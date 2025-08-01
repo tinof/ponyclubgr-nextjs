@@ -6,7 +6,7 @@ interface WhyChooseUsProps {
   dictionary: Dictionary;
 }
 
-export function WhyChooseUs(_props: WhyChooseUsProps) {
+export function WhyChooseUs({ dictionary: _dictionary }: WhyChooseUsProps) {
   return (
     <div className="px-4 mt-8">
       <div className="bg-white rounded-2xl shadow-card p-5 border border-white/60">

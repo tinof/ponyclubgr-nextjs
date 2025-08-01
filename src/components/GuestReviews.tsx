@@ -14,7 +14,7 @@ interface Review {
   source: string;
 }
 
-export function GuestReviews(_props: GuestReviewsProps) {
+export function GuestReviews({ dictionary: _dictionary }: GuestReviewsProps) {
   const reviews: Review[] = [
     {
       name: 'Maria K.',
@@ -68,7 +68,7 @@ export function GuestReviews(_props: GuestReviewsProps) {
                 {review.source}
               </div>
             </div>
-            <p className="text-sm text-gray-600 mb-3">"{review.text}"</p>
+            <p className="text-sm text-gray-600 mb-3">&ldquo;{review.text}&rdquo;</p>
             <div className="flex items-center">
               {[...Array(5)].map((_, i) => (
                 <Star

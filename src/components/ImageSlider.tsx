@@ -16,7 +16,7 @@ export function ImageSlider({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hasPlayedIntro, setHasPlayedIntro] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const containerRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const autoPlayTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Navigation functions
