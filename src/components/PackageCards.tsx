@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 import { ImageSlider } from './ImageSlider';
-import { Waves, Mountain, Users, Clock, Star, Shield } from 'lucide-react';
 import type { Dictionary } from '../lib/dictionaries';
 
 interface PackageCardsProps {
@@ -23,72 +23,124 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
     };
     checkBokunScript();
   }, []);
-  return <div className="space-y-8 px-3">
-      {/* Package 1 - Bokun Integration */}
-      <div className="bg-white rounded-3xl shadow-premium overflow-hidden border border-white/40 relative">
+  return <div className="space-y-6 px-4">
+      {/* Package 1 - Premium Card */}
+      <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden relative">
         {/* Premium tag */}
-        <div className="absolute top-4 left-0 bg-[#5a6f5a] text-white text-xs font-semibold py-1 px-4 rounded-r-full z-10 shadow-md">
+        <div className="absolute top-4 left-0 bg-sage-600 text-white text-xs font-semibold py-2 px-4 rounded-r-full z-10 shadow-md">
           {dictionary.packages.raftingRiding.tag}
         </div>
-        <div className="relative h-56">
-          <ImageSlider images={[
-            '/images/packages/Package1/rafting.jpeg',
-            '/images/packages/Package1/horse_girl.jpg',
-            '/images/packages/Package1/river_girl.jpg'
-          ]} alt="Rafting and horse riding activities" />
+
+        {/* Image section with dots indicator */}
+        <div className="relative">
+          <div className="relative h-56">
+            <ImageSlider images={[
+              '/images/packages/Package1/rafting.jpeg',
+              '/images/packages/Package1/horse_girl.jpg',
+              '/images/packages/Package1/river_girl.jpg'
+            ]} alt="Rafting and horse riding activities" />
+          </div>
+
+          {/* Dots indicator overlay */}
+          <div className="absolute bottom-4 right-4 flex gap-1">
+            <div className="w-2 h-2 bg-white rounded-full" />
+            <div className="w-2 h-2 bg-white/50 rounded-full" />
+            <div className="w-2 h-2 bg-white/50 rounded-full" />
+          </div>
         </div>
-        <div className="p-5">
-          <div className="flex justify-between items-center mb-2">
-            <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
-              Package 1
-            </p>
-            <div className="flex items-center">
-              <Star size={14} fill="#FFD700" stroke="#FFD700" />
-              <Star size={14} fill="#FFD700" stroke="#FFD700" />
-              <Star size={14} fill="#FFD700" stroke="#FFD700" />
-              <Star size={14} fill="#FFD700" stroke="#FFD700" />
-              <Star size={14} fill="#FFD700" stroke="#FFD700" />
+
+        <div className="p-6">
+          {/* Header with package info and rating */}
+          <div className="flex justify-between items-start mb-3">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-gray-500 mb-1">
+                Package 1
+              </p>
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Image
+                    key={star}
+                    src="/images/figma-assets/star-rating-1.svg"
+                    alt=""
+                    width={14}
+                    height={14}
+                    className="text-yellow-400"
+                  />
+                ))}
+              </div>
             </div>
           </div>
-          <h3 className="text-2xl font-bold text-gray-800">{dictionary.packages.raftingRiding.title}</h3>
-          <div className="flex items-center mt-1 mb-2">
-            <div className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
-              {dictionary.packages.raftingRiding.integration}
+          {/* Title and family-friendly badge */}
+          <h3 className="text-xl font-bold text-gray-800 mb-2">{dictionary.packages.raftingRiding.title}</h3>
+
+          <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-1">
+              <Image
+                src="/images/figma-assets/users-icon-1.svg"
+                alt=""
+                width={16}
+                height={16}
+                className="text-sage-600"
+              />
+              <span className="text-sm text-sage-600 font-medium">
+                {dictionary.packages.raftingRiding.ageRequirement}
+              </span>
             </div>
           </div>
-          <div className="flex items-center mt-1 mb-3">
-            <Users size={16} className="text-[#5a6f5a]" />
-            <span className="text-xs text-[#5a6f5a] font-medium ml-1">
-              {dictionary.packages.raftingRiding.ageRequirement}
-            </span>
-          </div>
-          <div className="mt-3 space-y-2 text-sm text-gray-600">
-            <div className="flex items-center">
-              <Waves className="text-[#5a6f5a] mr-2" size={20} />
+
+          {/* Activity details */}
+          <div className="space-y-3 mb-4">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Image
+                src="/images/figma-assets/clock-icon-1.svg"
+                alt=""
+                width={16}
+                height={16}
+              />
               <span>{dictionary.packages.raftingRiding.activities.rafting}</span>
             </div>
-            <div className="flex items-center">
-              <Clock className="text-[#5a6f5a] mr-2" size={20} />
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Image
+                src="/images/figma-assets/horse-icon-1.svg"
+                alt=""
+                width={16}
+                height={16}
+              />
               <span>{dictionary.packages.raftingRiding.activities.riding}</span>
             </div>
-            <div className="flex items-center">
-              <Mountain className="text-[#5a6f5a] mr-2" size={20} />
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Image
+                src="/images/figma-assets/hiking-icon.svg"
+                alt=""
+                width={16}
+                height={16}
+              />
               <span>{dictionary.packages.raftingRiding.activities.hiking}</span>
             </div>
           </div>
-          <div className="mt-3 p-3 bg-[#f0f3f0] rounded-xl flex items-center">
-            <Shield size={18} className="text-[#5a6f5a] mr-2" />
+
+          {/* Safety note */}
+          <div className="p-3 bg-sage-50 rounded-xl flex items-center gap-2 mb-4">
+            <Image
+              src="/images/figma-assets/safety-icon.svg"
+              alt=""
+              width={16}
+              height={16}
+              className="text-sage-600"
+            />
             <p className="text-xs text-gray-700">
               {dictionary.packages.raftingRiding.safetyNote}
             </p>
           </div>
-          <div className="flex justify-between items-center mt-4">
+
+          {/* Price and booking */}
+          <div className="flex justify-between items-center">
             <div>
               <p className="text-2xl font-bold text-gray-800">{dictionary.packages.raftingRiding.price}</p>
               <p className="text-sm text-gray-500">{dictionary.common.perPerson}</p>
             </div>
             <button
-              className="bokunButton bg-[#5a6f5a] text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-opacity-90 transition shadow-md min-w-[120px]"
+              className="bokunButton bg-sage-600 text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-sage-700 transition shadow-md min-w-[120px]"
               id="bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4"
               data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020598?partialView=1"
               data-testid="widget-book-button"
@@ -98,70 +150,127 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           </div>
         </div>
       </div>
-      {/* Package 2 - Bokun Integration */}
-      <div className="bg-white rounded-3xl shadow-premium overflow-hidden border border-white/40">
-        <div className="relative h-48">
-          <ImageSlider images={[
-            '/images/packages/Package2/kayak.jpg',
-            '/images/packages/Package2/grouponriver.jpg',
-            '/images/packages/Package2/riding.jpg',
-            '/images/packages/Package2/riding2.jpg'
-          ]} alt="Kayaking, group activities and horse riding" smallDots={true} />
+      {/* Package 2 - Standard Card */}
+      <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden">
+        <div className="relative">
+          <div className="relative h-48">
+            <ImageSlider images={[
+              '/images/packages/Package2/kayak.jpg',
+              '/images/packages/Package2/grouponriver.jpg',
+              '/images/packages/Package2/riding.jpg',
+              '/images/packages/Package2/riding2.jpg'
+            ]} alt="Kayaking, group activities and horse riding" smallDots={true} />
+          </div>
+
+          {/* Dots indicator overlay */}
+          <div className="absolute bottom-4 right-4 flex gap-1">
+            <div className="w-2 h-2 bg-white rounded-full" />
+            <div className="w-2 h-2 bg-white/50 rounded-full" />
+            <div className="w-2 h-2 bg-white/50 rounded-full" />
+            <div className="w-2 h-2 bg-white/50 rounded-full" />
+          </div>
         </div>
-        <div className="p-4">
-          <div className="flex justify-between items-center mb-1">
-            <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
-              Package 2
-            </p>
-            <div className="flex items-center">
-              <Star size={12} fill="#FFD700" stroke="#FFD700" />
-              <Star size={12} fill="#FFD700" stroke="#FFD700" />
-              <Star size={12} fill="#FFD700" stroke="#FFD700" />
-              <Star size={12} fill="#FFD700" stroke="#FFD700" />
-              <Star size={12} fill="none" stroke="#FFD700" />
+
+        <div className="p-5">
+          <div className="flex justify-between items-start mb-3">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-gray-500 mb-1">
+                Package 2
+              </p>
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4].map((star) => (
+                  <Image
+                    key={star}
+                    src="/images/figma-assets/star-rating-1.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                    className="text-yellow-400"
+                  />
+                ))}
+                <Image
+                  src="/images/figma-assets/star-rating-1.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="text-gray-300"
+                />
+              </div>
             </div>
           </div>
-          <h3 className="text-lg font-bold text-gray-800">
+          {/* Title and family-friendly badge */}
+          <h3 className="text-lg font-bold text-gray-800 mb-2">
             {dictionary.packages.kayakingRidingTrekking.title}
           </h3>
-          <div className="flex items-center mt-1 mb-2">
-            <div className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
-              {dictionary.packages.kayakingRidingTrekking.integration}
+
+          <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-1">
+              <Image
+                src="/images/figma-assets/users-icon-1.svg"
+                alt=""
+                width={14}
+                height={14}
+                className="text-sage-600"
+              />
+              <span className="text-xs text-sage-600 font-medium">
+                {dictionary.packages.kayakingRidingTrekking.ageRequirement}
+              </span>
             </div>
           </div>
-          <div className="flex items-center mt-1 mb-2">
-            <Users size={14} className="text-[#5a6f5a]" />
-            <span className="text-xs text-[#5a6f5a] font-medium ml-1">
-              {dictionary.packages.kayakingRidingTrekking.ageRequirement}
-            </span>
-          </div>
-          <div className="mt-2 space-y-1 text-xs text-gray-600">
-            <div className="flex items-center">
-              <Waves className="text-[#5a6f5a] mr-2" size={16} />
+
+          {/* Activity details */}
+          <div className="space-y-2 mb-3">
+            <div className="flex items-center gap-2 text-xs text-gray-600">
+              <Image
+                src="/images/figma-assets/clock-icon-1.svg"
+                alt=""
+                width={14}
+                height={14}
+              />
               <span>{dictionary.packages.kayakingRidingTrekking.activities.kayak}</span>
             </div>
-            <div className="flex items-center">
-              <Clock className="text-[#5a6f5a] mr-2" size={16} />
+            <div className="flex items-center gap-2 text-xs text-gray-600">
+              <Image
+                src="/images/figma-assets/horse-icon-1.svg"
+                alt=""
+                width={14}
+                height={14}
+              />
               <span>{dictionary.packages.kayakingRidingTrekking.activities.riding}</span>
             </div>
-            <div className="flex items-center">
-              <Mountain className="text-[#5a6f5a] mr-2" size={16} />
+            <div className="flex items-center gap-2 text-xs text-gray-600">
+              <Image
+                src="/images/figma-assets/hiking-icon.svg"
+                alt=""
+                width={14}
+                height={14}
+              />
               <span>{dictionary.packages.kayakingRidingTrekking.activities.trekking}</span>
             </div>
           </div>
-          <div className="mt-2 p-2 bg-[#f0f3f0] rounded-lg flex items-center">
-            <Shield size={14} className="text-[#5a6f5a] mr-2" />
+
+          {/* Safety note */}
+          <div className="p-2 bg-sage-50 rounded-lg flex items-center gap-2 mb-3">
+            <Image
+              src="/images/figma-assets/safety-icon.svg"
+              alt=""
+              width={14}
+              height={14}
+              className="text-sage-600"
+            />
             <p className="text-xs text-gray-700">
               {dictionary.packages.kayakingRidingTrekking.safetyNote}
             </p>
           </div>
-          <div className="flex justify-between items-center mt-2">
+
+          {/* Price and booking */}
+          <div className="flex justify-between items-center">
             <div>
-              <p className="text-2xl font-bold text-gray-800">{dictionary.packages.kayakingRidingTrekking.price}</p>
-              <p className="text-sm text-gray-500">{dictionary.common.perPerson}</p>
+              <p className="text-xl font-bold text-gray-800">{dictionary.packages.kayakingRidingTrekking.price}</p>
+              <p className="text-xs text-gray-500">{dictionary.common.perPerson}</p>
             </div>
             <button
-              className="bokunButton bg-[#5a6f5a] text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-opacity-90 transition shadow-md min-w-[120px]"
+              className="bokunButton bg-sage-600 text-white font-bold py-2 px-4 rounded-xl text-sm hover:bg-sage-700 transition shadow-md min-w-[100px]"
               id="bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d"
               data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020569?partialView=1"
               data-testid="widget-book-button"
