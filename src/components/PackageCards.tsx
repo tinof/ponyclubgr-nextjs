@@ -3,8 +3,13 @@
 import React, { useEffect } from 'react';
 import { ImageSlider } from './ImageSlider';
 import { Waves, Mountain, Users, Clock, Star, Shield } from 'lucide-react';
+import type { Dictionary } from '../lib/dictionaries';
 
-export function PackageCards() {
+interface PackageCardsProps {
+  dictionary: Dictionary
+}
+
+export function PackageCards({ dictionary }: PackageCardsProps) {
 
   // Debug: Check if Bokun script is loaded
   useEffect(() => {
@@ -22,15 +27,19 @@ export function PackageCards() {
       {/* Package 1 - Bokun Integration */}
       <div className="bg-white rounded-3xl shadow-premium overflow-hidden border border-white/40 relative">
         {/* Premium tag */}
-        <div className="absolute top-4 left-0 bg-[#5a6f5a] text-white text-xs font-semibold py-1 px-4 rounded-r-full z-10 shadow-md">
-          Family Favorite
+        <div className="absolute top-4 left-0 bg-[#88B04B] text-white text-xs font-semibold py-1 px-4 rounded-r-full z-10 shadow-md">
+          {dictionary.packages.raftingRiding.tag}
         </div>
         <div className="relative h-56">
-          <ImageSlider images={['https://lh3.googleusercontent.com/aida-public/AB6AXuAy3muCIwLH4QIsLcENlnaAFxf6WymQV6e7hg1mWJln8NSXX2Tq-ZIVhTru0CyCLLsFpoD007GKZZhwI-ECuigvHRaSUEgDLNdXZo-uvPJqzgkdidtj6SHZmzXbhTAAGwY2Fko47FiEr3wyzUJYzhsfQWgVM2T660pFmZ-_Rvr3I--Z7mlGqLuf3JGa50TPsfZb3671Av0SKdb65snYwBlOksS2Tjmk-fdl_UAm3R86gQ5b5kY7T9UV5tAh76LaNqmA89nDKzkZVdtg']} alt="People rafting down a river" />
+          <ImageSlider images={[
+            '/images/packages/Package1/rafting.jpeg',
+            '/images/packages/Package1/horse_girl.jpg',
+            '/images/packages/Package1/river_girl.jpg'
+          ]} alt="Rafting and horse riding activities" />
         </div>
         <div className="p-5">
           <div className="flex justify-between items-center mb-2">
-            <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
+            <p className="text-sm font-medium uppercase tracking-wider text-[#333333] opacity-70">
               Package 1
             </p>
             <div className="flex items-center">
@@ -41,50 +50,50 @@ export function PackageCards() {
               <Star size={14} fill="#FFD700" stroke="#FFD700" />
             </div>
           </div>
-          <h3 className="text-2xl font-bold text-gray-800">Rafting & Riding</h3>
+          <h3 className="text-2xl font-bold text-[#333333]">{dictionary.packages.raftingRiding.title}</h3>
           <div className="flex items-center mt-1 mb-2">
             <div className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
-              Bokun Integration
+              {dictionary.packages.raftingRiding.integration}
             </div>
           </div>
           <div className="flex items-center mt-1 mb-3">
-            <Users size={16} className="text-[#5a6f5a]" />
-            <span className="text-xs text-[#5a6f5a] font-medium ml-1">
-              Perfect for families with children 8+
+            <Users size={16} className="text-[#88B04B]" />
+            <span className="text-xs text-[#88B04B] font-medium ml-1">
+              {dictionary.packages.raftingRiding.ageRequirement}
             </span>
           </div>
-          <div className="mt-3 space-y-2 text-sm text-gray-600">
+          <div className="mt-3 space-y-2 text-sm text-[#333333] opacity-80">
             <div className="flex items-center">
-              <Waves className="text-[#5a6f5a] mr-2" size={20} />
-              <span>Rafting: 30 minutes</span>
+              <Waves className="text-[#88B04B] mr-2" size={20} />
+              <span>{dictionary.packages.raftingRiding.activities.rafting}</span>
             </div>
             <div className="flex items-center">
-              <Clock className="text-[#5a6f5a] mr-2" size={20} />
-              <span>Riding: 10-15 minutes</span>
+              <Clock className="text-[#88B04B] mr-2" size={20} />
+              <span>{dictionary.packages.raftingRiding.activities.riding}</span>
             </div>
             <div className="flex items-center">
-              <Mountain className="text-[#5a6f5a] mr-2" size={20} />
-              <span>Hiking canyon crossing</span>
+              <Mountain className="text-[#88B04B] mr-2" size={20} />
+              <span>{dictionary.packages.raftingRiding.activities.hiking}</span>
             </div>
           </div>
-          <div className="mt-3 p-3 bg-[#f0f3f0] rounded-xl flex items-center">
-            <Shield size={18} className="text-[#5a6f5a] mr-2" />
-            <p className="text-xs text-gray-700">
-              All safety equipment provided. Professional guides for all ages.
+          <div className="mt-3 p-3 bg-[#F3EDE5] rounded-xl flex items-center">
+            <Shield size={18} className="text-[#88B04B] mr-2" />
+            <p className="text-xs text-[#333333] opacity-90">
+              {dictionary.packages.raftingRiding.safetyNote}
             </p>
           </div>
           <div className="flex justify-between items-center mt-4">
             <div>
-              <p className="text-2xl font-bold text-gray-800">20 EUR</p>
-              <p className="text-sm text-gray-500">per person</p>
+              <p className="text-2xl font-bold text-[#333333]">{dictionary.packages.raftingRiding.price}</p>
+              <p className="text-sm text-[#333333] opacity-70">{dictionary.common.perPerson}</p>
             </div>
             <button
-              className="bokunButton bg-[#5a6f5a] text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-opacity-90 transition shadow-md min-w-[120px]"
+              className="bokunButton bg-[#007C77] text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-opacity-90 transition shadow-md min-w-[120px]"
               id="bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4"
               data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020598?partialView=1"
               data-testid="widget-book-button"
             >
-              Book Now
+              {dictionary.common.bookNow}
             </button>
           </div>
         </div>
@@ -92,11 +101,16 @@ export function PackageCards() {
       {/* Package 2 - Bokun Integration */}
       <div className="bg-white rounded-3xl shadow-premium overflow-hidden border border-white/40">
         <div className="relative h-48">
-          <ImageSlider images={['https://lh3.googleusercontent.com/aida-public/AB6AXuCuomzRuuor-R2JxViFScBWf1WsVK8_1J9_t-Rvy6Yz0YZYqfTvW0_uwe78mAHgo0mX5SkYi0D0NyZemZn_QpF5SIHZOayW3JLmFdapRuMHEhC0CFCCQhlPFkOOWauXPc6NS-lp0SqlRPHleEqV7KbPsOQ1e3F4tVVn-ekxCJNR_Jp4tN1VoBHwE7lskokGh708ZIQllzSp9KDJdfksZDdsbhh9rLtyXLRFaYXsxE-2HXLBizLYnjvCrpdLH6veAF8aqCePJn119T3l']} alt="Kayaking on a calm lake" smallDots={true} />
+          <ImageSlider images={[
+            '/images/packages/Package2/kayak.jpg',
+            '/images/packages/Package2/grouponriver.jpg',
+            '/images/packages/Package2/riding.jpg',
+            '/images/packages/Package2/riding2.jpg'
+          ]} alt="Kayaking, group activities and horse riding" smallDots={true} />
         </div>
         <div className="p-4">
           <div className="flex justify-between items-center mb-1">
-            <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
+            <p className="text-xs font-medium uppercase tracking-wider text-[#333333] opacity-70">
               Package 2
             </p>
             <div className="flex items-center">
@@ -107,52 +121,52 @@ export function PackageCards() {
               <Star size={12} fill="none" stroke="#FFD700" />
             </div>
           </div>
-          <h3 className="text-lg font-bold text-gray-800">
-            Kayaking, Riding & Trekking
+          <h3 className="text-lg font-bold text-[#333333]">
+            {dictionary.packages.kayakingRidingTrekking.title}
           </h3>
           <div className="flex items-center mt-1 mb-2">
             <div className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
-              Bokun Integration
+              {dictionary.packages.kayakingRidingTrekking.integration}
             </div>
           </div>
           <div className="flex items-center mt-1 mb-2">
-            <Users size={14} className="text-[#5a6f5a]" />
-            <span className="text-xs text-[#5a6f5a] font-medium ml-1">
-              Great for families with children 10+
+            <Users size={14} className="text-[#88B04B]" />
+            <span className="text-xs text-[#88B04B] font-medium ml-1">
+              {dictionary.packages.kayakingRidingTrekking.ageRequirement}
             </span>
           </div>
-          <div className="mt-2 space-y-1 text-xs text-gray-600">
+          <div className="mt-2 space-y-1 text-xs text-[#333333] opacity-80">
             <div className="flex items-center">
-              <Waves className="text-[#5a6f5a] mr-2" size={16} />
-              <span>Kayak: 30 minutes</span>
+              <Waves className="text-[#88B04B] mr-2" size={16} />
+              <span>{dictionary.packages.kayakingRidingTrekking.activities.kayak}</span>
             </div>
             <div className="flex items-center">
-              <Clock className="text-[#5a6f5a] mr-2" size={16} />
-              <span>Riding: 10-15 minutes</span>
+              <Clock className="text-[#88B04B] mr-2" size={16} />
+              <span>{dictionary.packages.kayakingRidingTrekking.activities.riding}</span>
             </div>
             <div className="flex items-center">
-              <Mountain className="text-[#5a6f5a] mr-2" size={16} />
-              <span>Hiking canyon crossing</span>
+              <Mountain className="text-[#88B04B] mr-2" size={16} />
+              <span>{dictionary.packages.kayakingRidingTrekking.activities.trekking}</span>
             </div>
           </div>
-          <div className="mt-2 p-2 bg-[#f0f3f0] rounded-lg flex items-center">
-            <Shield size={14} className="text-[#5a6f5a] mr-2" />
-            <p className="text-xs text-gray-700">
-              Safety equipment & guides included
+          <div className="mt-2 p-2 bg-[#F3EDE5] rounded-lg flex items-center">
+            <Shield size={14} className="text-[#88B04B] mr-2" />
+            <p className="text-xs text-[#333333] opacity-90">
+              {dictionary.packages.kayakingRidingTrekking.safetyNote}
             </p>
           </div>
           <div className="flex justify-between items-center mt-2">
             <div>
-              <p className="text-xl font-bold text-gray-800">25 EUR</p>
-              <p className="text-xs text-gray-500">per person</p>
+              <p className="text-2xl font-bold text-[#333333]">{dictionary.packages.kayakingRidingTrekking.price}</p>
+              <p className="text-sm text-[#333333] opacity-70">{dictionary.common.perPerson}</p>
             </div>
             <button
-              className="bokunButton bg-[#5a6f5a] text-white font-semibold py-2 px-4 rounded-xl text-sm hover:bg-opacity-90 transition shadow-md min-w-[100px]"
+              className="bokunButton bg-[#007C77] text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-opacity-90 transition shadow-md min-w-[120px]"
               id="bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d"
               data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020569?partialView=1"
               data-testid="widget-book-button"
             >
-              Book Now
+              {dictionary.common.bookNow}
             </button>
           </div>
         </div>

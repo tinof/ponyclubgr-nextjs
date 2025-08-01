@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import useSWR from 'swr'
 import { Cloud, CloudRain, Sun, CloudSnow, AlertCircle, Thermometer, Wind, Droplets } from 'lucide-react'
+import type { Dictionary } from '../lib/dictionaries'
 
 // Weather data interface matching our API response
 interface WeatherData {
@@ -77,99 +78,103 @@ const WeatherSkeleton = () => (
 )
 
 // Error state component
-const WeatherError = ({ onRetry }: { onRetry: () => void }) => (
+const WeatherError = ({ onRetry, dictionary }: { onRetry: () => void; dictionary: Dictionary }) => (
   <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-red-100">
     <div className="flex items-center justify-between">
       <div className="flex items-center space-x-2">
         <AlertCircle className="h-5 w-5 text-red-500" />
-        <span className="text-xs text-red-600 font-medium">Weather unavailable</span>
+        <span className="text-xs text-red-600 font-medium">{dictionary.weather.unavailable}</span>
       </div>
       <button
         onClick={onRetry}
         className="text-xs text-red-600 hover:text-red-700 font-medium underline"
       >
-        Retry
+        {dictionary.common.retry}
       </button>
     </div>
   </div>
 )
 
 // Detailed weather tooltip component
-const WeatherTooltip = ({ data, isVisible }: { data: WeatherData; isVisible: boolean }) => {
+const WeatherTooltip = ({ data, isVisible, dictionary }: { data: WeatherData; isVisible: boolean; dictionary: Dictionary }) => {
   if (!isVisible) return null
 
   return (
     <div className="absolute top-full right-0 mt-2 w-64 bg-white rounded-2xl shadow-premium border border-white/40 p-4 z-50">
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <h3 className="font-semibold text-gray-800">{data.location}</h3>
-          <div className="text-xs text-gray-500">
-            {new Date(data.lastUpdated).toLocaleTimeString('en-US', { 
-              hour: '2-digit', 
-              minute: '2-digit' 
+          <h3 className="font-semibold text-[#333333]">{data.location}</h3>
+          <div className="text-xs text-[#333333] opacity-70">
+            {new Date(data.lastUpdated).toLocaleTimeString('en-US', {
+              hour: '2-digit',
+              minute: '2-digit'
             })}
           </div>
         </div>
-        
+
         <div className="grid grid-cols-2 gap-3">
           <div className="flex items-center space-x-2">
-            <Thermometer className="h-4 w-4 text-[#5a6f5a]" />
+            <Thermometer className="h-4 w-4 text-[#88B04B]" />
             <div>
-              <div className="text-sm font-medium">{data.temperature}°C</div>
-              <div className="text-xs text-gray-500">Feels {data.feelsLike}°C</div>
+              <div className="text-sm font-medium text-[#333333]">{data.temperature}°C</div>
+              <div className="text-xs text-[#333333] opacity-70">{dictionary.weather.details.feelsLike} {data.feelsLike}°C</div>
             </div>
           </div>
 
           <div className="flex items-center space-x-2">
-            <Wind className="h-4 w-4 text-[#5a6f5a]" />
+            <Wind className="h-4 w-4 text-[#88B04B]" />
             <div>
-              <div className="text-sm font-medium">{data.windSpeed} km/h</div>
-              <div className="text-xs text-gray-500">{data.windDirection}</div>
+              <div className="text-sm font-medium text-[#333333]">{data.windSpeed} km/h</div>
+              <div className="text-xs text-[#333333] opacity-70">{data.windDirection}</div>
             </div>
           </div>
 
           <div className="flex items-center space-x-2">
-            <Droplets className="h-4 w-4 text-[#5a6f5a]" />
+            <Droplets className="h-4 w-4 text-[#88B04B]" />
             <div>
-              <div className="text-sm font-medium">{data.humidity}%</div>
-              <div className="text-xs text-gray-500">Humidity</div>
+              <div className="text-sm font-medium text-[#333333]">{data.humidity}%</div>
+              <div className="text-xs text-[#333333] opacity-70">{dictionary.weather.details.humidity}</div>
             </div>
           </div>
 
           <div className="flex items-center space-x-2">
-            <Sun className="h-4 w-4 text-[#5a6f5a]" />
+            <Sun className="h-4 w-4 text-[#88B04B]" />
             <div>
-              <div className="text-sm font-medium">UV {data.uvIndex}</div>
-              <div className="text-xs text-gray-500">Index</div>
+              <div className="text-sm font-medium text-[#333333]">UV {data.uvIndex}</div>
+              <div className="text-xs text-[#333333] opacity-70">{dictionary.weather.details.index}</div>
             </div>
           </div>
 
           <div className="flex items-center space-x-2">
-            <Cloud className="h-4 w-4 text-[#5a6f5a]" />
+            <Cloud className="h-4 w-4 text-[#88B04B]" />
             <div>
-              <div className="text-sm font-medium">{data.cloudCover}%</div>
-              <div className="text-xs text-gray-500">Cloud cover</div>
+              <div className="text-sm font-medium text-[#333333]">{data.cloudCover}%</div>
+              <div className="text-xs text-[#333333] opacity-70">{dictionary.weather.details.cloudCover}</div>
             </div>
           </div>
 
           <div className="flex items-center space-x-2">
-            <div className="h-4 w-4 flex items-center justify-center text-[#5a6f5a] text-xs font-bold">P</div>
+            <div className="h-4 w-4 flex items-center justify-center text-[#88B04B] text-xs font-bold">P</div>
             <div>
-              <div className="text-sm font-medium">{data.pressure} mb</div>
-              <div className="text-xs text-gray-500">Pressure</div>
+              <div className="text-sm font-medium text-[#333333]">{data.pressure} mb</div>
+              <div className="text-xs text-[#333333] opacity-70">{dictionary.weather.details.pressure}</div>
             </div>
           </div>
         </div>
-        
+
         <div className="pt-2 border-t border-gray-100">
-          <div className="text-sm text-gray-700 font-medium">{data.condition}</div>
+          <div className="text-sm text-[#333333] font-medium">{data.condition}</div>
         </div>
       </div>
     </div>
   )
 }
 
-export function WeatherWidget() {
+interface WeatherWidgetProps {
+  dictionary: Dictionary
+}
+
+export function WeatherWidget({ dictionary }: WeatherWidgetProps) {
   const [showTooltip, setShowTooltip] = useState(false)
 
   // SWR configuration for weather data with aggressive caching
@@ -201,7 +206,7 @@ export function WeatherWidget() {
 
   // Error state
   if (error || !weatherData) {
-    return <WeatherError onRetry={handleRetry} />
+    return <WeatherError onRetry={handleRetry} dictionary={dictionary} />
   }
 
   return (
@@ -214,20 +219,20 @@ export function WeatherWidget() {
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="text-[#5a6f5a]">
+            <div className="text-[#88B04B]">
               {getWeatherIcon(weatherData.condition, weatherData.isDay)}
             </div>
-            <span className="text-lg font-semibold text-gray-800">
+            <span className="text-lg font-semibold text-[#333333]">
               {weatherData.temperature}°
             </span>
           </div>
-          <div className="text-xs text-gray-500 font-medium">
-            Glyki
+          <div className="text-xs text-[#333333] opacity-70 font-medium">
+            {dictionary.weather.location}
           </div>
         </div>
       </div>
-      
-      <WeatherTooltip data={weatherData} isVisible={showTooltip} />
+
+      <WeatherTooltip data={weatherData} isVisible={showTooltip} dictionary={dictionary} />
     </div>
   )
 }

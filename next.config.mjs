@@ -3,6 +3,9 @@ const nextConfig = {
   // Removed 'output: export' to enable full Next.js features including image optimization
   // Vercel handles deployment automatically without static export
   trailingSlash: true, // Ensures compatibility with static hosting
+
+  // Note: i18n config is not compatible with app router
+  // Using manual locale routing with [locale] folder structure instead
   images: {
     // Enable image optimization for Vercel
     unoptimized: false,
@@ -23,13 +26,6 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
     // Cache optimization for Vercel
     minimumCacheTTL: 60,
-  },
-  experimental: {
-    reactCompiler: true, // Enable React Compiler for automatic optimizations
-    staleTimes: {
-      dynamic: 30,   // Dynamic content is considered fresh for 30 seconds
-      static: 180,  // Static content is considered fresh for 180 seconds
-    },
   },
 }
 

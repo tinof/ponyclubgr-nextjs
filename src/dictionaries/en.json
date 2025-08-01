@@ -1,0 +1,99 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "bookNow": "Book Now",
+    "perPerson": "per person",
+    "skipToMainContent": "Skip to main content"
+  },
+  "header": {
+    "logoAlt": "Pony Club",
+    "location": "Acheron River, Greece"
+  },
+  "welcome": {
+    "description": "Explore the mythical Acheron River with our unique horse riding and rafting tours. An unforgettable adventure awaits in the heart of Greece.",
+    "title": "Welcome to Pony Club",
+    "intro": "Welcome to Pony Club at the Acheron River, where adventure meets nature.",
+    "history": "Since 1998, we've offered unforgettable horse riding and rafting experiences for families and adventurers. Explore our farm with 8 horses and our rafting base, guided by experts who prioritize safety and respect for the environment.",
+    "callToAction": "Join us for rafting, riding, kayaking, and trekking at Acheron River in Glyki, Greece.",
+    "features": {
+      "safety": "Safety First",
+      "family": "Family Friendly",
+      "memorable": "Memorable"
+    }
+  },
+  "packages": {
+    "raftingRiding": {
+      "title": "Rafting & Riding",
+      "tag": "Family Favorite",
+      "integration": "Bokun Integration",
+      "ageRequirement": "Perfect for families with children 8+",
+      "activities": {
+        "rafting": "Rafting: 30 minutes",
+        "riding": "Riding: 10-15 minutes",
+        "hiking": "Hiking canyon crossing"
+      },
+      "safetyNote": "Safety equipment & guides included",
+      "price": "20 EUR"
+    },
+    "kayakingRidingTrekking": {
+      "title": "Kayaking, Riding & Trekking",
+      "integration": "Bokun Integration",
+      "ageRequirement": "Great for families with children 10+",
+      "activities": {
+        "kayak": "Kayak: 30 minutes",
+        "riding": "Riding: 10-15 minutes",
+        "trekking": "Trekking: 45 minutes"
+      },
+      "safetyNote": "All equipment provided",
+      "price": "25 EUR"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "map": "Map",
+    "activities": "Activities",
+    "offers": "Offers",
+    "more": "More",
+    "contactUs": "Contact Us",
+    "familyPackages": "Family Packages",
+    "safetyInfo": "Safety Info",
+    "bookFamilyExperience": "Book a family experience today!"
+  },
+  "weather": {
+    "unavailable": "Weather unavailable",
+    "location": "Glyki",
+    "details": {
+      "feelsLike": "Feels",
+      "humidity": "Humidity",
+      "index": "Index",
+      "cloudCover": "Cloud cover",
+      "pressure": "Pressure"
+    }
+  },
+  "metadata": {
+    "title": "Pony Club - Acheron River, Greece | Horse Riding & Rafting Tours",
+    "description": "Experience unforgettable horse riding and rafting adventures at Acheron River, Greece. Family-friendly tours since 1998 with professional guides and safety equipment.",
+    "keywords": "horse riding, rafting, Acheron River, Greece, adventure tours, family activities, outdoor activities, nature tours, water sports, equestrian tours",
+    "openGraph": {
+      "title": "Pony Club - Acheron River Adventures",
+      "description": "Unforgettable horse riding and rafting experiences in Greece",
+      "imageAlt": "Pony Club - Horse riding and rafting adventures at Acheron River, Greece"
+    },
+    "twitter": {
+      "title": "Pony Club - Acheron River Adventures",
+      "description": "Unforgettable horse riding and rafting experiences in Greece"
+    }
+  },
+  "manifest": {
+    "name": "Pony Club - Adventure Activities in Acheron River",
+    "shortName": "Pony Club",
+    "description": "Experience unforgettable rafting, horse riding, kayaking and trekking adventures in the beautiful Acheron River, Greece."
+  },
+  "jsonLd": {
+    "name": "Pony Club - Rafting & Riding Adventure",
+    "description": "Experience unforgettable horse riding and rafting adventures at Acheron River, Greece.",
+    "brandName": "Pony Club Acheron"
+  }
+}

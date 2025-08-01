@@ -7,19 +7,66 @@
 /* Tailwind v4.1 theme configuration */
 @theme {
   --font-family-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  --color-sage-50: #f0f3f0;
-  --color-sage-primary: #5a6f5a;
+  /* Primary sage green */
+  --color-sage-primary: #88B04B;
+  --color-sage-50: #F3F8EC;
+  --color-sage-100: #E6F0D9;
+  --color-sage-200: #D1E4B8;
+  --color-sage-300: #B8D794;
+  --color-sage-400: #A0C46F;
+  --color-sage-500: #88B04B;
+  --color-sage-600: #6F903C;
+  --color-sage-700: #56702D;
+  --color-sage-800: #3D501E;
+  --color-sage-900: #24300F;
+  
+  /* Warm coral accent */
+  --color-coral-primary: #FF6F61;
+  --color-coral-50: #FFF4F3;
+  --color-coral-100: #FFE8E6;
+  --color-coral-200: #FFD1CD;
+  --color-coral-300: #FFB5AD;
+  --color-coral-400: #FF928A;
+  --color-coral-500: #FF6F61;
+  --color-coral-600: #E5584A;
+  --color-coral-700: #CC4233;
+  --color-coral-800: #B22C1C;
+  --color-coral-900: #991605;
+  
+  /* Deep teal for actions */
+  --color-teal-primary: #007C77;
+  --color-teal-50: #EDFFFE;
+  --color-teal-100: #DAFFFD;
+  --color-teal-200: #B8FFFA;
+  --color-teal-300: #8DFFF6;
+  --color-teal-400: #5EFFF2;
+  --color-teal-500: #1FFFE8;
+  --color-teal-600: #00CCB8;
+  --color-teal-700: #007C77;
+  --color-teal-800: #005550;
+  --color-teal-900: #002E2A;
+  
+  /* Neutral colors */
+  --color-neutral-off-white: #F8F8F8;
+  --color-neutral-beige: #F3EDE5;
+  --color-neutral-charcoal: #333333;
 }
 
 /* Custom CSS variables */
 :root {
-  --sage-50: #f0f3f0;
-  --sage-primary: #5a6f5a;
+  --sage-50: #F3F8EC;
+  --sage-primary: #88B04B;
+  --coral-primary: #FF6F61;
+  --teal-primary: #007C77;
+  --off-white: #F8F8F8;
+  --soft-beige: #F3EDE5;
+  --charcoal: #333333;
 }
 
 body {
-  background-color: var(--sage-50);
+  background-color: var(--off-white);
   min-height: max(884px, 100vh);
+  color: var(--charcoal);
 }
 .shadow-soft {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
@@ -48,7 +95,7 @@ body {
 #bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4,
 #bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d {
   /* Ensure our custom styles take precedence over Bokun's default styles */
-  background-color: var(--sage-primary) !important;
+  background-color: var(--teal-primary) !important;
   color: white !important;
   border: none !important;
   font-weight: 700 !important;
@@ -64,7 +111,7 @@ body {
 .bokunButton:hover,
 #bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4:hover,
 #bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d:hover {
-  background-color: rgba(90, 111, 90, 0.9) !important;
+  background-color: rgba(0, 124, 119, 0.9) !important;
 }
 
 .bokunButton:disabled,
@@ -78,7 +125,7 @@ body {
 #bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4,
 #bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d {
   /* Override the provided Bokun colors (#408C3D, #285726, #30682e) with our design system */
-  background-color: var(--sage-primary) !important;
+  background-color: var(--teal-primary) !important;
 }
 
 /* Ensure Package 2's smaller button styling is preserved */
