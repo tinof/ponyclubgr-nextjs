@@ -1,5 +1,6 @@
 import React from 'react';
-import { Heart, Shield, Users } from 'lucide-react';
+import Image from 'next/image';
+import { WeatherWidget } from './WeatherWidget';
 import type { Dictionary } from '../lib/dictionaries';
 
 interface WelcomeSectionProps {
@@ -7,55 +8,155 @@ interface WelcomeSectionProps {
 }
 
 export function WelcomeSection({ dictionary }: WelcomeSectionProps) {
-  return <>
-      <div className="px-3 relative">
-        {/* Decorative element */}
-        <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-[#5a6f5a]/20 rounded-tl-lg"></div>
-        <p className="text-gray-600 text-base leading-relaxed">
-          {dictionary.welcome.description}
-        </p>
-      </div>
-      <div className="px-3 space-y-4">
-        <div className="bg-white/90 backdrop-blur-sm p-5 rounded-2xl shadow-premium border border-white/40 relative overflow-hidden">
-          {/* Decorative element */}
-          <div className="absolute -top-10 -right-10 w-20 h-20 bg-[#f0f3f0]/50 rounded-full"></div>
-          <h2 className="text-xl font-bold text-[#5a6f5a] mb-3 relative z-10">
-            {dictionary.welcome.title}
-          </h2>
-          <div className="space-y-3 text-gray-700 text-sm leading-relaxed">
-            <p>
-              {dictionary.welcome.intro}
-            </p>
-            <p>
-              {dictionary.welcome.history}
-            </p>
-            <p className="font-medium text-gray-800">
-              {dictionary.welcome.callToAction}
+  return (
+    <div className="relative -mx-4 sm:-mx-6">
+      {/* Full-width Hero Image Section */}
+      <div className="relative h-80 sm:h-96 overflow-hidden rounded-t-[2rem]">
+        <Image
+          src="/images/hero-image.webp"
+          alt="Acheron River Adventure"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Enhanced gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+
+        {/* Logo and Weather Widget Overlay */}
+        <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-20">
+          {/* Logo Section */}
+          <div className="flex flex-col">
+            <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40 mb-1">
+              <Image
+                src="/images/logo.png"
+                alt={dictionary.header.logoAlt}
+                width={140}
+                height={46}
+                className="h-10 w-auto"
+                priority
+              />
+            </div>
+            <p className="text-sm text-white/90 ml-1 drop-shadow-sm">{dictionary.header.location}</p>
+          </div>
+
+          {/* Weather Widget */}
+          <div className="relative z-10">
+            <WeatherWidget dictionary={dictionary} />
+          </div>
+        </div>
+
+        {/* Main Hero Content Overlay */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
+          {/* Star Rating and Title */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full">
+              <div className="w-8 h-8 flex items-center justify-center">
+                {/* Star rating icons */}
+                <div className="flex gap-0.5">
+                  {[1, 2, 3, 4].map((star) => (
+                    <Image
+                      key={star}
+                      src="/images/figma-assets/star-rating-1.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                      className="text-yellow-400"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="text-white">
+              <h1 className="text-lg font-bold drop-shadow-sm">Pony Club</h1>
+              <p className="text-sm text-white/90 drop-shadow-sm">Acheron River, Greece</p>
+            </div>
+          </div>
+
+          {/* Main Hero Text */}
+          <div className="text-white max-w-md">
+            <p className="text-lg leading-relaxed drop-shadow-sm font-medium">
+              {dictionary.welcome.description}
             </p>
           </div>
-          <div className="mt-5 grid grid-cols-3 gap-2">
-            <div className="flex flex-col items-center text-center p-2">
-              <div className="bg-[#f0f3f0] p-2 rounded-full">
-                <Shield size={16} className="text-[#5a6f5a]" />
+        </div>
+
+        {/* Curved Bottom Transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 overflow-hidden">
+          <svg
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+            className="w-full h-full"
+          >
+            <path
+              d="M0,0 C300,80 900,80 1200,0 L1200,120 L0,120 Z"
+              fill="rgb(245, 247, 245)"
+              className="drop-shadow-sm"
+            />
+          </svg>
+        </div>
+      </div>
+
+
+      {/* Content Section with improved spacing */}
+      <div className="px-4 sm:px-6 -mt-4 relative z-10">
+        <div className="bg-white rounded-[2rem] shadow-card border border-white/60 overflow-hidden">
+          <div className="p-6">
+            {/* Welcome Card */}
+            <div className="bg-sage-600 rounded-2xl p-5 text-white relative overflow-hidden">
+              {/* Decorative element */}
+              <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full" />
+
+              <h3 className="text-lg font-bold mb-3">{dictionary.welcome.title}</h3>
+
+              <div className="space-y-3 text-sm leading-relaxed text-white/90">
+                <p>{dictionary.welcome.intro}</p>
+                <p>{dictionary.welcome.history}</p>
+                <p className="font-medium text-white">{dictionary.welcome.callToAction}</p>
               </div>
-              <span className="text-xs mt-1 text-gray-700">{dictionary.welcome.features.safety}</span>
-            </div>
-            <div className="flex flex-col items-center text-center p-2">
-              <div className="bg-[#f0f3f0] p-2 rounded-full">
-                <Users size={16} className="text-[#5a6f5a]" />
+
+              {/* Feature highlights */}
+              <div className="mt-5 grid grid-cols-3 gap-3">
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-white/20 p-2 rounded-full mb-2">
+                    <Image
+                      src="/images/figma-assets/shield-icon.svg"
+                      alt=""
+                      width={16}
+                      height={16}
+                      className="filter brightness-0 invert"
+                    />
+                  </div>
+                  <span className="text-xs text-white/90">{dictionary.welcome.features.safety}</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-white/20 p-2 rounded-full mb-2">
+                    <Image
+                      src="/images/figma-assets/users-icon-1.svg"
+                      alt=""
+                      width={16}
+                      height={16}
+                      className="filter brightness-0 invert"
+                    />
+                  </div>
+                  <span className="text-xs text-white/90">{dictionary.welcome.features.family}</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-white/20 p-2 rounded-full mb-2">
+                    <Image
+                      src="/images/figma-assets/heart-icon.svg"
+                      alt=""
+                      width={16}
+                      height={16}
+                      className="filter brightness-0 invert"
+                    />
+                  </div>
+                  <span className="text-xs text-white/90">{dictionary.welcome.features.memorable}</span>
+                </div>
               </div>
-              <span className="text-xs mt-1 text-gray-700">
-                {dictionary.welcome.features.family}
-              </span>
-            </div>
-            <div className="flex flex-col items-center text-center p-2">
-              <div className="bg-[#f0f3f0] p-2 rounded-full">
-                <Heart size={16} className="text-[#5a6f5a]" />
-              </div>
-              <span className="text-xs mt-1 text-gray-700">{dictionary.welcome.features.memorable}</span>
             </div>
           </div>
         </div>
       </div>
-    </>;
+    </div>
+  );
 }

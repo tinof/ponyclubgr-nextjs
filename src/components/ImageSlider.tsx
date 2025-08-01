@@ -16,8 +16,8 @@ export function ImageSlider({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hasPlayedIntro, setHasPlayedIntro] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const containerRef = useRef<any>(null);
+  const autoPlayTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Navigation functions
   const goToNext = useCallback(() => {
@@ -63,7 +63,9 @@ export function ImageSlider({
 
   // Intersection Observer for auto-play trigger
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    if (typeof window === 'undefined') return;
+
+    const observer = new window.IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasPlayedIntro) {
