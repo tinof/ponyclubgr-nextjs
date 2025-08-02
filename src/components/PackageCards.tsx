@@ -1,30 +1,15 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect } from 'react';
 import type { Dictionary } from '../lib/dictionaries';
 import { ImageSlider } from './ImageSlider';
+import { BokunButton } from './BokunButton';
 
 interface PackageCardsProps {
   dictionary: Dictionary;
 }
 
 export function PackageCards({ dictionary }: PackageCardsProps) {
-  // Debug: Check if Bokun script is loaded
-  useEffect(() => {
-    const checkBokunScript = () => {
-      if (
-        typeof window !== 'undefined' &&
-        (window as unknown as { BokunWidgets?: unknown }).BokunWidgets
-      ) {
-        console.log('✅ Bokun script loaded successfully');
-      } else {
-        console.log('⏳ Bokun script not yet loaded, retrying...');
-        setTimeout(checkBokunScript, 1000);
-      }
-    };
-    checkBokunScript();
-  }, []);
   return (
     <div className="space-y-6 px-4">
       {/* Package 1 - Premium Card */}
@@ -154,15 +139,11 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <button
-                type="button"
-                className="bokunButton bg-sage-primary text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-sage-700 transition shadow-md min-w-[120px] h-12"
-                id="bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4"
-                data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020598?partialView=1"
-                data-testid="widget-book-button"
-              >
-                {dictionary.common.bookNow}
-              </button>
+              <BokunButton
+                experienceId="1020598"
+                buttonId="bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4"
+                dictionary={dictionary}
+              />
               <Image
                 src="/images/bokun-logo@0.5x.png"
                 alt="Bokun booking system"
@@ -308,15 +289,11 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <button
-                type="button"
-                className="bokunButton bg-sage-primary text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-sage-700 transition shadow-md min-w-[120px] h-12"
-                id="bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d"
-                data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020569?partialView=1"
-                data-testid="widget-book-button"
-              >
-                {dictionary.common.bookNow}
-              </button>
+              <BokunButton
+                experienceId="1020569"
+                buttonId="bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d"
+                dictionary={dictionary}
+              />
               <Image
                 src="/images/bokun-logo@0.5x.png"
                 alt="Bokun booking system"
