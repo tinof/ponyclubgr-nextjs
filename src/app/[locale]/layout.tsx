@@ -35,7 +35,7 @@ export async function generateMetadata({
   const dictionary = await getDictionary(locale as Locale);
 
   return {
-    metadataBase: new globalThis.URL('https://www.ponyclubacheron.com'),
+    metadataBase: new globalThis.URL('https://www.ponyclub.gr'),
     title: dictionary.metadata.title,
     description: dictionary.metadata.description,
     keywords: dictionary.metadata.keywords,
@@ -66,7 +66,7 @@ export async function generateMetadata({
     openGraph: {
       title: dictionary.metadata.openGraph.title,
       description: dictionary.metadata.openGraph.description,
-      url: `https://www.ponyclubacheron.com/${locale}`,
+      url: `https://www.ponyclub.gr/${locale}`,
       siteName: 'Pony Club Acheron',
       images: [
         {
@@ -89,11 +89,11 @@ export async function generateMetadata({
       google: 'your-google-site-verification-code', // Replace with actual verification code
     },
     alternates: {
-      canonical: `https://www.ponyclubacheron.com/${locale}`,
+      canonical: `https://www.ponyclub.gr/${locale}`,
       languages: {
-        en: 'https://www.ponyclubacheron.com/en',
-        el: 'https://www.ponyclubacheron.com/el',
-        'x-default': 'https://www.ponyclubacheron.com/en',
+        en: 'https://www.ponyclub.gr/en',
+        el: 'https://www.ponyclub.gr/el',
+        'x-default': 'https://www.ponyclub.gr/en',
       },
     },
   };
@@ -126,14 +126,14 @@ export default async function LocaleLayout({
     '@type': 'Product',
     name: dictionary.jsonLd.name,
     description: dictionary.jsonLd.description,
-    image: 'https://www.ponyclubacheron.com/images/og-image-ponyclub.jpg',
+    image: 'https://www.ponyclub.gr/images/og-image-ponyclub.jpg',
     brand: {
       '@type': 'Brand',
       name: dictionary.jsonLd.brandName,
     },
     offers: {
       '@type': 'Offer',
-      url: `https://www.ponyclubacheron.com/${locale}`,
+      url: `https://www.ponyclub.gr/${locale}`,
       priceCurrency: 'EUR',
       price: '20',
       availability: 'https://schema.org/InStock',

@@ -32,6 +32,23 @@ const nextConfig = {
     // Cache optimization for Vercel
     minimumCacheTTL: 60,
   },
+
+  // Webpack configuration to handle module resolution issues
+  webpack: (config, { isServer }) => {
+    // Fix for module resolution issues in Next.js 15
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+    }
+
+    return config;
+  },
+
+
 }
 
 export default nextConfig

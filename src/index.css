@@ -203,3 +203,53 @@ body {
   /* Override the provided Bokun colors (#408C3D, #285726, #30682e) with our design system */
   background-color: var(--sage-primary) !important;
 }
+
+/* React Google Reviews custom styling to match existing design */
+.react-google-reviews {
+  /* Hide default styling that conflicts with our custom renderer */
+}
+
+.react-google-reviews .review-item {
+  /* Override default review item styles */
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.react-google-reviews .review-content {
+  /* Override default review content styles */
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.react-google-reviews .reviewer-info {
+  /* Override default reviewer info styles */
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.react-google-reviews .review-rating {
+  /* Override default rating styles */
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Hide any default Google logo or branding that might interfere */
+.react-google-reviews .google-logo,
+.react-google-reviews .powered-by {
+  display: none !important;
+}
+
+/* Ensure loading and error states match our design */
+.react-google-reviews .loading-message,
+.react-google-reviews .error-message {
+  color: var(--color-gray-500) !important;
+  font-size: 0.875rem !important;
+  text-align: center !important;
+  padding: 2rem 0 !important;
+}

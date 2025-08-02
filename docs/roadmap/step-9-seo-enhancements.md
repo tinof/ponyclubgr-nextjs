@@ -36,14 +36,14 @@ const jsonLd = {
   '@type': 'Product',
   name: 'Pony Club - Rafting & Riding Adventure',
   description: 'Experience unforgettable horse riding and rafting adventures at Acheron River, Greece.',
-  image: 'https://www.ponyclubacheron.com/og-image.jpg', // Replace with your actual domain
+  image: 'https://www.ponyclub.gr/og-image.jpg', // Replace with your actual domain
   brand: {
     '@type': 'Brand',
     name: 'Pony Club Acheron',
   },
   offers: {
     '@type': 'Offer',
-    url: 'https://www.ponyclubacheron.com/', // Replace with your actual domain
+    url: 'https://www.ponyclub.gr/', // Replace with your actual domain
     priceCurrency: 'EUR',
     price: '20',
     availability: 'https://schema.org/InStock',
