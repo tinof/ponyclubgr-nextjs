@@ -33,6 +33,12 @@ importers:
       '@nedcloarbr/biome-config':
         specifier: 2.0.0
         version: 2.0.0
+      '@stagewise-plugins/react':
+        specifier: ^0.6.2
+        version: 0.6.2(@stagewise/toolbar@0.6.2)
+      '@stagewise/toolbar-next':
+        specifier: ^0.6.2
+        version: 0.6.2(@types/react@19.1.9)(next@15.4.5(babel-plugin-react-compiler@19.1.0-rc.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       '@tailwindcss/postcss':
         specifier: ^4.1.11
         version: 4.1.11
@@ -328,6 +334,27 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
+
+  '@stagewise-plugins/react@0.6.2':
+    resolution: {integrity: sha512-IZVWgxeO2GFQj8wTFacIkmlF7YlZn4T5MN3cyrYo5wdYo2RATGIX4+pugPmPYQUjq2Gm+OSLR2hxKfBq32Y2Qg==}
+    peerDependencies:
+      '@stagewise/toolbar': 0.6.2
+
+  '@stagewise/toolbar-next@0.6.2':
+    resolution: {integrity: sha512-0rLMYSQucYcgtD6UbX/4IY5CnYYImt279tAAw5h+BgEeLmZE3iB7z0M6mOrN4lvrt6+PrBYdAEvrAL5CKwXydw==}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      next: '>=14.0.0'
+      react: '>=18.0.0'
+
+  '@stagewise/toolbar-react@0.6.2':
+    resolution: {integrity: sha512-fKgINBKCgUWzeSdP8Nfs5cSchCS4yf9bMOROnVqAgMbT77yGhZ4nYWGNL/nkaCAkE7uyrpSvtbHT4ut2PDoJLw==}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      react: '>=18.0.0'
+
+  '@stagewise/toolbar@0.6.2':
+    resolution: {integrity: sha512-WN7PWaOT6YQKjJYL4/85V5UU0eZEws+/UBT/J4wJOEbFxoluLuchqh7xVTmUZTtw0q0xpzlgX8Vb0kAZf/pjmw==}
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
@@ -909,6 +936,25 @@ snapshots:
 
   '@next/swc-win32-x64-msvc@15.4.5':
     optional: true
+
+  '@stagewise-plugins/react@0.6.2(@stagewise/toolbar@0.6.2)':
+    dependencies:
+      '@stagewise/toolbar': 0.6.2
+
+  '@stagewise/toolbar-next@0.6.2(@types/react@19.1.9)(next@15.4.5(babel-plugin-react-compiler@19.1.0-rc.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)':
+    dependencies:
+      '@stagewise/toolbar-react': 0.6.2(@types/react@19.1.9)(react@19.1.1)
+      '@types/react': 19.1.9
+      next: 15.4.5(babel-plugin-react-compiler@19.1.0-rc.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      react: 19.1.1
+
+  '@stagewise/toolbar-react@0.6.2(@types/react@19.1.9)(react@19.1.1)':
+    dependencies:
+      '@stagewise/toolbar': 0.6.2
+      '@types/react': 19.1.9
+      react: 19.1.1
+
+  '@stagewise/toolbar@0.6.2': {}
 
   '@swc/helpers@0.5.15':
     dependencies:

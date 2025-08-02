@@ -44,14 +44,14 @@ export function BottomNav({ dictionary }: BottomNavProps) {
                   className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
                   href="tel:+302651099220"
                 >
-                  <Phone className="text-sage-600" size={18} />
+                  <Phone className="text-sage-primary" size={18} />
                   <span>{dictionary.navigation.contactUs}</span>
                 </a>
                 <a
                   className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
                   href="#family-packages"
                 >
-                  <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-600">
+                  <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-primary">
                     <svg
                       width="18"
                       height="18"
@@ -97,7 +97,7 @@ export function BottomNav({ dictionary }: BottomNavProps) {
                   className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
                   href="#safety-info"
                 >
-                  <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-600">
+                  <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-primary">
                     <svg
                       width="18"
                       height="18"
@@ -148,10 +148,12 @@ function NavItem({ icon, label, active = false, onClick }: NavItemProps) {
   return (
     <button
       type="button"
-      className={`flex flex-col items-center justify-center px-3 py-2 rounded-xl transition-colors ${active ? 'text-sage-600 bg-sage-50' : 'text-gray-500 hover:text-sage-600'}`}
+      className={`flex flex-col items-center justify-center px-3 py-2 rounded-xl transition-colors ${active ? 'text-sage-primary bg-sage-50' : 'text-gray-500 hover:text-sage-primary'}`}
       onClick={onClick}
     >
-      <div className={active ? 'text-sage-600' : 'text-gray-400'}>{icon}</div>
+      <div className={active ? 'text-sage-primary' : 'text-gray-400'}>
+        {icon}
+      </div>
       <span className={`text-xs mt-1 ${active ? 'font-medium' : ''}`}>
         {label}
       </span>

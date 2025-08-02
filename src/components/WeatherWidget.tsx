@@ -51,18 +51,18 @@ const fetcher = async (url: string): Promise<WeatherData> => {
   return result.data;
 };
 
-// Weather condition to icon mapping
+// Weather condition to icon mapping with colorful styling
 const getWeatherIcon = (condition: string, isDay: number) => {
   const conditionLower = condition.toLowerCase();
 
   if (conditionLower.includes('rain') || conditionLower.includes('drizzle')) {
-    return <CloudRain className="h-6 w-6" />;
+    return <CloudRain className="h-6 w-6 text-blue-500" />;
   }
   if (conditionLower.includes('snow') || conditionLower.includes('blizzard')) {
-    return <CloudSnow className="h-6 w-6" />;
+    return <CloudSnow className="h-6 w-6 text-blue-200" />;
   }
   if (conditionLower.includes('cloud') || conditionLower.includes('overcast')) {
-    return <Cloud className="h-6 w-6" />;
+    return <Cloud className="h-6 w-6 text-gray-500" />;
   }
   if (
     conditionLower.includes('sun') ||
@@ -71,14 +71,14 @@ const getWeatherIcon = (condition: string, isDay: number) => {
   ) {
     // Use sun icon for day, cloud for night clear conditions
     return isDay === 1 ? (
-      <Sun className="h-6 w-6" />
+      <Sun className="h-6 w-6 text-yellow-500" />
     ) : (
-      <Cloud className="h-6 w-6" />
+      <Cloud className="h-6 w-6 text-indigo-400" />
     );
   }
 
   // Default to cloud icon
-  return <Cloud className="h-6 w-6" />;
+  return <Cloud className="h-6 w-6 text-gray-400" />;
 };
 
 // Loading skeleton component
@@ -148,7 +148,7 @@ const WeatherTooltip = ({
 
         <div className="grid grid-cols-2 gap-3">
           <div className="flex items-center space-x-2">
-            <Thermometer className="h-4 w-4 text-[#5a6f5a]" />
+            <Thermometer className="h-4 w-4 text-red-500" />
             <div>
               <div className="text-sm font-medium">{data.temperature}°C</div>
               <div className="text-xs text-gray-500">
@@ -158,7 +158,7 @@ const WeatherTooltip = ({
           </div>
 
           <div className="flex items-center space-x-2">
-            <Wind className="h-4 w-4 text-[#5a6f5a]" />
+            <Wind className="h-4 w-4 text-cyan-500" />
             <div>
               <div className="text-sm font-medium">{data.windSpeed} km/h</div>
               <div className="text-xs text-gray-500">{data.windDirection}</div>
@@ -166,7 +166,7 @@ const WeatherTooltip = ({
           </div>
 
           <div className="flex items-center space-x-2">
-            <Droplets className="h-4 w-4 text-[#5a6f5a]" />
+            <Droplets className="h-4 w-4 text-blue-500" />
             <div>
               <div className="text-sm font-medium">{data.humidity}%</div>
               <div className="text-xs text-gray-500">
@@ -176,7 +176,7 @@ const WeatherTooltip = ({
           </div>
 
           <div className="flex items-center space-x-2">
-            <Sun className="h-4 w-4 text-[#5a6f5a]" />
+            <Sun className="h-4 w-4 text-orange-500" />
             <div>
               <div className="text-sm font-medium">UV {data.uvIndex}</div>
               <div className="text-xs text-gray-500">
@@ -186,7 +186,7 @@ const WeatherTooltip = ({
           </div>
 
           <div className="flex items-center space-x-2">
-            <Cloud className="h-4 w-4 text-[#5a6f5a]" />
+            <Cloud className="h-4 w-4 text-gray-500" />
             <div>
               <div className="text-sm font-medium">{data.cloudCover}%</div>
               <div className="text-xs text-gray-500">
@@ -196,7 +196,7 @@ const WeatherTooltip = ({
           </div>
 
           <div className="flex items-center space-x-2">
-            <div className="h-4 w-4 flex items-center justify-center text-[#5a6f5a] text-xs font-bold">
+            <div className="h-4 w-4 flex items-center justify-center text-purple-500 text-xs font-bold">
               P
             </div>
             <div>
@@ -271,7 +271,7 @@ export function WeatherWidget({ dictionary }: WeatherWidgetProps) {
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="text-[#5a6f5a]">
+            <div>
               {getWeatherIcon(weatherData.condition, weatherData.isDay)}
             </div>
             <span className="text-lg font-semibold text-gray-800">

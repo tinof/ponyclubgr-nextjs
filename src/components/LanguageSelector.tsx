@@ -1,6 +1,5 @@
 'use client';
 
-
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import type { Locale } from '../lib/dictionaries';

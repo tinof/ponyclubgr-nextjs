@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { Dictionary, Locale } from '../lib/dictionaries';
-import { WeatherWidget } from './WeatherWidget';
 import { LanguageSelector } from './LanguageSelector';
+import { WeatherWidget } from './WeatherWidget';
 
 interface WelcomeSectionProps {
   dictionary: Dictionary;
@@ -27,7 +27,7 @@ export function WelcomeSection({ dictionary, locale }: WelcomeSectionProps) {
         <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-20">
           {/* Logo Section */}
           <div className="flex flex-col">
-            <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40 mb-1">
+            <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40">
               <Image
                 src="/images/logo.png"
                 alt={dictionary.header.logoAlt}
@@ -37,15 +37,14 @@ export function WelcomeSection({ dictionary, locale }: WelcomeSectionProps) {
                 priority={true}
               />
             </div>
-            <p className="text-sm text-white/90 ml-1 drop-shadow-sm">
-              {dictionary.header.location}
-            </p>
           </div>
 
           {/* Weather Widget and Language Selector */}
-          <div className="relative z-10 flex flex-col items-end space-y-2">
+          <div className="relative z-10 flex flex-col items-end space-y-3">
             <WeatherWidget dictionary={dictionary} />
-            <LanguageSelector currentLocale={locale} />
+            <div className="mr-1">
+              <LanguageSelector currentLocale={locale} />
+            </div>
           </div>
         </div>
 
@@ -82,7 +81,7 @@ export function WelcomeSection({ dictionary, locale }: WelcomeSectionProps) {
         <div className="bg-white rounded-[2rem] shadow-card border border-white/60 overflow-hidden">
           <div className="p-6">
             {/* Welcome Card */}
-            <div className="bg-sage-600 rounded-2xl p-5 text-white relative overflow-hidden">
+            <div className="bg-sage-primary rounded-2xl p-5 text-white relative overflow-hidden">
               {/* Decorative element */}
               <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full" />
 

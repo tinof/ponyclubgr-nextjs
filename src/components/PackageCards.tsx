@@ -30,7 +30,7 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
       {/* Package 1 - Premium Card */}
       <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden relative">
         {/* Premium tag */}
-        <div className="absolute top-4 left-0 bg-sage-600 text-white text-xs font-semibold py-2 px-4 rounded-r-full z-10 shadow-md">
+        <div className="absolute top-4 left-0 bg-sage-primary text-white text-xs font-semibold py-2 px-4 rounded-r-full z-10 shadow-md">
           {dictionary.packages.raftingRiding.tag}
         </div>
 
@@ -153,22 +153,31 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
                 {dictionary.common.perPerson}
               </p>
             </div>
-            <button
-              type="button"
-              className="bokunButton bg-sage-600 text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-sage-700 transition shadow-md min-w-[120px]"
-              id="bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4"
-              data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020598?partialView=1"
-              data-testid="widget-book-button"
-            >
-              {dictionary.common.bookNow}
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                className="bokunButton bg-sage-primary text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-sage-700 transition shadow-md min-w-[120px] h-12"
+                id="bokun_c652cb51_18f7_4f87_bb88_8f74b68be5f4"
+                data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020598?partialView=1"
+                data-testid="widget-book-button"
+              >
+                {dictionary.common.bookNow}
+              </button>
+              <Image
+                src="/images/bokun-logo@0.5x.png"
+                alt="Bokun booking system"
+                width={48}
+                height={48}
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
       {/* Package 2 - Standard Card */}
       <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden">
         <div className="relative">
-          <div className="relative h-48">
+          <div className="relative h-56">
             <ImageSlider
               images={[
                 '/images/packages/Package2/kayak.jpg',
@@ -190,7 +199,7 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           </div>
         </div>
 
-        <div className="p-5">
+        <div className="p-6">
           <div className="flex justify-between items-start mb-3">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-gray-500 mb-1">
@@ -202,71 +211,71 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
                     key={star}
                     src="/images/figma-assets/star-rating-1.svg"
                     alt=""
-                    width={12}
-                    height={12}
+                    width={14}
+                    height={14}
                     className="text-yellow-400"
                   />
                 ))}
                 <Image
                   src="/images/figma-assets/star-rating-1.svg"
                   alt=""
-                  width={12}
-                  height={12}
+                  width={14}
+                  height={14}
                   className="text-gray-300"
                 />
               </div>
             </div>
           </div>
           {/* Title and family-friendly badge */}
-          <h3 className="text-lg font-bold text-gray-800 mb-2">
+          <h3 className="text-xl font-bold text-gray-800 mb-2">
             {dictionary.packages.kayakingRidingTrekking.title}
           </h3>
 
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-4">
             <div className="flex items-center gap-1">
               <Image
                 src="/images/figma-assets/users-icon-1.svg"
                 alt=""
-                width={14}
-                height={14}
+                width={16}
+                height={16}
                 className="text-sage-600"
               />
-              <span className="text-xs text-sage-600 font-medium">
+              <span className="text-sm text-sage-600 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.ageRequirement}
               </span>
             </div>
           </div>
 
           {/* Activity details */}
-          <div className="space-y-2 mb-3">
-            <div className="flex items-center gap-2 text-xs text-gray-600">
+          <div className="space-y-3 mb-4">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
               <Image
                 src="/images/figma-assets/clock-icon-1.svg"
                 alt=""
-                width={14}
-                height={14}
+                width={16}
+                height={16}
               />
               <span>
                 {dictionary.packages.kayakingRidingTrekking.activities.kayak}
               </span>
             </div>
-            <div className="flex items-center gap-2 text-xs text-gray-600">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
               <Image
                 src="/images/figma-assets/horse-icon-1.svg"
                 alt=""
-                width={14}
-                height={14}
+                width={16}
+                height={16}
               />
               <span>
                 {dictionary.packages.kayakingRidingTrekking.activities.riding}
               </span>
             </div>
-            <div className="flex items-center gap-2 text-xs text-gray-600">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
               <Image
                 src="/images/figma-assets/hiking-icon.svg"
                 alt=""
-                width={14}
-                height={14}
+                width={16}
+                height={16}
               />
               <span>
                 {dictionary.packages.kayakingRidingTrekking.activities.trekking}
@@ -275,12 +284,12 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           </div>
 
           {/* Safety note */}
-          <div className="p-2 bg-sage-50 rounded-lg flex items-center gap-2 mb-3">
+          <div className="p-3 bg-sage-50 rounded-xl flex items-center gap-2 mb-4">
             <Image
               src="/images/figma-assets/safety-icon.svg"
               alt=""
-              width={14}
-              height={14}
+              width={16}
+              height={16}
               className="text-sage-600"
             />
             <p className="text-xs text-gray-700">
@@ -291,22 +300,31 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {/* Price and booking */}
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-xl font-bold text-gray-800">
+              <p className="text-2xl font-bold text-gray-800">
                 {dictionary.packages.kayakingRidingTrekking.price}
               </p>
-              <p className="text-xs text-gray-500">
+              <p className="text-sm text-gray-500">
                 {dictionary.common.perPerson}
               </p>
             </div>
-            <button
-              type="button"
-              className="bokunButton bg-sage-600 text-white font-bold py-2 px-4 rounded-xl text-sm hover:bg-sage-700 transition shadow-md min-w-[100px]"
-              id="bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d"
-              data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020569?partialView=1"
-              data-testid="widget-book-button"
-            >
-              {dictionary.common.bookNow}
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                className="bokunButton bg-sage-primary text-white font-bold py-3 px-6 rounded-xl text-base hover:bg-sage-700 transition shadow-md min-w-[120px] h-12"
+                id="bokun_19c157f7_4229_42ed_a5a0_fc53d0e76b6d"
+                data-src="https://widgets.bokun.io/online-sales/c078b762-6f7f-474f-8edb-bdd1bdb7d12a/experience/1020569?partialView=1"
+                data-testid="widget-book-button"
+              >
+                {dictionary.common.bookNow}
+              </button>
+              <Image
+                src="/images/bokun-logo@0.5x.png"
+                alt="Bokun booking system"
+                width={48}
+                height={48}
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>

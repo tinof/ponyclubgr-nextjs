@@ -9,14 +9,14 @@ export function WhyChooseUs({ dictionary: _dictionary }: WhyChooseUsProps) {
   return (
     <div className="px-4 mt-8">
       <div className="bg-white rounded-2xl shadow-card p-5 border border-white/60">
-        <h3 className="text-xl font-bold text-sage-600 mb-4 relative">
+        <h3 className="text-xl font-bold text-sage-primary mb-4 relative">
           Why Choose Pony Club?
-          <span className="absolute bottom-0 left-0 w-16 h-1 bg-sage-600/30 rounded-full"></span>
+          <span className="absolute bottom-0 left-0 w-16 h-1 bg-sage-primary/30 rounded-full"></span>
         </h3>
         <div className="space-y-4">
           <div className="flex items-start space-x-3">
             <div className="bg-sage-50 p-2 rounded-full flex-shrink-0">
-              <Shield size={18} className="text-sage-600" />
+              <Shield size={18} className="text-sage-primary" />
             </div>
             <div>
               <h4 className="font-medium text-gray-800 text-sm">
@@ -29,7 +29,7 @@ export function WhyChooseUs({ dictionary: _dictionary }: WhyChooseUsProps) {
           </div>
           <div className="flex items-start space-x-3">
             <div className="bg-sage-50 p-2 rounded-full flex-shrink-0">
-              <CheckCircle size={18} className="text-sage-600" />
+              <CheckCircle size={18} className="text-sage-primary" />
             </div>
             <div>
               <h4 className="font-medium text-gray-800 text-sm">
@@ -42,7 +42,7 @@ export function WhyChooseUs({ dictionary: _dictionary }: WhyChooseUsProps) {
           </div>
           <div className="flex items-start space-x-3">
             <div className="bg-sage-50 p-2 rounded-full flex-shrink-0">
-              <Calendar size={18} className="text-sage-600" />
+              <Calendar size={18} className="text-sage-primary" />
             </div>
             <div>
               <h4 className="font-medium text-gray-800 text-sm">

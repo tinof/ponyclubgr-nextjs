@@ -10,7 +10,7 @@ export function Header({ dictionary }: HeaderProps) {
   return (
     <header className="flex justify-between items-start px-2 pt-4 relative">
       <div className="flex flex-col">
-        <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40 mb-1">
+        <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40">
           <Image
             src="/images/logo.png"
             alt={dictionary.header.logoAlt}
@@ -20,9 +20,6 @@ export function Header({ dictionary }: HeaderProps) {
             priority={true}
           />
         </div>
-        <p className="text-sm text-gray-500 ml-1">
-          {dictionary.header.location}
-        </p>
       </div>
 
       {/* Weather Widget */}
@@ -31,7 +28,7 @@ export function Header({ dictionary }: HeaderProps) {
       </div>
 
       {/* Decorative element - moved behind weather widget */}
-      <div className="absolute top-0 right-0 h-16 w-16 bg-[#f0f3f0] rounded-full -z-10 opacity-70 translate-x-1/4 -translate-y-1/4"></div>
+      <div className="absolute top-0 right-0 h-16 w-16 bg-sage-50 rounded-full -z-10 opacity-70 translate-x-1/4 -translate-y-1/4"></div>
     </header>
   );
 }
