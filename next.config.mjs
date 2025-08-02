@@ -1,3 +1,9 @@
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Removed 'output: export' to enable full Next.js features including image optimization
@@ -51,4 +57,4 @@ const nextConfig = {
 
 }
 
-export default nextConfig
+export default withBundleAnalyzer(nextConfig);

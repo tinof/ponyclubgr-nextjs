@@ -1,319 +1,888 @@
+# [React Google Reviews](https://featurable.com/docs/react-google-reviews#undefined)
 
+![React Google Reviews Component Library](https://featurable.com/docs/images/react-google-reviews.jpg)
 
-# React Google Reviews
+The `react-google-reviews` library makes it easy to fetch and display Google reviews using ReactJS. The library is built on top of the Featurable API and provides a simple way to fetch and display Google reviews on your website. You can also use the Google Places API and your own API key instead of the Featurable API. In this guide we will show you how to get started with the `react-google-reviews` library.
 
-![React Google Reviews Integration by Featurable](public/images/react-google-reviews.jpg)
+## [Features](https://featurable.com/docs/react-google-reviews#features)
 
-<div align="center">
-  <strong>Making adding Google reviews to any React app beautiful, easy, and free!</strong><br />
-  <br />
-  <a href="https://github.com/Featurable/react-google-reviews/issues/new?assignees=&labels=Type%3A+Bug&template=01_bug_report.yml&title=bug%3A+">Report a Bug</a>
-  -
-  <a href="https://github.com/Featurable/react-google-reviews/issues/new?assignees=&labels=Type%3A+Feature&template=02_feature_request.yml&title=feat%3A+">Request a Feature</a>
-  -
-  <a href="https://github.com/Featurable/react-google-reviews/issues/new?assignees=&labels=Type%3A+Question&template=03_support_question.yml&title=support%3A+">Ask a Question</a>
-</div>
+-   **Customizable:** Choose from three layout options and customize the appearance of the reviews component
+-   **SEO-friendly:** Include JSON-LD structured data for search engines to index your reviews
+-   **Responsive:** Works on all devices and screen sizes
+-   **Fast:** Caches reviews for quick loading and improved performance
+-   **Free:** No cost to use the Featurable API for fetching reviews
+-   **Fresh:** Automatically updates with new reviews from Google every 24 hours (using Featurable API)
+-   **Accessible:** Built with accessibility in mind (WAI-ARIA compliant)
+-   **Easy**: Using the Featurable API, you can fetch reviews with just a few lines of code (no server-side code required)
 
-<div align="center">
+## [Live Demo](https://featurable.com/docs/react-google-reviews#live-demo)
 
-<br />
+Here is what the `react-google-reviews` component looks like when integrated into a React application:
 
-[![npm](https://img.shields.io/npm/v/react-google-reviews?style=flat-square)](https://www.npmjs.com/package/react-google-reviews)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Featurable/react-google-reviews?sort=semver&style=flat-square)](https://github.com/Featurable/react-google-reviews/releases)
-[![Release Date](https://img.shields.io/github/release-date/Featurable/react-google-reviews?style=flat-square)](https://github.com/Featurable/react-google-reviews/releases/latest)
-[![License: MIT](https://img.shields.io/badge/license-%20MIT-blue?style=flat-square&logo=gnu)](https://github.com/Featurable/react-google-reviews/blob/main/LICENSE)
-[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/Featurable/react-google-reviews/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22%2C%22Status%3A+Available%22+sort%3Aupdated-desc+)
+### Carousel layout
 
-</div>
+PreviewCode
 
----
+![](https://featurable.com/docs/react-google-reviews)
 
-<a href="https://github.com/premail">
+D
 
-<img src="public/images/featurable-icon.svg" alt="Featurable" width="50" height="50" align="left" />
+David W.
 
-</a><strong>This
-React Google Reviews library is brought to you by
-<a href="https://featurable.com">Featurable</a>, and the following
-documentation can also be found at
-<a href="https://featurable.com/docs/react-google-reviews">https://featurable.com/docs/react-google-reviews</a></strong>
+1 day ago
 
----
+I was skeptical at first, but after using this product for a while, I'm a believer. It's well-designed, durable, and does exactly what it's supposed to do. I couldn't be happier with my purchase.
 
-**What is it?** React component to display Google reviews on your website. This library is built with React and uses the Google Places API -or- the free Featurable API to fetch and display Google reviews on your website.
+![](https://featurable.com/docs/react-google-reviews)
 
-Documentation and examples at [https://featurable.com/docs/react-google-reviews](https://featurable.com/docs/react-google-reviews). Source code at [https://github.com/Featurable/react-google-reviews](https://github.com/Featurable/react-google-reviews).
+J
 
-## Demo
+Jessica B.
 
-Check out the [live demo](https://featurable.com/docs/react-google-reviews#live-demo) to see the React Google Reviews library in action.
+1 day ago
 
-## Features
+I love this product! It has exceeded my expectations in every way. Setup was a breeze and it works flawlessly. I've already recommended it to several friends and family members.
 
-1. 🛠️ **Customizable**: Choose from three layout options and customize the appearance of the reviews component
-2. 🔎 **SEO-friendly**: Include JSON-LD structured data for search engines to index your reviews
-3. 💻 **Responsive**: Works on all devices and screen sizes
-4. ⚡ **Fast**: Caches reviews for quick loading and improved performance
-5. ✨ **Free**: No cost to use the Featurable API for fetching reviews
-6. 🌱 **Fresh**: Automatically updates with new reviews from Google every 48 hours (using Featurable API)
-7. ♿️ **Accessible**: Built with accessibility in mind (WAI-ARIA compliant)
-8. 🪶 **Lightweight**: Small bundle size and minimal dependencies
+![](https://featurable.com/docs/react-google-reviews)
 
-## Installation
+I
 
-Install it from npm, yarn, or pnpm:
+Isabella H.
 
-```sh
-npm install react-google-reviews
-```
+1 day ago
 
-```sh
-yarn add react-google-reviews
-```
+I was hesitant to invest in this product at first, but I'm so glad I did. It has been a total game-changer for me and has made a significant positive impact on my work. It's worth every penny.
 
-```sh
-pnpm add react-google-reviews
-```
+![](https://featurable.com/docs/react-google-reviews)
 
-## Usage
+S
 
-The `<ReactGoogleReviews>` component renders Google reviews. You can supply Google reviews to the component automatically using the Featurable API or by manually fetching and passing reviews.
+Sophia M.
+
+1 day ago
+
+I've tried similar products in the past, but none of them compare to this one. It's in a league of its own in terms of functionality, durability, and overall value. I can't recommend it highly enough!
+
+![](https://featurable.com/docs/react-google-reviews)
+
+J
+
+John D.
+
+1 day ago
+
+This product is a game-changer! I've been using it for a few months now and it has consistently delivered excellent results. It's easy to use, well-designed, and built to last.
+
+![](https://featurable.com/docs/react-google-reviews)
+
+E
+
+Emily D.
+
+1 day ago
+
+I've been using this product for a few weeks now and I'm blown away by how well it works. It's intuitive, easy to use, and has already saved me a ton of time. I can't imagine going back to the way I...
+
+Read more
+
+![](https://featurable.com/docs/react-google-reviews)
+
+D
+
+David W.
+
+1 day ago
+
+I was skeptical at first, but after using this product for a while, I'm a believer. It's well-designed, durable, and does exactly what it's supposed to do. I couldn't be happier with my purchase.
+
+![](https://featurable.com/docs/react-google-reviews)
+
+J
+
+Jessica B.
+
+1 day ago
+
+I love this product! It has exceeded my expectations in every way. Setup was a breeze and it works flawlessly. I've already recommended it to several friends and family members.
+
+![](https://featurable.com/docs/react-google-reviews)
+
+I
+
+Isabella H.
+
+1 day ago
+
+I was hesitant to invest in this product at first, but I'm so glad I did. It has been a total game-changer for me and has made a significant positive impact on my work. It's worth every penny.
+
+![](https://featurable.com/docs/react-google-reviews)
+
+S
+
+Sophia M.
+
+1 day ago
+
+I've tried similar products in the past, but none of them compare to this one. It's in a league of its own in terms of functionality, durability, and overall value. I can't recommend it highly enough!
+
+![](https://featurable.com/docs/react-google-reviews)
+
+J
+
+John D.
+
+1 day ago
+
+This product is a game-changer! I've been using it for a few months now and it has consistently delivered excellent results. It's easy to use, well-designed, and built to last.
+
+![](https://featurable.com/docs/react-google-reviews)
+
+E
+
+Emily D.
+
+1 day ago
+
+I've been using this product for a few weeks now and I'm blown away by how well it works. It's intuitive, easy to use, and has already saved me a ton of time. I can't imagine going back to the way I...
+
+Read more
+
+![](https://featurable.com/docs/react-google-reviews)
+
+D
+
+David W.
+
+1 day ago
+
+I was skeptical at first, but after using this product for a while, I'm a believer. It's well-designed, durable, and does exactly what it's supposed to do. I couldn't be happier with my purchase.
+
+![](https://featurable.com/docs/react-google-reviews)
+
+J
+
+Jessica B.
+
+1 day ago
+
+I love this product! It has exceeded my expectations in every way. Setup was a breeze and it works flawlessly. I've already recommended it to several friends and family members.
+
+-   1
+-   2
+-   3
+-   4
+-   5
+-   6
+
+### Badge layout
+
+PreviewCode
+
+Google Rating
+
+5.0
+
+★★★★★
+
+★★★★★
+
+Read our 123 reviews
+
+## [Installation](https://featurable.com/docs/react-google-reviews#installation)
+
+To get started with the `react-google-reviews` library, you need to install it using [npm](https://npmjs.com/package/react-google-reviews).
+
+### Installation
+
+npmyarnpnpm
+
+    npm install react-google-reviews
+    
+
+CopyCopied!
+
+## [Usage](https://featurable.com/docs/react-google-reviews#usage)
+
+There are two ways to use the React Google Reviews library:
+
+1.  Using the **Featurable API** (recommended)
+    
+2.  Using the **Google Places API.**
+    
+
+We recommend using the Featurable API for fetching reviews, as it provides more features, better performance, and is entirely free.
+
+But if you prefer not to use the Featurable API, you can use the Google Places API with your own API key. This method is limited to fetching only the first 5 reviews from Google.
+
+The Featurable API method is entirely free, while the Google Places API method requires a Google Cloud Platform account and may incur costs at scale.
 
 ### Using the Featurable API (recommended)
 
-Prerequisites:
-1. Create a free Featurable account at [https://featurable.com](https://featurable.com?ref=react-google-reviews)
-2. Create a new Featurable widget
-3. Click Embed > API and copy the widget ID
+The Featurable API offers a free and easy method of using the `<ReactGoogleReviews />` component. It requires no server-side code and automatically fetches new reviews from Google every 24 hours.
 
-> [!NOTE]
-> The Featurable API is free to use and provides additional features like caching, automatic updates, and more reviews. To prevent abuse, the Featurable API is subject to rate limits. 
+Using the Featurable API, you also do not need to find the Google Place ID, which can be especially helpful for businesses without a physical address.
 
-![Copy Featurable Widget ID](public/images/featurable-widget-id.png)
+#### Prerequisites:
 
-```jsx
-import { ReactGoogleReviews } from "react-google-reviews";
-import "react-google-reviews/dist/index.css";
+1.  Create your free Featurable account at [https://featurable.com](https://featurable.com/account/signup)
+2.  Create a new Featurable widget and copy the widget ID
 
-function Reviews() {
-  // Create a free Featurable account at https://featurable.com
-  // Then create a new Featurable widget and copy the widget ID
-  const featurableWidgetId = "842ncdd8-0f40-438d-9c..."; // You can use "example" for testing
+### Using component with Featurable API
 
-  return (
-    <ReactGoogleReviews layout="carousel" featurableId={featurableWidgetId} />
-  );
-}
-```
+    import { ReactGoogleReviews } from "react-google-reviews";
+    import "react-google-reviews/dist/index.css";
+    
+    function Reviews() {
+      // Create a free Featurable account at https://featurable.com
+      // Then create a new Featurable widget and copy the widget ID
+      const featurableWidgetId = "842ncdd8-0f40-438d-9c...";
+    
+      return (
+        <ReactGoogleReviews layout="carousel" featurableId={featurableWidgetId} />
+      );
+    }
+    
+
+CopyCopied!
 
 ### Using the Google Places API (limited to 5 reviews)
 
-Prerequisites:
-1. Create a Google Cloud Platform account at [https://cloud.google.com](https://cloud.google.com)
-2. Create a new project and enable the Google Places API **(old version)**
-3. Find the Google Place ID using the [Place ID Finder](https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder)
+If you prefer to use the Google Places API, you can fetch reviews using your own API key. This method is limited to fetching only the first 5 reviews from Google and requires server-side code to avoid exposing your API key.
 
-```jsx
-import { ReactGoogleReviews, dangerouslyFetchPlaceReviews } from "react-google-reviews";
-import "react-google-reviews/dist/index.css";
+#### Prerequisites:
 
-/**
- * Example using NextJS server component
- */
-async function ReviewsPage() {
-  const placeId = "ChIJN1t_tDeuEmsRU..."; // Google Place ID
-  const apiKey = "AIzaSyD..."; // Google API Key
+1.  Create a Google Cloud Platform account at [https://cloud.google.com](https://cloud.google.com/)
+2.  Create a new project and enable the Google Places API **(old version)**
+3.  Find your business's Google Place ID using the [Place ID Finder](https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder)
 
-  // IMPORTANT: Only fetch reviews server-side to avoid exposing API key
-  const reviews = await dangerouslyFetchPlaceReviews(placeId, apiKey)
+### Using component with Google Places API
 
-  return (
-    // Carousel and other layouts require wrapping ReactGoogleReviews in a client component
-    <ReactGoogleReviews layout="badge" reviews={reviews} />
-  );
-}
+    import { ReactGoogleReviews, dangerouslyFetchPlaceReviews, ReactGoogleReview } from "react-google-reviews";
+    import "react-google-reviews/dist/index.css";
+    
+    /**
+     * Example using NextJS page router
+     */
+    async function ReviewsPage({
+      reviews
+    }, {
+      reviews: ReactGoogleReview[]
+    }) {
+      return (
+        <ReactGoogleReviews layout="badge" reviews={reviews} />
+      );
+    }
+    
+    export default ReviewsPage;
+    
+    export const getServerSideProps = async () => {
+      const placeId = "ChIJN1t_tDeuEmsRU..."; // Google Place ID
+      const apiKey = "AIzaSyD..."; // Google API Key
+    
+      // IMPORTANT: Only fetch reviews server-side to avoid exposing API key
+      const reviews = await dangerouslyFetchPlaceReviews(placeId, apiKey)
+    
+      return {
+        props: {
+          reviews,
+        }
+      }
+    }
+    
 
-export default ReviewsPage;
-```
+CopyCopied!
 
-> [!NOTE]
-> The Google Places API **only returns the 5 most recent reviews.** If you need more reviews or want to customize which reviews are returned, consider using the [free Featurable API](https://featurable.com/).
+If using NextJS, the `<ReactGoogleReviews />` component should be wrapped in a client component because it uses client-side hooks.
 
-## Configuration
+## [Configuration](https://featurable.com/docs/react-google-reviews#configuration)
+
+The `<ReactGoogleReviews />` component has a variety of configuration options and pre-built layouts. You can also pass a custom renderer function to customize the appearance of the reviews.
 
 ### Layout
 
 There are three layout options currently available:
 
-1. **Badge**: Display a badge with the average rating, total reviews, and link to Google Business profile
+1.  **Badge**: Display a badge with the average rating, total reviews, and link to Google Business profile
 
-```jsx
- <ReactGoogleReviews layout="badge" featurableId={featurableWidgetId} />
-```
+### Badge layout
 
-<img src="public/images/badge-example.png" alt="Badge Layout" width="200"/>
+     <ReactGoogleReviews layout="badge" featurableId={featurableWidgetId} />
+    
 
-2. **Carousel**: An interactive carousel that displays reviews
+CopyCopied!
 
-```jsx
- <ReactGoogleReviews layout="carousel" featurableId={featurableWidgetId} />
-```
+![Badge Layout](https://featurable.com/docs/images/badge-example.png)
 
-![Carousel Layout](public/images/carousel-example.png)
+2.  **Carousel**: An interactive carousel that displays reviews
 
-3. **Custom renderer**: Render reviews using a custom function
+### Carousel layout
 
-```jsx
-<ReactGoogleReviews layout="custom" featurableId={featurableWidgetId} renderer={(reviews) => {
-  return (
-    <div>
-      {reviews.map(({ reviewId, reviewer, comment }) => (
-        <div key={reviewId}>
-          <h3>{reviewer.displayName}</h3>
-          <p>{comment}</p>
+     <ReactGoogleReviews layout="carousel" featurableId={featurableWidgetId} />
+    
+
+CopyCopied!
+
+![Carousel Layout](https://featurable.com/docs/images/carousel-example.png)
+
+3.  **Custom renderer**: Render reviews using a custom function
+
+### Custom renderer layout
+
+    <ReactGoogleReviews layout="custom" featurableId={featurableWidgetId} renderer={(reviews) => {
+      return (
+        <div>
+          {reviews.map(({ reviewId, reviewer, comment }) => (
+            <div key={reviewId}>
+              <h3>{reviewer.displayName}</h3>
+              <p>{comment}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  );
-}} />
-```
+      );
+    }} />
+    
 
-The `reviews` prop is an array of `ReactGoogleReview` objects with the following structure:
+CopyCopied!
 
-```
-{
-    reviewId: string | null;
-    reviewer: {
-        profilePhotoUrl: string;
-        displayName: string;
-        isAnonymous: boolean;
-    };
-    starRating: number;
-    comment: string;
-    createTime: string | null;
-    updateTime: string | null;
-    reviewReply?: {
-        comment: string;
-        updateTime: string;
-    } | null;
-};
-```
+## [CSS Classes](https://featurable.com/docs/react-google-reviews#css-classes)
 
-### CSS Styling
+The `<ReactGoogleReviews />` component uses the Block Element Modifier (BEM) naming convention for CSS classes. You can override stylings by supplying a stylesheet that uses these selectors.
 
-For the carousel widget to work correctly, you must include the CSS file in your project:
+### Carousel Classes
 
-```jsx
-import "react-google-reviews/dist/index.css";
-```
+-   Name
+    
+    `.carousel`
+    
+    Description
+    
+    Main carousel container
+    
+-   Name
+    
+    `.carousel__btn`
+    
+    Description
+    
+    Button to scroll carousel
+    
+-   Name
+    
+    `.carousel__btn--left`
+    
+    Description
+    
+    Left (previous) carousel button
+    
+-   Name
+    
+    `.carousel__btn--right`
+    
+    Description
+    
+    Right (next) carousel button
+    
+-   Name
+    
+    `.carousel__btn--light`
+    
+    Type
+    
+    default
+    
+    Description
+    
+    Light theme carousel button
+    
+-   Name
+    
+    `.carousel__btn--dark`
+    
+    Description
+    
+    Dark theme carousel button
+    
+-   Name
+    
+    `.carousel__btn__icon`
+    
+    Description
+    
+    SVG chevron icon for carousel button
+    
+-   Name
+    
+    `.carousel__card`
+    
+    Description
+    
+    Container for carousel review card
+    
+-   Name
+    
+    `.slick-dots > li > button::before`
+    
+    Description
+    
+    Carousel slider dots
+    
+-   Name
+    
+    `.slick-dots > li.slick-active > button::before`
+    
+    Description
+    
+    Carousel slider dots active state
+    
 
-To override the default styles, you can use the CSS props to add custom styles:
+### Badge Classes
 
-```jsx
-<style>
-{`
-.read-more {
-  color: blue;
-}
-`}
-</style>
+-   Name
+    
+    `.badge`
+    
+    Description
+    
+    Main badge container
+    
+-   Name
+    
+    `.badge__container`
+    
+    Description
+    
+    Inner container for badge
+    
+-   Name
+    
+    `.badge__container--light`
+    
+    Type
+    
+    default
+    
+    Description
+    
+    Light theme inner container for badge
+    
+-   Name
+    
+    `.badge__container--dark`
+    
+    Description
+    
+    Dark theme inner container for badge
+    
+-   Name
+    
+    `.badge__subcontainer`
+    
+    Description
+    
+    Inner container for badge text
+    
+-   Name
+    
+    `.badge__label`
+    
+    Description
+    
+    "Google Rating" badge label
+    
+-   Name
+    
+    `.badge__label--light`
+    
+    Type
+    
+    default
+    
+    Description
+    
+    Light theme for badge label
+    
+-   Name
+    
+    `.badge__label--dark`
+    
+    Description
+    
+    Dark theme for badge label
+    
+-   Name
+    
+    `.badge__rating__container`
+    
+    Description
+    
+    Badge container for rating and stars
+    
+-   Name
+    
+    `.badge__rating`
+    
+    Description
+    
+    Rating text (e.g. 4.8)
+    
+-   Name
+    
+    `.badge__rating--light`
+    
+    Type
+    
+    default
+    
+    Description
+    
+    Light theme for rating text
+    
+-   Name
+    
+    `.badge__rating--dark`
+    
+    Description
+    
+    Dark theme for rating text
+    
+-   Name
+    
+    `.badge__stars`
+    
+    Description
+    
+    Container for star icons
+    
+-   Name
+    
+    `.badge__stars__container`
+    
+    Description
+    
+    Inner container for star icons
+    
+-   Name
+    
+    `.badge__stars__fill`
+    
+    Description
+    
+    Filled state for star icons
+    
+-   Name
+    
+    `.badge__stars__empty`
+    
+    Description
+    
+    Empty state for star icons
+    
+-   Name
+    
+    `.badge__link__container`
+    
+    Description
+    
+    Container for "Read our \_\_ reviews" profile link
+    
+-   Name
+    
+    `.badge__link`
+    
+    Description
+    
+    The "Read our \_\_ reviews" profile link
+    
+-   Name
+    
+    `.badge__link--light`
+    
+    Type
+    
+    default
+    
+    Description
+    
+    Light theme for badge profile link
+    
+-   Name
+    
+    `.badge__link--dark`
+    
+    Description
+    
+    Dark theme for badge profile link
+    
 
-<ReactGoogleReviews 
-  layout="carousel"
-  id="example"
-  reviewReadMoreClassName="read-more"
-  reviewReadMoreStyle={{ color: "blue" }}
-/>
-```
+## [Props](https://featurable.com/docs/react-google-reviews#props)
 
-Please see the documentation for a list of CSS properties and examples of how to style the component.
-
-[View CSS classes and examples](https://featurable.com/docs/react-google-reviews#css-classes)
-
-## Props
+The `<ReactGoogleReviews />` component accepts the following props:
 
 ### Common Props
 
-| Prop | Type | Description |
-| --- | --- | --- |
-| featurableId | `string` | Featurable widget ID |
-| reviews | [GoogleReview](#googlereview)[] | Array of reviews to display, fetched using `dangerouslyFetchPlaceReviews` |
-| layout | `"badge" \| "carousel" \| "custom"` | Layout of the reviews component |
-| nameDisplay?| `"fullNames" \| "firstAndLastInitials" \| "firstNamesOnly"` | How to display names on reviews |;
-| logoVariant? | `"logo" \| "icon" \| "none"` | How to display the Google logo |
-| maxCharacters? | `number` | When collapsed, the maximum number of characters to display in the review body |
-| dateDisplay? | `"relative" \| "absolute"` | How to display the review date |
-| reviewVariant? | `"card" \| "testimonial"` | Review layout variations |
-| theme? | `"light" \| "dark"` | Color scheme of the component |
-| structuredData? | `boolean` | Whether to include JSON-LD structured data for SEO |
-| brandName? | `string` | Customize business name for structured data |
-| productName? | `string` | Customize product name for structured data |
-| productDescription? | `string` | Optional product description for structured data |
-| accessibility? | `boolean` | Enable/disable accessibility features |
-| hideEmptyReviews? | `boolean` | Hide reviews without text |
-| disableTranslation? | `boolean` | Disables translation from Google to use original review text |
-| totalReviewCount? | `number` | Total number of reviews on Google Business profile. This is automatically fetched if using `featurableId`. Otherwise, this is required if passing reviews manually and `structuredData` is true. |
-| averageRating? | `number` | Average rating for Google Business profile. This is automatically fetched if using `featurableId`. Otherwise, this is required if passing reviews manually and `structuredData` is true. |
-| errorMessage? | `React.ReactNode` | Custom error message to display if reviews cannot be fetched |
-| loadingMessage? | `React.ReactNode` | Custom loading message to display while reviews are loading |
-| isLoading? | `boolean` | Controls the loading state of the component when fetching reviews manually |
-
-#### `ReactGoogleReview` Model
-
-| Prop | Type | Description |
-| --- | --- | --- |
-| reviewId | `string \| null` | Unique review ID |
-| reviewer | `{ profilePhotoUrl: string; displayName: string; isAnonymous: boolean; }` | Reviewer information |
-| starRating | `number` | Star rating (1-5) |
-| comment | `string` | Review text |
-| createTime | `string \| null` | Review creation time |
-| updateTime | `string \| null` | Review update time |
-| reviewReply? | `{ comment: string; updateTime: string; } \| null` | Review reply information |
-
+-   Name
+    
+    `featurableId`
+    
+    Type
+    
+    string
+    
+    Description
+    
+    Featurable widget ID
+    
+-   Name
+    
+    `reviews`
+    
+    Type
+    
+    ReactGoogleReview\[\]
+    
+    Description
+    
+    Array of reviews to display, fetched using `dangerouslyFetchPlaceReviews`
+    
+-   Name
+    
+    `layout`
+    
+    Type
+    
+    "badge" | "carousel" | "custom"
+    
+    Description
+    
+    Array of reviews to display, fetched using `dangerouslyFetchPlaceReviews`
+    
+-   Name
+    
+    `nameDisplay?`
+    
+    Type
+    
+    "fullNames" | "firstAndLastInitials" | "firstNamesOnly"
+    
+    Description
+    
+    How to display names on reviews. Default: "firstAndLastInitials"
+    
+-   Name
+    
+    `logoVariant?`
+    
+    Type
+    
+    "logo" | "icon" | "none"
+    
+    Description
+    
+    How to display the Google logo. Default: "icon"
+    
+-   Name
+    
+    `maxCharacters?`
+    
+    Type
+    
+    number
+    
+    Description
+    
+    When collapsed, the maximum number of characters to display in the review body. Default: 200
+    
+-   Name
+    
+    `dateDisplay?`
+    
+    Type
+    
+    "relative" | "absolute"
+    
+    Description
+    
+    How to display the review date. Default: "relative"
+    
+-   Name
+    
+    `reviewVariant?`
+    
+    Type
+    
+    "card" | "testimonial"
+    
+    Description
+    
+    Review layout variations. Default: "card"
+    
+-   Name
+    
+    `theme?`
+    
+    Type
+    
+    "light" | "dark"
+    
+    Description
+    
+    Color scheme of the component. Default: "light"
+    
+-   Name
+    
+    `structuredData?`
+    
+    Type
+    
+    boolean
+    
+    Description
+    
+    Whether to include JSON-LD structured data for SEO
+    
+-   Name
+    
+    `structuredData?`
+    
+    Type
+    
+    boolean
+    
+    Description
+    
+    Whether to include JSON-LD structured data for SEO. Default: false
+    
+-   Name
+    
+    `brandName?`
+    
+    Type
+    
+    string
+    
+    Description
+    
+    Custom business name for structured data
+    
+-   Name
+    
+    `productName?`
+    
+    Type
+    
+    string
+    
+    Description
+    
+    Custom product name for structured data
+    
+-   Name
+    
+    `productDescription?`
+    
+    Type
+    
+    string
+    
+    Description
+    
+    Optional product description for structured data
+    
+-   Name
+    
+    `accessibility?`
+    
+    Type
+    
+    boolean
+    
+    Description
+    
+    Enable/disable accessibility features. Default: true
+    
+-   Name
+    
+    `totalReviewCount?`
+    
+    Type
+    
+    number
+    
+    Description
+    
+    Total number of reviews on Google Business profile. This is automatically fetched if using `featurableId`. Otherwise, this is required if passing reviews manually and `structuredData` is true.
+    
+-   Name
+    
+    `averageRating?`
+    
+    Type
+    
+    number
+    
+    Description
+    
+    Average rating for Google Business profile. This is automatically fetched if using `featurableId`. Otherwise, this is required if passing reviews manually and `structuredData` is true.
+    
 
 ### Carousel Props
 
-| Prop | Type | Description |
-| --- | --- | --- |
-| carouselSpeed? | `number` | Autoplay speed of the carousel in milliseconds |
-| carouselAutoplay? | `boolean` | Whether to autoplay the carousel |
-| maxItems? | `number` | Maximum number of items to display at any one time in carousel |
-| readMoreLabel? | `string` | Read more label for truncated reviews. |
-| readLessLabel? | `string` | Read less label for expanded reviews. |
-| getRelativeDate? | `(date: Date) => string` | Formatting function for relative dates. |
-| getAbsoluteDate? | `(date: Date) => string` | Formatting function for absolute dates. |
-| showDots? | `boolean` | Whether to show/hide navigation dots in the carousel |
+-   Name
+    
+    `carouselSpeed`
+    
+    Type
+    
+    number
+    
+    Description
+    
+    Autoplay speed of the carousel in milliseconds. Default: 3000
+    
+-   Name
+    
+    `carouselAutoplay`
+    
+    Type
+    
+    boolean
+    
+    Description
+    
+    Whether to autoplay the carousel. Default: true
+    
+-   Name
+    
+    `maxItems`
+    
+    Type
+    
+    number
+    
+    Description
+    
+    Maximum number of items to display at any one time in carousel. Default: 3
+    
 
 ### Badge Props
 
-| Prop | Type | Description |
-| --- | --- | --- |
-| profileUrl? | `string` | Link to Google Business profile, if manually fetching reviews via Place API. Using Featurable API will automatically supply this URL. |
-| badgeLabel? | `string` | Label for the badge. |
-| badgeSubheadingFormatter? | `(totalReviewCount: number) => string` | Function to format the badge subheading. |
+-   Name
+    
+    `profileUrl`
+    
+    Type
+    
+    string
+    
+    Description
+    
+    Link to Google Business profile, if manually fetching reviews via Place API. Using Featurable API will automatically supply this URL.
+    
 
-### Custom Layout Props
+## [License](https://featurable.com/docs/react-google-reviews#license)
 
-| Prop | Type | Description |
-| --- | --- | --- |
-| renderer? | (reviews: [ReactGoogleReview](#reactgooglereview-model)[]) => React.ReactNode | Custom rendering function |
+This project is licensed under the MIT License. By using the Featurable API, you agree to the [Featurable Terms of Service](https://featurable.com/terms).
 
-## License
+## [Acknowledgements](https://featurable.com/docs/react-google-reviews#acknowledgements)
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. By using the Featurable API, you agree to the [Featurable Terms of Service](https://featurable.com/terms).
-
-## Acknowledgements
-
-This library uses [`slick-carousel`](https://github.com/kenwheeler/slick) and [`react-slick`](https://github.com/akiran/react-slick) under the MIT license for the carousel layout. You can find the respective licenses [here](https://github.com/kenwheeler/slick?tab=MIT-1-ov-file#readme) and [here](https://github.com/akiran/react-slick?tab=MIT-1-ov-file#readme), respectively.
-
-## Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-Please see the [Contributing Guidelines](https://github.com/Featurable/react-google-reviews/blob/main/CONTRIBUTING.md) for details on how to contribute.
-
-## Issues 
-
-Please report any issues or bugs you encounter on the [GitHub Issues](https://github.com/Featurable/react-google-reviews/issues) page.
-
-For support using Featurable, please contact us through your [Featurable dashboard](https://featurable.com/app).
+This library uses [`slick-carousel`](https://github.com/kenwheeler/slick) and [`react-slick`](https://github.com/akiran/react-slick) for the carousel layout.

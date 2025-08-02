@@ -5,6 +5,7 @@ import {
   type Locale,
 } from '../../lib/dictionaries';
 import { LocalizedClientPage } from './client';
+import { WelcomeSection } from '../../components/WelcomeSection';
 
 // Featurable widget ID for the pony club
 const FEATURABLE_WIDGET_ID = 'e22fc7c6-97ba-49d1-8391-7b5f236ffb84';
@@ -77,10 +78,43 @@ export default async function LocalePage({
   const reviewsData = await fetchReviewsData();
 
   return (
-    <LocalizedClientPage 
-      locale={locale as Locale} 
-      dictionary={dictionary}
-      reviewsData={reviewsData}
-    />
+    <div className="bg-gradient-sage min-h-screen flex justify-center items-start p-4 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div
+        className="absolute top-0 right-0 w-80 h-80 bg-sage-200/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-0 left-0 w-96 h-96 bg-sage-300/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"
+        aria-hidden="true"
+      />
+
+      {/* Main container with updated styling */}
+      <div className="w-full max-w-sm mx-auto relative z-10">
+        {/* Background decorative circles */}
+        <div
+          className="absolute top-8 right-8 w-16 h-16 bg-sage-200/40 rounded-full blur-sm"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute top-32 left-4 w-12 h-12 bg-sage-300/30 rounded-full blur-sm"
+          aria-hidden="true"
+        />
+
+        {/* Main content card with hero extending to edges */}
+        <div className="bg-gradient-card backdrop-blur-card rounded-[2rem] shadow-elevated border border-white/50 overflow-hidden relative">
+          <main id="main-content" className="pb-20">
+            {/* Content sections with improved spacing */}
+            <div className="space-y-6">
+              <WelcomeSection dictionary={dictionary} locale={locale as Locale} />
+              <LocalizedClientPage
+                dictionary={dictionary}
+                reviewsData={reviewsData}
+              />
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import type { Dictionary, Locale } from '../lib/dictionaries';
-import { LanguageSelector } from './LanguageSelector';
-import { WeatherWidget } from './WeatherWidget';
+import { WelcomeSectionClient } from './WelcomeSectionClient';
 
 interface WelcomeSectionProps {
   dictionary: Dictionary;
@@ -23,30 +22,22 @@ export function WelcomeSection({ dictionary, locale }: WelcomeSectionProps) {
         {/* Enhanced gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
 
-        {/* Logo and Weather Widget Overlay */}
-        <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-20">
-          {/* Logo Section */}
-          <div className="flex flex-col">
-            <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40">
-              <Image
-                src="/images/logo.png"
-                alt={dictionary.header.logoAlt}
-                width={140}
-                height={46}
-                className="h-10 w-auto"
-                priority={true}
-              />
-            </div>
-          </div>
-
-          {/* Weather Widget and Language Selector */}
-          <div className="relative z-10 flex flex-col items-end space-y-3">
-            <WeatherWidget dictionary={dictionary} />
-            <div className="mr-1">
-              <LanguageSelector currentLocale={locale} />
-            </div>
+        {/* Logo Section */}
+        <div className="absolute top-4 left-4 z-20">
+          <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40">
+            <Image
+              src="/images/logo.png"
+              alt={dictionary.header.logoAlt}
+              width={140}
+              height={46}
+              className="h-10 w-auto"
+              priority={true}
+            />
           </div>
         </div>
+
+        {/* Client-side interactive components */}
+        <WelcomeSectionClient dictionary={dictionary} locale={locale} />
 
         {/* Main Hero Content Overlay */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">

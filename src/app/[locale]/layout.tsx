@@ -160,7 +160,7 @@ export default async function LocaleLayout({
         </a>
         <Script
           src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=c078b762-6f7f-474f-8edb-bdd1bdb7d12a"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           id="bokun-loader"
         />
         <ErrorBoundary>
