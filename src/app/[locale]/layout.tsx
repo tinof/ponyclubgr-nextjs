@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
-import Script from 'next/script';
 import type { ReactNode } from 'react';
 import '../../index.css';
-import { StagewiseClient } from '../../components/StagewiseClient';
 import { notFound } from 'next/navigation';
 import { ErrorBoundary } from '../../components/ErrorBoundary';
 import {
@@ -160,7 +158,6 @@ export default async function LocaleLayout({
         </a>
         <ErrorBoundary>
           <div id="root">{children}</div>
-          <StagewiseClient />
         </ErrorBoundary>
       </body>
     </html>
