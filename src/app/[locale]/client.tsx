@@ -77,11 +77,17 @@ const BottomNav = dynamic(
 interface LocalizedClientPageProps {
   locale: Locale;
   dictionary: Dictionary;
+  reviewsData: {
+    reviews: any[];
+    averageRating: number;
+    totalReviews: number;
+  };
 }
 
 export function LocalizedClientPage({
   locale,
   dictionary,
+  reviewsData,
 }: LocalizedClientPageProps) {
   return (
     <div className="bg-gradient-sage min-h-screen flex justify-center items-start p-4 relative overflow-hidden">
@@ -115,7 +121,7 @@ export function LocalizedClientPage({
               <WelcomeSection dictionary={dictionary} locale={locale} />
               <PackageCards dictionary={dictionary} />
               <WhyChooseUs dictionary={dictionary} />
-              <GuestReviews dictionary={dictionary} />
+              <GuestReviews dictionary={dictionary} reviewsData={reviewsData} />
             </div>
           </main>
 
