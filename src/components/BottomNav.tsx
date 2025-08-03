@@ -1,32 +1,141 @@
 'use client';
 
 import { Home, Map as MapIcon, Menu, Phone, Tag, Waves } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type React from 'react';
 import { useState } from 'react';
-import type { Dictionary } from '../lib/dictionaries';
+import type { Dictionary, Locale } from '../lib/dictionaries';
 
 interface BottomNavProps {
   dictionary: Dictionary;
+  locale?: Locale;
 }
 
-export function BottomNav({ dictionary }: BottomNavProps) {
+export function BottomNav({ dictionary, locale = 'en' }: BottomNavProps) {
   const [moreMenuOpen, setMoreMenuOpen] = useState(false);
+  const [activitiesMenuOpen, setActivitiesMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Determine if we're on the home page
+  const isHomePage = pathname === `/${locale}` || pathname === '/';
+
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[calc(24rem-2rem)] z-50">
       <nav className="bg-white/90 backdrop-blur-md rounded-2xl shadow-elevated flex items-center justify-around p-2 border border-white/60">
         <NavItem
           icon={<Home size={20} />}
           label={dictionary.navigation.home}
-          active={true}
+          active={isHomePage}
+          href={`/${locale}`}
         />
         <NavItem
           icon={<MapIcon size={20} />}
           label={dictionary.navigation.map}
         />
-        <NavItem
-          icon={<Waves size={20} />}
-          label={dictionary.navigation.activities}
-        />
+        <div className="relative">
+          <NavItem
+            icon={<Waves size={20} />}
+            label={dictionary.navigation.activities}
+            onClick={() => setActivitiesMenuOpen(!activitiesMenuOpen)}
+          />
+          {activitiesMenuOpen && (
+            <>
+              {/* Backdrop */}
+              <div
+                className="fixed inset-0 z-10"
+                onClick={() => setActivitiesMenuOpen(false)}
+                aria-hidden="true"
+              />
+              {/* Activities Menu */}
+              <div className="absolute bottom-16 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-elevated w-48 p-3 border border-white/60 z-20">
+                <div className="space-y-3">
+                  <Link
+                    href={`/${locale}/rafting`}
+                    className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
+                    onClick={() => setActivitiesMenuOpen(false)}
+                  >
+                    <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-primary">
+                      <Waves size={18} />
+                    </div>
+                    <span>{dictionary.navigation.activityPages.rafting}</span>
+                  </Link>
+                  <Link
+                    href={`/${locale}/riding`}
+                    className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
+                    onClick={() => setActivitiesMenuOpen(false)}
+                  >
+                    <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-primary">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 5.5L8 22h8l-1-8.5c1.5-1 3-3 3-5.5 0-3.5-2.5-6-6-6z"/>
+                        <path d="M8 8h8"/>
+                        <path d="M10 6h4"/>
+                      </svg>
+                    </div>
+                    <span>{dictionary.navigation.activityPages.riding}</span>
+                  </Link>
+                  <Link
+                    href={`/${locale}/kayaking`}
+                    className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
+                    onClick={() => setActivitiesMenuOpen(false)}
+                  >
+                    <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-primary">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M3 12h18"/>
+                        <path d="M8 8l4-4 4 4"/>
+                        <path d="M8 16l4 4 4-4"/>
+                      </svg>
+                    </div>
+                    <span>{dictionary.navigation.activityPages.kayaking}</span>
+                  </Link>
+                  <Link
+                    href={`/${locale}/trekking`}
+                    className="flex items-center space-x-3 text-gray-700 font-medium hover:bg-gray-50 p-2 rounded-xl transition-colors"
+                    onClick={() => setActivitiesMenuOpen(false)}
+                  >
+                    <div className="flex items-center justify-center h-[18px] w-[18px] text-sage-primary">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10,9 9,9 8,9"/>
+                      </svg>
+                    </div>
+                    <span>{dictionary.navigation.activityPages.trekking}</span>
+                  </Link>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
         <NavItem
           icon={<Tag size={20} />}
           label={dictionary.navigation.offers}
@@ -142,21 +251,38 @@ interface NavItemProps {
   label: string;
   active?: boolean;
   onClick?: () => void;
+  href?: string;
 }
 
-function NavItem({ icon, label, active = false, onClick }: NavItemProps) {
-  return (
-    <button
-      type="button"
-      className={`flex flex-col items-center justify-center px-3 py-2 rounded-xl transition-colors ${active ? 'text-sage-primary bg-sage-50' : 'text-gray-500 hover:text-sage-primary'}`}
-      onClick={onClick}
-    >
+function NavItem({ icon, label, active = false, onClick, href }: NavItemProps) {
+  const className = `flex flex-col items-center justify-center px-3 py-2 rounded-xl transition-colors ${active ? 'text-sage-primary bg-sage-50' : 'text-gray-500 hover:text-sage-primary'}`;
+
+  const content = (
+    <>
       <div className={active ? 'text-sage-primary' : 'text-gray-400'}>
         {icon}
       </div>
       <span className={`text-xs mt-1 ${active ? 'font-medium' : ''}`}>
         {label}
       </span>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={className}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      className={className}
+      onClick={onClick}
+    >
+      {content}
     </button>
   );
 }

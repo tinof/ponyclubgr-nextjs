@@ -59,7 +59,13 @@
     "contactUs": "Επικοινωνία",
     "familyPackages": "Οικογενειακά Πακέτα",
     "safetyInfo": "Πληροφορίες Ασφαλείας",
-    "bookFamilyExperience": "Κλείστε μια οικογενειακή εμπειρία σήμερα!"
+    "bookFamilyExperience": "Κλείστε μια οικογενειακή εμπειρία σήμερα!",
+    "activityPages": {
+      "rafting": "Ράφτινγκ",
+      "riding": "Ιππασία",
+      "kayaking": "Καγιάκ",
+      "trekking": "Πεζοπορία"
+    }
   },
   "weather": {
     "unavailable": "Καιρός μη διαθέσιμος",

@@ -66,6 +66,12 @@ export interface Dictionary {
     familyPackages: string;
     safetyInfo: string;
     bookFamilyExperience: string;
+    activityPages: {
+      rafting: string;
+      riding: string;
+      kayaking: string;
+      trekking: string;
+    };
   };
   weather: {
     unavailable: string;

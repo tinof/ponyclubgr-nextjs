@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import type { Dictionary } from '../lib/dictionaries';
-import { ImageSlider } from './ImageSlider';
 import { BokunButton } from './BokunButton';
+import { ImageSlider } from './ImageSlider';
 
 interface PackageCardsProps {
   dictionary: Dictionary;
@@ -84,32 +84,17 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {/* Activity details */}
           <div className="space-y-3 mb-4">
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image
-                src="/images/figma-assets/clock-icon-1.svg"
-                alt=""
-                width={16}
-                height={16}
-              />
+              <Image src="/icons/rafting.png" alt="" width={16} height={16} />
               <span>
                 {dictionary.packages.raftingRiding.activities.rafting}
               </span>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image
-                src="/images/figma-assets/horse-icon-1.svg"
-                alt=""
-                width={16}
-                height={16}
-              />
+              <Image src="/icons/riding.png" alt="" width={16} height={16} />
               <span>{dictionary.packages.raftingRiding.activities.riding}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image
-                src="/images/figma-assets/hiking-icon.svg"
-                alt=""
-                width={16}
-                height={16}
-              />
+              <Image src="/icons/trekking.png" alt="" width={16} height={16} />
               <span>{dictionary.packages.raftingRiding.activities.hiking}</span>
             </div>
           </div>
@@ -230,34 +215,19 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {/* Activity details */}
           <div className="space-y-3 mb-4">
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image
-                src="/images/figma-assets/clock-icon-1.svg"
-                alt=""
-                width={16}
-                height={16}
-              />
+              <Image src="/icons/kayak.png" alt="" width={16} height={16} />
               <span>
                 {dictionary.packages.kayakingRidingTrekking.activities.kayak}
               </span>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image
-                src="/images/figma-assets/horse-icon-1.svg"
-                alt=""
-                width={16}
-                height={16}
-              />
+              <Image src="/icons/riding.png" alt="" width={16} height={16} />
               <span>
                 {dictionary.packages.kayakingRidingTrekking.activities.riding}
               </span>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image
-                src="/images/figma-assets/hiking-icon.svg"
-                alt=""
-                width={16}
-                height={16}
-              />
+              <Image src="/icons/trekking.png" alt="" width={16} height={16} />
               <span>
                 {dictionary.packages.kayakingRidingTrekking.activities.trekking}
               </span>

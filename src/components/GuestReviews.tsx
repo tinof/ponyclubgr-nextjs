@@ -1,38 +1,61 @@
 'use client';
 
 import { Quote, Star } from 'lucide-react';
+import Image from 'next/image';
 import type { Dictionary } from '../lib/dictionaries';
 import { ReviewsHeader } from './ReviewsHeader';
 
-interface GuestReviewsProps {
-  dictionary: Dictionary;
-  reviewsData: {
-    reviews: any[];
-    averageRating: number;
-    totalReviews: number;
-  };
+interface Reviewer {
+  displayName: string;
+  profilePhotoUrl: string;
+  isAnonymous: boolean;
 }
 
-export function GuestReviews({ dictionary: _dictionary, reviewsData }: GuestReviewsProps) {
+interface Review {
+  id?: string;
+  reviewer?: Reviewer;
+  comment: string;
+  starRating: number;
+  createTime: string | null;
+}
+
+interface ReviewsData {
+  reviews: Review[];
+  averageRating: number;
+  totalReviews: number;
+}
+
+interface GuestReviewsProps {
+  dictionary: Dictionary;
+  reviewsData: ReviewsData;
+}
+
+export function GuestReviews({
+  dictionary: _dictionary,
+  reviewsData,
+}: GuestReviewsProps) {
   const { reviews, averageRating, totalReviews } = reviewsData;
-  
+
   return (
     <div className="px-4 mt-8 mb-20">
-      <ReviewsHeader 
+      <ReviewsHeader
         averageRating={averageRating}
         totalReviews={totalReviews}
       />
 
       <div className="space-y-4">
         {reviews.map((review, index) => {
-          const displayName = review.reviewer?.displayName || `Guest ${index + 1}`;
+          const displayName =
+            review.reviewer?.displayName || `Guest ${index + 1}`;
           const comment = review.comment || 'Great experience!';
           const rating = review.starRating || 5;
           const profilePhoto = review.reviewer?.profilePhotoUrl;
 
           return (
             <div
-              key={`review-${index}`}
+              key={
+                review.id || `review-${review.comment?.slice(0, 20) || index}`
+              }
               className="bg-white rounded-2xl shadow-card p-4 border border-white/60 relative"
             >
               <div className="absolute -top-2 -right-2 bg-sage-600 rounded-full p-1.5">
@@ -41,9 +64,11 @@ export function GuestReviews({ dictionary: _dictionary, reviewsData }: GuestRevi
               <div className="flex items-center mb-3">
                 <div className="w-10 h-10 rounded-full bg-sage-50 flex items-center justify-center text-sage-600 font-bold mr-3 overflow-hidden">
                   {profilePhoto ? (
-                    <img
+                    <Image
                       src={profilePhoto}
                       alt={displayName}
+                      width={40}
+                      height={40}
                       className="w-full h-full object-cover"
                     />
                   ) : (
@@ -55,7 +80,9 @@ export function GuestReviews({ dictionary: _dictionary, reviewsData }: GuestRevi
                     {displayName}
                   </p>
                   <p className="text-xs text-gray-500">
-                    {review.createTime ? new Date(review.createTime).toLocaleDateString() : 'Recent guest'}
+                    {review.createTime
+                      ? new Date(review.createTime).toLocaleDateString()
+                      : 'Recent guest'}
                   </p>
                 </div>
                 <div className="ml-auto text-xs text-gray-400">
@@ -68,7 +95,7 @@ export function GuestReviews({ dictionary: _dictionary, reviewsData }: GuestRevi
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star
-                    key={`${displayName}-star-${i}`}
+                    key={`star-${i}`}
                     size={14}
                     fill={i < rating ? '#FFD700' : 'none'}
                     stroke={i < rating ? '#FFD700' : '#D1D5DB'}

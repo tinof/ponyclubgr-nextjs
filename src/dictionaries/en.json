@@ -59,7 +59,13 @@
     "contactUs": "Contact Us",
     "familyPackages": "Family Packages",
     "safetyInfo": "Safety Info",
-    "bookFamilyExperience": "Book a family experience today!"
+    "bookFamilyExperience": "Book a family experience today!",
+    "activityPages": {
+      "rafting": "Rafting",
+      "riding": "Horse Riding",
+      "kayaking": "Kayaking",
+      "trekking": "Trekking"
+    }
   },
   "weather": {
     "unavailable": "Weather unavailable",

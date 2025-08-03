@@ -73,26 +73,43 @@ const BottomNav = dynamic(
   },
 );
 
+interface Reviewer {
+  displayName: string;
+  profilePhotoUrl: string;
+  isAnonymous: boolean;
+}
+
+interface Review {
+  id?: string;
+  reviewer?: Reviewer;
+  comment: string;
+  starRating: number;
+  createTime: string | null;
+}
+
+interface ReviewsData {
+  reviews: Review[];
+  averageRating: number;
+  totalReviews: number;
+}
+
 interface LocalizedClientPageProps {
   locale: Locale;
   dictionary: Dictionary;
-  reviewsData: {
-    reviews: any[];
-    averageRating: number;
-    totalReviews: number;
-  };
+  reviewsData: ReviewsData;
 }
 
 export function LocalizedClientPage({
   dictionary,
   reviewsData,
-}: Omit<LocalizedClientPageProps, 'locale'>) {
+  locale,
+}: LocalizedClientPageProps) {
   return (
     <>
       <PackageCards dictionary={dictionary} />
       <WhyChooseUs dictionary={dictionary} />
       <GuestReviews dictionary={dictionary} reviewsData={reviewsData} />
-      <BottomNav dictionary={dictionary} />
+      <BottomNav dictionary={dictionary} locale={locale} />
     </>
   );
 }

@@ -145,6 +145,15 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale as Locale} className={poppins.variable}>
+      <head>
+        <link rel="preconnect" href="https://widgets.bokun.io" />
+        <link rel="dns-prefetch" href="https://widgets.bokun.io" />
+        <link
+          rel="prefetch"
+          as="script"
+          href="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=c078b762-6f7f-474f-8edb-bdd1bdb7d12a"
+        />
+      </head>
       <body className="font-sans">
         <script
           type="application/ld+json"
