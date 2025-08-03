@@ -1,12 +1,13 @@
-import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { BottomNav } from '../../../components/BottomNav';
+import { TrekkingClientPage } from '../../../components/TrekkingClientPage';
+import { WelcomeSectionClient } from '../../../components/WelcomeSectionClient';
 import {
   getDictionary,
   isValidLocale,
   type Locale,
 } from '../../../lib/dictionaries';
-import { WelcomeSectionClient } from '../../../components/WelcomeSectionClient';
-import { BottomNav } from '../../../components/BottomNav';
 
 // Generate static params for supported locales
 export async function generateStaticParams() {
@@ -20,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
+
   if (!isValidLocale(locale as Locale)) {
     return {
       title: 'Page Not Found',
@@ -28,13 +29,15 @@ export async function generateMetadata({
   }
 
   const dictionary = await getDictionary(locale as Locale);
-  
+
   return {
     title: `Trekking Adventures - ${dictionary.header.logoAlt}`,
-    description: 'Discover hidden trails and breathtaking views around Acheron River. Guided trekking tours through pristine nature and ancient landscapes.',
+    description:
+      'Discover hidden trails and breathtaking views around Acheron River. Guided trekking tours through pristine nature and ancient landscapes.',
     openGraph: {
       title: `Trekking Adventures - ${dictionary.header.logoAlt}`,
-      description: 'Discover hidden trails and breathtaking views around Acheron River. Guided trekking tours through pristine nature and ancient landscapes.',
+      description:
+        'Discover hidden trails and breathtaking views around Acheron River. Guided trekking tours through pristine nature and ancient landscapes.',
       images: ['/images/trekking-og.jpg'],
     },
   };
@@ -111,7 +114,10 @@ export default async function TrekkingPage({
                 </div>
 
                 {/* Client-side interactive components */}
-                <WelcomeSectionClient dictionary={dictionary} locale={locale as Locale} />
+                <WelcomeSectionClient
+                  dictionary={dictionary}
+                  locale={locale as Locale}
+                />
 
                 {/* Main Hero Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
@@ -121,7 +127,9 @@ export default async function TrekkingPage({
                       Trekking Adventures
                     </h1>
                     <p className="text-lg leading-relaxed drop-shadow-sm font-medium">
-                      Discover hidden trails and ancient paths around the mythical Acheron River. Guided trekking tours through pristine wilderness.
+                      Discover hidden trails and ancient paths around the
+                      mythical Acheron River. Guided trekking tours through
+                      pristine wilderness.
                     </p>
                   </div>
                 </div>
@@ -144,6 +152,7 @@ export default async function TrekkingPage({
                 </div>
               </div>
             </div>
+            <TrekkingClientPage dictionary={dictionary} />
           </main>
         </div>
 

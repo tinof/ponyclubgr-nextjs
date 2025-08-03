@@ -1,12 +1,13 @@
-import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { BottomNav } from '../../../components/BottomNav';
+import { WelcomeSectionClient } from '../../../components/WelcomeSectionClient';
 import {
   getDictionary,
   isValidLocale,
   type Locale,
 } from '../../../lib/dictionaries';
-import { WelcomeSectionClient } from '../../../components/WelcomeSectionClient';
-import { BottomNav } from '../../../components/BottomNav';
+import { RaftingClientPage } from '../../../components/RaftingClientPage';
 
 // Generate static params for supported locales
 export async function generateStaticParams() {
@@ -20,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
+
   if (!isValidLocale(locale as Locale)) {
     return {
       title: 'Page Not Found',
@@ -28,13 +29,15 @@ export async function generateMetadata({
   }
 
   const dictionary = await getDictionary(locale as Locale);
-  
+
   return {
     title: `Rafting Adventures - ${dictionary.header.logoAlt}`,
-    description: 'Experience thrilling rafting adventures on the mythical Acheron River. Safe, family-friendly rafting tours with professional guides.',
+    description:
+      'Experience thrilling rafting adventures on the mythical Acheron River. Safe, family-friendly rafting tours with professional guides.',
     openGraph: {
       title: `Rafting Adventures - ${dictionary.header.logoAlt}`,
-      description: 'Experience thrilling rafting adventures on the mythical Acheron River. Safe, family-friendly rafting tours with professional guides.',
+      description:
+        'Experience thrilling rafting adventures on the mythical Acheron River. Safe, family-friendly rafting tours with professional guides.',
       images: ['/images/rafting-og.jpg'],
     },
   };
@@ -111,7 +114,10 @@ export default async function RaftingPage({
                 </div>
 
                 {/* Client-side interactive components */}
-                <WelcomeSectionClient dictionary={dictionary} locale={locale as Locale} />
+                <WelcomeSectionClient
+                  dictionary={dictionary}
+                  locale={locale as Locale}
+                />
 
                 {/* Main Hero Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
@@ -121,7 +127,8 @@ export default async function RaftingPage({
                       Rafting Adventures
                     </h1>
                     <p className="text-lg leading-relaxed drop-shadow-sm font-medium">
-                      Experience the thrill of rafting on the mythical Acheron River. Safe, guided adventures for the whole family.
+                      Experience the thrill of rafting on the mythical Acheron
+                      River. Safe, guided adventures for the whole family.
                     </p>
                   </div>
                 </div>
@@ -144,6 +151,9 @@ export default async function RaftingPage({
                 </div>
               </div>
             </div>
+
+            {/* Product Page Widget Section */}
+            <RaftingClientPage dictionary={dictionary} />
           </main>
         </div>
 

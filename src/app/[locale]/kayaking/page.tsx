@@ -1,12 +1,13 @@
-import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { BottomNav } from '../../../components/BottomNav';
+import { WelcomeSectionClient } from '../../../components/WelcomeSectionClient';
 import {
   getDictionary,
   isValidLocale,
   type Locale,
 } from '../../../lib/dictionaries';
-import { WelcomeSectionClient } from '../../../components/WelcomeSectionClient';
-import { BottomNav } from '../../../components/BottomNav';
+import { KayakingClientPage } from '../../../components/KayakingClientPage';
 
 // Generate static params for supported locales
 export async function generateStaticParams() {
@@ -20,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
+
   if (!isValidLocale(locale as Locale)) {
     return {
       title: 'Page Not Found',
@@ -28,13 +29,15 @@ export async function generateMetadata({
   }
 
   const dictionary = await getDictionary(locale as Locale);
-  
+
   return {
     title: `Kayaking Adventures - ${dictionary.header.logoAlt}`,
-    description: 'Paddle through the crystal-clear waters of Acheron River. Peaceful kayaking tours suitable for beginners and families.',
+    description:
+      'Paddle through the crystal-clear waters of Acheron River. Peaceful kayaking tours suitable for beginners and families.',
     openGraph: {
       title: `Kayaking Adventures - ${dictionary.header.logoAlt}`,
-      description: 'Paddle through the crystal-clear waters of Acheron River. Peaceful kayaking tours suitable for beginners and families.',
+      description:
+        'Paddle through the crystal-clear waters of Acheron River. Peaceful kayaking tours suitable for beginners and families.',
       images: ['/images/kayaking-og.jpg'],
     },
   };
@@ -111,7 +114,10 @@ export default async function KayakingPage({
                 </div>
 
                 {/* Client-side interactive components */}
-                <WelcomeSectionClient dictionary={dictionary} locale={locale as Locale} />
+                <WelcomeSectionClient
+                  dictionary={dictionary}
+                  locale={locale as Locale}
+                />
 
                 {/* Main Hero Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
@@ -121,7 +127,9 @@ export default async function KayakingPage({
                       Kayaking Adventures
                     </h1>
                     <p className="text-lg leading-relaxed drop-shadow-sm font-medium">
-                      Paddle through the pristine waters of the mythical Acheron River. Peaceful kayaking experiences perfect for all skill levels.
+                      Paddle through the pristine waters of the mythical Acheron
+                      River. Peaceful kayaking experiences perfect for all skill
+                      levels.
                     </p>
                   </div>
                 </div>
@@ -144,6 +152,9 @@ export default async function KayakingPage({
                 </div>
               </div>
             </div>
+
+            {/* Product Page Widget Section */}
+            <KayakingClientPage dictionary={dictionary} />
           </main>
         </div>
 

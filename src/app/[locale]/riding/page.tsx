@@ -1,12 +1,13 @@
-import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { BottomNav } from '../../../components/BottomNav';
+import { WelcomeSectionClient } from '../../../components/WelcomeSectionClient';
 import {
   getDictionary,
   isValidLocale,
   type Locale,
 } from '../../../lib/dictionaries';
-import { WelcomeSectionClient } from '../../../components/WelcomeSectionClient';
-import { BottomNav } from '../../../components/BottomNav';
+import { RidingClientPage } from '../../../components/RidingClientPage';
 
 // Generate static params for supported locales
 export async function generateStaticParams() {
@@ -20,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
+
   if (!isValidLocale(locale as Locale)) {
     return {
       title: 'Page Not Found',
@@ -28,13 +29,15 @@ export async function generateMetadata({
   }
 
   const dictionary = await getDictionary(locale as Locale);
-  
+
   return {
     title: `Horse Riding Adventures - ${dictionary.header.logoAlt}`,
-    description: 'Discover the beauty of Acheron River on horseback. Family-friendly horse riding tours with experienced guides and gentle horses.',
+    description:
+      'Discover the beauty of Acheron River on horseback. Family-friendly horse riding tours with experienced guides and gentle horses.',
     openGraph: {
       title: `Horse Riding Adventures - ${dictionary.header.logoAlt}`,
-      description: 'Discover the beauty of Acheron River on horseback. Family-friendly horse riding tours with experienced guides and gentle horses.',
+      description:
+        'Discover the beauty of Acheron River on horseback. Family-friendly horse riding tours with experienced guides and gentle horses.',
       images: ['/images/riding-og.jpg'],
     },
   };
@@ -111,7 +114,10 @@ export default async function RidingPage({
                 </div>
 
                 {/* Client-side interactive components */}
-                <WelcomeSectionClient dictionary={dictionary} locale={locale as Locale} />
+                <WelcomeSectionClient
+                  dictionary={dictionary}
+                  locale={locale as Locale}
+                />
 
                 {/* Main Hero Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
@@ -121,7 +127,9 @@ export default async function RidingPage({
                       Horse Riding Adventures
                     </h1>
                     <p className="text-lg leading-relaxed drop-shadow-sm font-medium">
-                      Explore the scenic beauty of Acheron River on horseback. Gentle horses and experienced guides ensure a memorable experience for all ages.
+                      Explore the scenic beauty of Acheron River on horseback.
+                      Gentle horses and experienced guides ensure a memorable
+                      experience for all ages.
                     </p>
                   </div>
                 </div>
@@ -144,6 +152,9 @@ export default async function RidingPage({
                 </div>
               </div>
             </div>
+
+            {/* Product Page Widget Section */}
+            <RidingClientPage dictionary={dictionary} />
           </main>
         </div>
 

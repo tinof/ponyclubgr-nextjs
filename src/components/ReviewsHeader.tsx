@@ -60,9 +60,9 @@ export function ReviewsHeader({
                 {averageRating}
               </span>
               <div className="flex items-center space-x-0.5">
-                {[...Array(5)].map((_, i) => (
+                {Array.from({ length: 5 }, (_, i) => (
                   <Star
-                    key={`google-star-${i}`}
+                    key={`google-star-${i + 1}`}
                     size={16}
                     fill={i < Math.floor(averageRating) ? '#FFD700' : 'none'}
                     stroke={
@@ -105,9 +105,9 @@ export function ReviewsHeader({
             <div className="flex items-center space-x-2">
               <span className="text-lg font-bold text-gray-900">4.7</span>
               <div className="flex items-center space-x-0.5">
-                {[...Array(5)].map((_, i) => (
+                {Array.from({ length: 5 }, (_, i) => (
                   <Star
-                    key={`facebook-star-${i}`}
+                    key={`facebook-star-${i + 1}`}
                     size={16}
                     fill={i < 4 ? '#FFD700' : 'none'}
                     stroke={i < 4 ? '#FFD700' : '#D1D5DB'}
@@ -153,9 +153,9 @@ export function ReviewsHeader({
             <div className="flex items-center space-x-2">
               <span className="text-lg font-bold text-gray-900">4.9</span>
               <div className="flex items-center space-x-0.5">
-                {[...Array(5)].map((_, i) => (
+                {Array.from({ length: 5 }, (_, i) => (
                   <Star
-                    key={`tripadvisor-star-${i}`}
+                    key={`tripadvisor-star-${i + 1}`}
                     size={16}
                     fill={i < 5 ? '#FFD700' : 'none'}
                     stroke={i < 5 ? '#FFD700' : '#D1D5DB'}

@@ -93,9 +93,9 @@ export function GuestReviews({
                 &ldquo;{comment}&rdquo;
               </p>
               <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
+                {Array.from({ length: 5 }, (_, i) => (
                   <Star
-                    key={`star-${i}`}
+                    key={`star-${i + 1}`}
                     size={14}
                     fill={i < rating ? '#FFD700' : 'none'}
                     stroke={i < rating ? '#FFD700' : '#D1D5DB'}
