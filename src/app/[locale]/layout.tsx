@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import type { ReactNode } from 'react';
 import '../../index.css';
@@ -16,6 +16,14 @@ const poppins = Poppins({
   display: 'swap',
   variable: '--font-poppins',
 });
+
+// Export viewport configuration for mobile optimization
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  userScalable: false,
+};
 
 // Generate metadata dynamically based on locale
 export async function generateMetadata({
