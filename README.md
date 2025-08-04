@@ -5,50 +5,50 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.4-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.11-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 
-A modern, responsive web application for Pony Club Acheron, showcasing horse riding and rafting adventure tours at the mythical Acheron River in Greece. Built with cutting-edge web technologies and optimized for performance, accessibility, and user experience.
+A modern, responsive web application for Pony Club Acheron, showcasing horse riding and rafting adventure tours at the mythical Acheron River in Greece.
 
-## 🌟 Live Website
+## Live Website
 
 **Production**: [ponyclub.gr](https://ponyclub.gr)
 
-## 🚀 Project Overview
+## Project Overview
 
-This application represents a modern approach to tourism marketing, combining immersive visual storytelling with seamless user interactions. The platform showcases adventure tour packages through an elegant, mobile-first interface that captures the essence of outdoor adventures in Greece.
+This application provides a platform for Pony Club Acheron to showcase adventure tour packages through a mobile-first interface.
 
-### Key Business Features
+### Key Features
 
-- **Interactive Tour Packages**: Dynamic presentation of rafting and horse riding experiences
-- **Visual Storytelling**: High-quality image galleries with smooth transitions
-- **Responsive Design**: Optimized for all devices with mobile-first approach
-- **Performance Optimized**: Fast loading times and smooth animations
-- **Accessibility Focused**: WCAG compliant with keyboard navigation support
+-   **Interactive Tour Packages**: Dynamic presentation of rafting and horse riding experiences.
+-   **Visual Storytelling**: High-quality image galleries with smooth transitions.
+-   **Responsive Design**: Optimized for all devices with a mobile-first approach.
+-   **Performance Optimized**: Fast loading times and smooth animations.
+-   **Accessibility Focused**: WCAG compliant with keyboard navigation support.
 
-## 🛠 Technical Architecture
+## Technical Architecture
 
 ### Core Technologies
 
-- **Next.js 15.4.5**: Latest App Router with React Server Components
-- **React 19.1.1**: Leveraging concurrent features and modern hooks
-- **TypeScript 5.5.4**: Full type safety and enhanced developer experience
-- **Tailwind CSS 4.1**: Utility-first styling with custom design system
-- **Lucide React**: Modern, customizable icon library
+-   **Next.js 15.4.5**: Latest App Router with React Server Components
+-   **React 19.1.1**: Leveraging concurrent features and modern hooks
+-   **TypeScript 5.5.4**: Full type safety and enhanced developer experience
+-   **Tailwind CSS 4.1**: Utility-first styling with custom design system
+-   **Lucide React**: Modern, customizable icon library
 
 ### Modern Development Practices
 
-- **Static Site Generation (SSG)**: Pre-rendered for optimal performance
-- **Component-Based Architecture**: Modular, reusable UI components
-- **Type-Safe Development**: Comprehensive TypeScript implementation
-- **Performance Optimization**: Image optimization and code splitting
-- **Responsive Design**: Mobile-first approach with fluid layouts
+-   **Static Site Generation (SSG)**: Pre-rendered for optimal performance.
+-   **Component-Based Architecture**: Modular, reusable UI components.
+-   **Type-Safe Development**: Comprehensive TypeScript implementation.
+-   **Performance Optimization**: Image optimization and code splitting.
+-   **Responsive Design**: Mobile-first approach with fluid layouts.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
 ├── app/                    # Next.js App Router
 │   ├── [[...slug]]/       # Dynamic catch-all routing
 │   │   ├── page.tsx       # Main page component
-│   │   └── client.tsx     # Client-side wrapper
+│   │   └── client.tsx     # Client-side wrapper (if applicable)
 │   └── layout.tsx         # Root layout with metadata
 ├── components/            # Reusable UI components
 │   ├── Header.tsx         # Site header with branding
@@ -56,16 +56,15 @@ src/
 │   ├── PackageCards.tsx   # Tour package displays
 │   ├── ImageSlider.tsx    # Interactive image carousel
 │   └── BottomNav.tsx      # Mobile navigation
-├── App.tsx               # Main application component
 └── index.css             # Global styles and Tailwind config
 ```
 
-## 🔧 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 
-- Node.js 18.0 or higher
-- pnpm 8.0 or higher
+-   Node.js 18.0 or higher
+-   pnpm 8.0 or higher
 
 ### Quick Start
 
@@ -91,22 +90,28 @@ pnpm run dev
 
 The application includes a real-time weather widget for Glyki, Greece. To enable it:
 
-1. **Get a free API key** from [WeatherAPI.com](https://www.weatherapi.com/signup.aspx)
-2. **Configure environment variables** as shown in the Quick Start section
-3. **For production deployment**, add the `WEATHER_API_KEY` to your Vercel environment variables
+1.  **Get a free API key** from [WeatherAPI.com](https://www.weatherapi.com/signup.aspx)
+2.  **Configure environment variables** as shown in the Quick Start section
+3.  **For production deployment**, add the `WEATHER_API_KEY` to your Vercel environment variables
 
 For detailed setup instructions, see [Weather Setup Guide](docs/WEATHER_SETUP.md).
 
 ### Available Scripts
 
 ```bash
-pnpm run dev      # Start development server
-pnpm run build    # Create production build
-pnpm run start    # Start production server
-pnpm run preview  # Preview production build locally
+pnpm run dev        # Start development server
+pnpm run build      # Create production build
+pnpm run start      # Start production server
+pnpm run preview    # Preview production build locally
+pnpm run lint       # Lint source code with Biome
+pnpm run lint:fix   # Fix linting issues with Biome
+pnpm run format     # Format source code with Biome
+pnpm run format:fix # Fix formatting issues with Biome
+pnpm run check      # Check source code with Biome
+pnpm run check:fix  # Fix check issues with Biome
 ```
 
-## 🏗 Build & Deployment
+## Build & Deployment
 
 ### Static Export Configuration
 
@@ -136,12 +141,12 @@ pnpm run build
 
 ### Hosting Recommendations
 
-- **Vercel**: Optimal for Next.js applications with automatic deployments
-- **Netlify**: Excellent for static sites with form handling capabilities
-- **GitHub Pages**: Free hosting for open-source projects
-- **AWS S3 + CloudFront**: Enterprise-grade hosting with global CDN
+-   **Vercel**: Optimal for Next.js applications with automatic deployments
+-   **Netlify**: Excellent for static sites with form handling capabilities
+-   **GitHub Pages**: Free hosting for open-source projects
+-   **AWS S3 + CloudFront**: Enterprise-grade hosting with global CDN
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
 
@@ -154,18 +159,18 @@ pnpm run build
 
 ### Typography
 
-- **Primary Font**: Poppins (Google Fonts)
-- **Weights**: 400 (Regular), 500 (Medium), 600 (Semi-bold), 700 (Bold)
-- **Loading**: Optimized with `font-display: swap`
+-   **Primary Font**: Poppins (Google Fonts)
+-   **Weights**: 400 (Regular), 500 (Medium), 600 (Semi-bold), 700 (Bold)
+-   **Loading**: Optimized with `font-display: swap`
 
 ### Component Design Principles
 
-- **Mobile-First**: Responsive design starting from 320px
-- **Accessibility**: WCAG 2.1 AA compliance
-- **Performance**: Optimized animations and transitions
-- **Consistency**: Unified spacing and color system
+-   **Mobile-First**: Responsive design starting from 320px
+-   **Accessibility**: WCAG 2.1 AA compliance
+-   **Performance**: Optimized animations and transitions
+-   **Consistency**: Unified spacing and color system
 
-## 🔍 Key Features & Implementation
+## Key Features & Implementation
 
 ### Interactive Image Slider
 
@@ -195,78 +200,86 @@ export function ImageSlider({ images, alt, smallDots }: ImageSliderProps) {
 
 ### Dynamic Package Cards
 
-- **Responsive Layout**: Adapts to different screen sizes
-- **Interactive Elements**: Hover effects and smooth transitions
-- **Accessibility**: Proper ARIA labels and keyboard navigation
-- **Performance**: Optimized rendering with React best practices
+-   **Responsive Layout**: Adapts to different screen sizes.
+-   **Interactive Elements**: Hover effects and smooth transitions.
+-   **Accessibility**: Proper ARIA labels and keyboard navigation.
+-   **Performance**: Optimized rendering with React best practices.
 
 ### Modern Navigation
 
-- **Bottom Navigation**: Mobile-optimized with backdrop blur effects
-- **Semantic HTML**: Proper use of navigation landmarks
-- **Touch-Friendly**: Optimized for mobile interactions
+-   **Bottom Navigation**: Mobile-optimized with backdrop blur effects.
+-   **Semantic HTML**: Proper use of navigation landmarks.
+-   **Touch-Friendly**: Optimized for mobile interactions.
 
-## 📊 Performance Metrics
+## Performance Metrics
+
+### Google PageSpeed Insights Scores
+
+[![PageSpeed Performance](https://img.shields.io/badge/Performance-98/100-brightgreen?logo=google-chrome)](https://pagespeed.web.dev/)
+[![PageSpeed Best Practices](https://img.shields.io/badge/Best_Practices-100/100-brightgreen?logo=google-chrome)](https://pagespeed.web.dev/)
 
 ### Lighthouse Scores (Target)
 
-- **Performance**: 95+
-- **Accessibility**: 100
-- **Best Practices**: 100
-- **SEO**: 95+
+-   **Performance**: 95+
+-   **Accessibility**: 100
+-   **Best Practices**: 100
+-   **SEO**: 95+
 
 ### Optimization Techniques
 
-- **Image Optimization**: WebP format with fallbacks
-- **Code Splitting**: Dynamic imports for optimal loading
-- **CSS Optimization**: Tailwind CSS purging for minimal bundle size
-- **Font Loading**: Optimized Google Fonts integration
+-   **Image Optimization**: WebP format with fallbacks.
+-   **Code Splitting**: Dynamic imports for optimal loading.
+-   **CSS Optimization**: Tailwind CSS purging for minimal bundle size.
+-   **Font Loading**: Optimized Google Fonts integration.
 
-## 🧪 Code Quality
+## Code Quality
 
-### TypeScript Implementation
+### Biome Configuration
 
-- **Strict Mode**: Enabled for maximum type safety
-- **Interface Definitions**: Comprehensive prop typing
-- **Type Inference**: Leveraging TypeScript's advanced features
+This project uses [Biome](https://biomejs.dev/) for linting, formatting, and checking. Biome provides comprehensive type checking and static analysis for the codebase.
 
-### Code Quality
+### Available Biome Commands
 
-TypeScript provides comprehensive type checking and static analysis for the codebase.
+-   `pnpm run lint`: Lint source code.
+-   `pnpm run lint:fix`: Fix linting issues.
+-   `pnpm run format`: Format source code.
+-   `pnpm run format:fix`: Fix formatting issues.
+-   `pnpm run check`: Check source code for errors.
+-   `pnpm run check:fix`: Fix check issues.
 
-## 🌐 Browser Support
+## Browser Support
 
-- **Modern Browsers**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
-- **Mobile**: iOS Safari 14+, Chrome Mobile 90+
-- **Progressive Enhancement**: Graceful degradation for older browsers
+-   **Modern Browsers**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+-   **Mobile**: iOS Safari 14+, Chrome Mobile 90+
+-   **Progressive Enhancement**: Graceful degradation for older browsers.
 
-## 📈 Future Enhancements
+## Future Enhancements
 
 ### Planned Features
 
-- **Booking System Integration**: Real-time availability and reservations
-- **Multi-language Support**: Greek and English localization
-- **Payment Processing**: Secure online booking with Stripe integration
-- **Content Management**: Headless CMS integration for dynamic content
-- **Analytics Integration**: Google Analytics 4 and performance monitoring
+-   **Booking System Integration**: Real-time availability and reservations.
+-   **Multi-language Support**: Greek and English localization.
+-   **Payment Processing**: Secure online booking with Stripe integration.
+-   **Content Management**: Headless CMS integration for dynamic content.
+-   **Analytics Integration**: Google Analytics 4 and performance monitoring.
 
 ### Technical Roadmap
 
-- **React 19 Features**: Implement concurrent features and Suspense
-- **Next.js 15 Optimizations**: Leverage new caching strategies
-- **Performance Monitoring**: Real User Monitoring (RUM) implementation
-- **SEO Enhancement**: Structured data and advanced meta tags
+-   **React 19 Features**: Implement concurrent features and Suspense.
+-   **Next.js 15 Optimizations**: Leverage new caching strategies.
+-   **Performance Monitoring**: Real User Monitoring (RUM) implementation.
+-   **SEO Enhancement**: Structured data and advanced meta tags.
 
-## 🤝 Contributing
+## Contributing
 
 This project follows modern development practices and welcomes contributions that maintain code quality and performance standards.
 
 ### Development Guidelines
 
-- **Code Style**: TypeScript strict mode configuration
-- **Commit Messages**: Conventional Commits specification
-- **Testing**: Component testing with React Testing Library
-- **Documentation**: Comprehensive inline documentation
+-   **Code Style**: Adheres to Biome's strict mode configuration.
+-   **Commit Messages**: Conventional Commits specification.
+-   **Testing**: Component testing with React Testing Library.
+-   **Documentation**: Comprehensive inline documentation.
 
 ### Getting Started with Development
 
@@ -289,80 +302,44 @@ git commit -m "feat: add new booking component"
 git push origin feature/your-feature-name
 ```
 
-## 🔒 Security & Privacy
+## Security & Privacy
 
 ### Data Protection
 
-- **No Personal Data Collection**: Static site with no backend data storage
-- **HTTPS Enforcement**: Secure connections for all traffic
-- **Content Security Policy**: Implemented for XSS protection
-- **Privacy Compliant**: GDPR-ready architecture
+-   **No Personal Data Collection**: Static site with no backend data storage.
+-   **HTTPS Enforcement**: Secure connections for all traffic.
+-   **Content Security Policy**: Implemented for XSS protection.
+-   **Privacy Compliant**: GDPR-ready architecture.
 
 ### Security Best Practices
 
-- **Dependency Scanning**: Regular security audits with `pnpm audit`
-- **Static Analysis**: TypeScript strict mode and type checking
-- **Build Security**: Secure build pipeline with integrity checks
+-   **Dependency Scanning**: Regular security audits with `pnpm audit`.
+-   **Static Analysis**: TypeScript strict mode and Biome type checking.
+-   **Build Security**: Secure build pipeline with integrity checks.
 
-## 📞 Contact & Support
+## Contact & Support
 
 ### Business Inquiries
 
-- **Website**: [ponyclub.gr](https://ponyclub.gr)
-- **Location**: Acheron River, Glyki, Greece
-- **Established**: 1998
+-   **Website**: [ponyclub.gr](https://ponyclub.gr)
+-   **Location**: Acheron River, Glyki, Greece
+-   **Established**: 1998
 
 ### Technical Support
 
 For technical issues or questions about the codebase:
 
-1. Check the [Issues](https://github.com/your-username/ponyclub-acheron/issues) section
-2. Review the [Next.js 15 Improvement Plan](./nextjs15-improvement-plan.md)
-3. Consult the [Next.js Documentation](https://nextjs.org/docs)
+1.  Check the [Issues](https://github.com/your-username/ponyclub-acheron/issues) section.
+2.  Review the [Next.js 15 Improvement Plan](./nextjs15-improvement-plan.md).
+3.  Consult the [Next.js Documentation](https://nextjs.org/docs).
 
-## 📊 Project Statistics
-
-### Codebase Metrics
-
-- **Total Components**: 6 React components
-- **TypeScript Coverage**: 100%
-- **Bundle Size**: ~100KB (optimized)
-- **Lighthouse Score**: 95+ (all categories)
-
-### Development Timeline
-
-- **Initial Development**: Modern Next.js 15 implementation
-- **Performance Optimization**: Ongoing improvements
-- **Accessibility Enhancement**: WCAG 2.1 AA compliance
-- **Mobile Optimization**: Touch-friendly interactions
-
-## 📄 License
+## License
 
 This project is proprietary software developed for Pony Club Acheron. All rights reserved.
 
 ### Usage Rights
 
-- **Commercial Use**: Restricted to Pony Club Acheron business operations
-- **Modification**: Authorized developers only
-- **Distribution**: Not permitted without explicit permission
-- **Study/Reference**: Code structure and patterns may be referenced for educational purposes
-
----
-
-**Built with ❤️ using Next.js 15 and React 19**
-
-*Showcasing modern web development practices with performance, accessibility, and user experience at the forefront.*
-
-## 🏆 Technical Achievements
-
-This project demonstrates proficiency in:
-
-- **Modern React Patterns**: Hooks, Context, and component composition
-- **Next.js 15 Features**: App Router, Server Components, and static generation
-- **TypeScript Mastery**: Advanced typing and interface design
-- **Performance Engineering**: Optimization techniques and best practices
-- **Accessibility Standards**: WCAG compliance and inclusive design
-- **Responsive Design**: Mobile-first development approach
-- **Code Quality**: TypeScript strict mode and modern tooling integration
-
-*A testament to contemporary web development excellence, combining business requirements with technical innovation.*
+-   **Commercial Use**: Restricted to Pony Club Acheron business operations.
+-   **Modification**: Authorized developers only.
+-   **Distribution**: Not permitted without explicit permission.
+-   **Study/Reference**: Code structure and patterns may be referenced for educational purposes.
