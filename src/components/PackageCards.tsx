@@ -13,9 +13,9 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
   return (
     <div className="space-y-6 px-4">
       {/* Package 1 - Premium Card */}
-      <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden relative">
+      <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden relative transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1">
         {/* Premium tag */}
-        <div className="absolute top-4 left-0 bg-sage-primary text-white text-xs font-semibold py-2 px-4 rounded-r-full z-10 shadow-md">
+        <div className="absolute top-4 left-0 bg-sage-primary text-white text-xs font-bold py-2 px-4 rounded-r-full z-10 shadow-lg">
           {dictionary.packages.raftingRiding.tag}
         </div>
 
@@ -83,19 +83,19 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
 
           {/* Activity details */}
           <div className="space-y-3 mb-4">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image src="/icons/dist/rafting.svg" alt="" width={16} height={16} />
-              <span>
+            <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
+              <Image src="/icons/dist/rafting.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <span className="text-gray-700 font-medium">
                 {dictionary.packages.raftingRiding.activities.rafting}
               </span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image src="/icons/dist/group.svg" alt="" width={16} height={16} />
-              <span>{dictionary.packages.raftingRiding.activities.riding}</span>
+            <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
+              <Image src="/icons/dist/group.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <span className="text-gray-700 font-medium">{dictionary.packages.raftingRiding.activities.riding}</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image src="/icons/dist/trekking.svg" alt="" width={16} height={16} />
-              <span>{dictionary.packages.raftingRiding.activities.hiking}</span>
+            <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
+              <Image src="/icons/dist/trekking.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <span className="text-gray-700 font-medium">{dictionary.packages.raftingRiding.activities.hiking}</span>
             </div>
           </div>
 
@@ -116,10 +116,10 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {/* Price and booking */}
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-2xl font-bold text-gray-800">
+              <p className="text-3xl font-extrabold text-sage-600">
                 {dictionary.packages.raftingRiding.price}
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 font-medium">
                 {dictionary.common.perPerson}
               </p>
             </div>
@@ -141,7 +141,7 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
         </div>
       </div>
       {/* Package 2 - Standard Card */}
-      <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden">
+      <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1">
         <div className="relative">
           <div className="relative h-56">
             <ImageSlider
@@ -214,21 +214,21 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
 
           {/* Activity details */}
           <div className="space-y-3 mb-4">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image src="/icons/dist/kayak.svg" alt="" width={16} height={16} />
-              <span>
+            <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
+              <Image src="/icons/dist/kayak.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <span className="text-gray-700 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.activities.kayak}
               </span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image src="/icons/dist/group.svg" alt="" width={16} height={16} />
-              <span>
+            <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
+              <Image src="/icons/dist/group.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <span className="text-gray-700 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.activities.riding}
               </span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Image src="/icons/dist/trekking.svg" alt="" width={16} height={16} />
-              <span>
+            <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
+              <Image src="/icons/dist/trekking.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <span className="text-gray-700 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.activities.trekking}
               </span>
             </div>
@@ -251,10 +251,10 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {/* Price and booking */}
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-2xl font-bold text-gray-800">
+              <p className="text-3xl font-extrabold text-sage-600">
                 {dictionary.packages.kayakingRidingTrekking.price}
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 font-medium">
                 {dictionary.common.perPerson}
               </p>
             </div>
