@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { Dictionary, Locale } from '../lib/dictionaries';
+import { MuxVideoBackground } from './MuxVideoBackground';
 import { WelcomeSectionClient } from './WelcomeSectionClient';
 
 interface WelcomeSectionProps {
@@ -10,15 +11,14 @@ interface WelcomeSectionProps {
 export function WelcomeSection({ dictionary, locale }: WelcomeSectionProps) {
   return (
     <div className="relative -mx-4 sm:-mx-6">
-      {/* Full-width Hero Image Section */}
-      <div className="relative h-96 sm:h-[28rem] md:h-[32rem] overflow-hidden rounded-t-[2rem]">
-        <Image
-          src="/images/hero-image.webp"
-          alt="Acheron River Adventure"
-          fill={true}
-          className="object-cover"
-          priority={true}
-        />
+      {/* Full-width Hero Video Section */}
+      <MuxVideoBackground
+        playbackId="tj7rc9I9w5wOyuk0079M3dMMW8stwyzSRBkBt01Bpnyt8"
+        fallbackImage="/images/hero-image.webp"
+        fallbackImageAlt="Acheron River Adventure"
+        className="min-h-[55vh] max-h-[80vh] aspect-[9/16] sm:aspect-[16/10] sm:min-h-[60vh] md:aspect-auto md:h-[32rem] rounded-t-[2rem]"
+        priority={true}
+      >
         {/* Enhanced gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
 
@@ -65,7 +65,7 @@ export function WelcomeSection({ dictionary, locale }: WelcomeSectionProps) {
             />
           </svg>
         </div>
-      </div>
+      </MuxVideoBackground>
 
       {/* Content Section with improved spacing */}
       <div className="px-4 sm:px-6 -mt-4 relative z-10">

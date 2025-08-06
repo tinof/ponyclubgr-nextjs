@@ -17,6 +17,7 @@ This application provides a platform for Pony Club Acheron to showcase adventure
 
 ### Key Features
 
+-   **Dynamic Video Background**: Full-width, responsive video background for the hero section.
 -   **Interactive Tour Packages**: Dynamic presentation of rafting and horse riding experiences.
 -   **Visual Storytelling**: High-quality image galleries with smooth transitions.
 -   **Responsive Design**: Optimized for all devices with a mobile-first approach.
@@ -171,6 +172,18 @@ pnpm run build
 -   **Consistency**: Unified spacing and color system
 
 ## Key Features & Implementation
+
+### Mux Video Integration
+
+The `MuxVideoBackground` component provides a responsive video background for the hero section, supporting both Mux playback IDs and local video sources. It ensures the video always fills the entire container on mobile and tablet devices, similar to `object-fit: cover`, by applying custom CSS overrides to the Mux Player's internal video element.
+
+```typescript
+// src/components/MuxVideoBackground.tsx
+// Example usage:
+// <MuxVideoBackground playbackId="your-mux-playback-id" />
+// or
+// <MuxVideoBackground src="/path/to/your/video.mp4" />
+```
 
 ### Interactive Image Slider
 

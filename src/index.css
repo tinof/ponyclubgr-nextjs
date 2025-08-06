@@ -277,3 +277,36 @@ img {
   text-align: center !important;
   padding: 2rem 0 !important;
 }
+
+/* Mobile video scaling for portrait aspect ratios */
+.mobile-video-scale {
+  transform: scale(1.5);
+}
+
+@media (min-aspect-ratio: 1/1) and (max-width: 640px) {
+  .mobile-video-scale {
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+  .mobile-video-scale {
+    transform: scale(1.05);
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-video-scale {
+    transform: scale(1);
+  }
+}
+
+/* Remove built-in 16:9 letter-box from Mux Player */
+mux-player.mux-no-bars::part(video) {
+  object-fit: cover !important;
+}
+
+mux-player.mux-no-bars {
+  /* kill the 56.25% padding hack */
+  padding-top: 0 !important;
+}
