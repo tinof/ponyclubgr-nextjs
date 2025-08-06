@@ -36,8 +36,16 @@
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "autoprefixer": "^10.4.21",
-    "postcss": "latest",
+    "postcss": "^8.4.31",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.5.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss": "8.4.49"
+    }
+  },
+  "resolutions": {
+    "postcss": "8.4.49"
   }
 }

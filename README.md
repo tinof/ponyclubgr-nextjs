@@ -181,8 +181,6 @@ The `MuxVideoBackground` component provides a responsive video background for th
 // src/components/MuxVideoBackground.tsx
 // Example usage:
 // <MuxVideoBackground playbackId="your-mux-playback-id" />
-// or
-// <MuxVideoBackground src="/path/to/your/video.mp4" />
 ```
 
 ### Interactive Image Slider
