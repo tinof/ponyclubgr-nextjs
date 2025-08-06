@@ -2,7 +2,13 @@
 
 import MuxPlayer from '@mux/mux-player-react';
 import Image from 'next/image';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  type ComponentRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 interface MuxVideoBackgroundProps {
   playbackId?: string;
@@ -30,7 +36,8 @@ export function MuxVideoBackground({
   const [isLoading, setIsLoading] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const playerRef = useRef<any>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const muxPlayerRef = useRef<ComponentRef<typeof MuxPlayer>>(null);
   const retryTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const MAX_RETRY_ATTEMPTS = 2;
@@ -122,9 +129,9 @@ export function MuxVideoBackground({
 
   // Ensure video plays when loaded and visible
   useEffect(() => {
-    if (videoLoaded && isIntersecting && playerRef.current) {
-      const video = playerRef.current;
-      const playPromise = video.play();
+    const currentPlayer = src ? videoRef.current : muxPlayerRef.current;
+    if (videoLoaded && isIntersecting && currentPlayer) {
+      const playPromise = currentPlayer.play();
 
       if (playPromise !== undefined) {
         playPromise.catch((error: unknown) => {
@@ -133,7 +140,7 @@ export function MuxVideoBackground({
         });
       }
     }
-  }, [videoLoaded, isIntersecting]);
+  }, [videoLoaded, isIntersecting, src]);
 
   const shouldShowVideo =
     !videoError && (isIntersecting || isLoading) && !prefersReducedMotion;
@@ -163,7 +170,7 @@ export function MuxVideoBackground({
         >
           {src ? (
             <video
-              ref={playerRef}
+              ref={videoRef}
               src={src}
               autoPlay
               muted
@@ -183,7 +190,7 @@ export function MuxVideoBackground({
             />
           ) : playbackId ? (
             <MuxPlayer
-              ref={playerRef}
+              ref={muxPlayerRef}
               playbackId={playbackId}
               streamType="on-demand"
               autoPlay="muted"
