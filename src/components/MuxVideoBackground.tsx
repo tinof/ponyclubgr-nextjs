@@ -190,13 +190,15 @@ export function MuxVideoBackground({
               muted={true}
               loop={true}
               playsInline={true}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center center',
-                '--media-object-fit': 'cover',
-              } as React.CSSProperties}
+              style={
+                {
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center center',
+                  '--media-object-fit': 'cover',
+                } as React.CSSProperties
+              }
               className="mobile-video-scale mux-no-bars"
               onLoadedData={handleLoadedData}
               onCanPlay={handleVideoLoad}

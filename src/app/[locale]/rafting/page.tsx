@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { BottomNav } from '../../../components/BottomNav';
+import { RaftingClientPage } from '../../../components/RaftingClientPage';
 import { WelcomeSectionClient } from '../../../components/WelcomeSectionClient';
 import {
   getDictionary,
   isValidLocale,
   type Locale,
 } from '../../../lib/dictionaries';
-import { RaftingClientPage } from '../../../components/RaftingClientPage';
 
 // Generate static params for supported locales
 export async function generateStaticParams() {

@@ -58,7 +58,7 @@
   --sage-700: #4a5d4a;
   --sage-800: #3a4b3a;
   --sage-900: #2a392a;
-  
+
   /* Safe area insets for device-specific screen features */
   --safe-area-inset-top: env(safe-area-inset-top);
   --safe-area-inset-bottom: env(safe-area-inset-bottom);
@@ -283,7 +283,7 @@ img {
   transform: scale(1.5);
 }
 
-@media (min-aspect-ratio: 1/1) and (max-width: 640px) {
+@media (min-aspect-ratio: 1 / 1) and (max-width: 640px) {
   .mobile-video-scale {
     transform: scale(1.1);
   }

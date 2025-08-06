@@ -84,18 +84,40 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {/* Activity details */}
           <div className="space-y-3 mb-4">
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
-              <Image src="/icons/dist/rafting.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <Image
+                src="/icons/dist/rafting.svg"
+                alt=""
+                width={24}
+                height={24}
+                className="flex-shrink-0"
+              />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.raftingRiding.activities.rafting}
               </span>
             </div>
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
-              <Image src="/icons/dist/group.svg" alt="" width={24} height={24} className="flex-shrink-0" />
-              <span className="text-gray-700 font-medium">{dictionary.packages.raftingRiding.activities.riding}</span>
+              <Image
+                src="/icons/dist/group.svg"
+                alt=""
+                width={24}
+                height={24}
+                className="flex-shrink-0"
+              />
+              <span className="text-gray-700 font-medium">
+                {dictionary.packages.raftingRiding.activities.riding}
+              </span>
             </div>
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
-              <Image src="/icons/dist/trekking.svg" alt="" width={24} height={24} className="flex-shrink-0" />
-              <span className="text-gray-700 font-medium">{dictionary.packages.raftingRiding.activities.hiking}</span>
+              <Image
+                src="/icons/dist/trekking.svg"
+                alt=""
+                width={24}
+                height={24}
+                className="flex-shrink-0"
+              />
+              <span className="text-gray-700 font-medium">
+                {dictionary.packages.raftingRiding.activities.hiking}
+              </span>
             </div>
           </div>
 
@@ -215,19 +237,37 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {/* Activity details */}
           <div className="space-y-3 mb-4">
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
-              <Image src="/icons/dist/kayak.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <Image
+                src="/icons/dist/kayak.svg"
+                alt=""
+                width={24}
+                height={24}
+                className="flex-shrink-0"
+              />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.activities.kayak}
               </span>
             </div>
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
-              <Image src="/icons/dist/group.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <Image
+                src="/icons/dist/group.svg"
+                alt=""
+                width={24}
+                height={24}
+                className="flex-shrink-0"
+              />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.activities.riding}
               </span>
             </div>
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
-              <Image src="/icons/dist/trekking.svg" alt="" width={24} height={24} className="flex-shrink-0" />
+              <Image
+                src="/icons/dist/trekking.svg"
+                alt=""
+                width={24}
+                height={24}
+                className="flex-shrink-0"
+              />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.activities.trekking}
               </span>
