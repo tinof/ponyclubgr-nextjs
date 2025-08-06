@@ -11,8 +11,7 @@ import {
 } from 'react';
 
 interface MuxVideoBackgroundProps {
-  playbackId?: string;
-  src?: string;
+  playbackId: string;
   fallbackImage: string;
   fallbackImageAlt: string;
   className?: string;
@@ -22,7 +21,6 @@ interface MuxVideoBackgroundProps {
 
 export function MuxVideoBackground({
   playbackId,
-  src,
   fallbackImage,
   fallbackImageAlt,
   className = '',
@@ -36,7 +34,6 @@ export function MuxVideoBackground({
   const [isLoading, setIsLoading] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const muxPlayerRef = useRef<ComponentRef<typeof MuxPlayer>>(null);
   const retryTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -129,7 +126,7 @@ export function MuxVideoBackground({
 
   // Ensure video plays when loaded and visible
   useEffect(() => {
-    const currentPlayer = src ? videoRef.current : muxPlayerRef.current;
+    const currentPlayer = muxPlayerRef.current;
     if (videoLoaded && isIntersecting && currentPlayer) {
       const playPromise = currentPlayer.play();
 
@@ -140,7 +137,7 @@ export function MuxVideoBackground({
         });
       }
     }
-  }, [videoLoaded, isIntersecting, src]);
+  }, [videoLoaded, isIntersecting]);
 
   const shouldShowVideo =
     !videoError && (isIntersecting || isLoading) && !prefersReducedMotion;
@@ -158,6 +155,8 @@ export function MuxVideoBackground({
           videoLoaded && !videoError ? 'opacity-0' : 'opacity-100'
         }`}
         priority={priority}
+        loading="eager"
+        fetchPriority="high"
         sizes="100vw"
       />
 
@@ -168,52 +167,30 @@ export function MuxVideoBackground({
             videoLoaded ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {src ? (
-            <video
-              ref={videoRef}
-              src={src}
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{
+          <MuxPlayer
+            ref={muxPlayerRef}
+            playbackId={playbackId}
+            streamType="on-demand"
+            autoPlay="muted"
+            muted={true}
+            loop={true}
+            playsInline={true}
+            style={
+              {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
                 objectPosition: 'center center',
-              }}
-              className="mobile-video-scale"
-              onLoadedData={handleLoadedData}
-              onCanPlay={handleVideoLoad}
-              onError={handleVideoError}
-              preload="metadata"
-            />
-          ) : playbackId ? (
-            <MuxPlayer
-              ref={muxPlayerRef}
-              playbackId={playbackId}
-              streamType="on-demand"
-              autoPlay="muted"
-              muted={true}
-              loop={true}
-              playsInline={true}
-              style={
-                {
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center center',
-                  '--media-object-fit': 'cover',
-                } as React.CSSProperties
-              }
-              className="mobile-video-scale mux-no-bars"
-              onLoadedData={handleLoadedData}
-              onCanPlay={handleVideoLoad}
-              onError={handleVideoError}
-              preload="metadata"
-              poster=""
-            />
-          ) : null}
+                '--media-object-fit': 'cover',
+              } as React.CSSProperties
+            }
+            className="mobile-video-scale mux-no-bars"
+            onLoadedData={handleLoadedData}
+            onCanPlay={handleVideoLoad}
+            onError={handleVideoError}
+            preload="metadata"
+            poster=""
+          />
         </div>
       )}
 
