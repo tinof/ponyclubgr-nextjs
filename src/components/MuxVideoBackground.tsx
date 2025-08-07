@@ -155,8 +155,6 @@ export function MuxVideoBackground({
           videoLoaded && !videoError ? 'opacity-0' : 'opacity-100'
         }`}
         priority={priority}
-        loading="eager"
-        fetchPriority="high"
         sizes="100vw"
       />
 
