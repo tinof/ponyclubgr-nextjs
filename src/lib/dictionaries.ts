@@ -12,6 +12,9 @@ export interface Dictionary {
     bookNow: string;
     perPerson: string;
     skipToMainContent: string;
+    somethingWentWrong: string;
+    tryAgain: string;
+    bookingUnavailable: string;
   };
   header: {
     logoAlt: string;
@@ -107,6 +110,44 @@ export interface Dictionary {
     name: string;
     description: string;
     brandName: string;
+  };
+  whyChooseUs: {
+    title: string;
+    licensed: { title: string; description: string };
+    guides: { title: string; description: string };
+    scheduling: { title: string; description: string };
+  };
+  reviews: {
+    title: string;
+    reviewsLabel: string;
+    recentGuest: string;
+  };
+  trekking: {
+    pageTitle: string;
+    intro: string;
+    readyText: string;
+    routesTitle: string;
+    detailsTitle: string;
+    difficulty: { easy: string; moderate: string; challenging: string };
+    yearRound: string;
+    springAutumn: string;
+    springToAutumn: string;
+    routes: {
+      route1: { title: string; duration: string; description: string };
+      route2: { title: string; duration: string; description: string };
+      route3: { title: string; duration: string; description: string };
+    };
+    whatToExpect: {
+      title: string;
+      guidedTreks: { title: string; description: string };
+      safetyEquipment: { title: string; description: string };
+      smallGroups: { title: string; description: string };
+      photography: { title: string; description: string };
+    };
+    whatToBring: {
+      title: string;
+      items: string[];
+    };
   };
 }
 

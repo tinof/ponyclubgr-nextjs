@@ -91,46 +91,31 @@ export default async function LocalePage({
   const reviewsData = await fetchReviewsData();
 
   return (
-    <div className="bg-gradient-sage min-h-screen flex justify-center items-start p-4 relative overflow-hidden">
+    <div className="bg-gradient-sage min-h-screen relative overflow-hidden">
       {/* Decorative background elements */}
       <div
-        className="absolute top-0 right-0 w-80 h-80 bg-sage-200/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"
+        className="absolute top-0 right-0 w-80 h-80 md:w-[40rem] md:h-[40rem] bg-sage-200/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-0 w-96 h-96 bg-sage-300/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"
+        className="absolute bottom-0 left-0 w-96 h-96 md:w-[48rem] md:h-[48rem] bg-sage-300/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"
         aria-hidden="true"
       />
 
-      {/* Main container with updated styling */}
-      <div className="w-full max-w-sm mx-auto relative z-10">
-        {/* Background decorative circles */}
-        <div
-          className="absolute top-8 right-8 w-16 h-16 bg-sage-200/40 rounded-full blur-sm"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute top-32 left-4 w-12 h-12 bg-sage-300/30 rounded-full blur-sm"
-          aria-hidden="true"
-        />
-
-        {/* Main content card with hero extending to edges */}
-        <div className="bg-gradient-card backdrop-blur-card rounded-[2rem] shadow-elevated border border-white/50 overflow-hidden relative">
-          <main id="main-content" className="pb-20">
-            {/* Content sections with improved spacing */}
-            <div className="space-y-6">
-              <WelcomeSection
-                dictionary={dictionary}
-                locale={locale as Locale}
-              />
+      {/* Main content — full width, no artificial phone constraint */}
+      <div className="relative z-10">
+        <main id="main-content" className="pb-20 lg:pb-8">
+          <div className="space-y-6">
+            <WelcomeSection dictionary={dictionary} locale={locale as Locale} />
+            <div className="max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
               <LocalizedClientPage
                 dictionary={dictionary}
                 reviewsData={reviewsData}
                 locale={locale as Locale}
               />
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
       </div>
     </div>
   );

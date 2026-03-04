@@ -5,7 +5,10 @@
     "retry": "Retry",
     "bookNow": "Book Now",
     "perPerson": "per person",
-    "skipToMainContent": "Skip to main content"
+    "skipToMainContent": "Skip to main content",
+    "somethingWentWrong": "Something went wrong",
+    "tryAgain": "Try again",
+    "bookingUnavailable": "Booking Temporarily Unavailable"
   },
   "header": {
     "logoAlt": "Pony Club",
@@ -101,5 +104,85 @@
     "name": "Pony Club - Rafting & Riding Adventure",
     "description": "Experience unforgettable horse riding and rafting adventures at Acheron River, Greece.",
     "brandName": "Pony Club Acheron"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Pony Club?",
+    "licensed": {
+      "title": "Licensed & Insured Since 1998",
+      "description": "Perfect safety record with thousands of satisfied guests"
+    },
+    "guides": {
+      "title": "Expert Local Guides",
+      "description": "Knowledgeable guides who know every corner of Acheron River"
+    },
+    "scheduling": {
+      "title": "Flexible Scheduling",
+      "description": "Tours running daily from 9 AM to 6 PM to fit your itinerary"
+    }
+  },
+  "reviews": {
+    "title": "What Our Guests Say",
+    "reviewsLabel": "reviews",
+    "recentGuest": "Recent guest"
+  },
+  "trekking": {
+    "pageTitle": "Trekking the Legendary Acheron",
+    "intro": "The mythical springs of the Acheron River, near the village of Glyki, invite exploration year-round. Deeply rooted in antiquity as one of the rivers leading to the underworld, Acheron today offers unparalleled natural beauty instead of passage to Hades! Access is easy: you can park your vehicle right next to the entrance of the springs area in Glyki. The best part? Parking and entry are completely free, inviting you to discover its wonders.",
+    "readyText": "Ready for exploration? Check out some of the best trekking routes to experience the magic of Acheron:",
+    "routesTitle": "Trekking Routes",
+    "detailsTitle": "Details & Requirements",
+    "difficulty": {
+      "easy": "Easy",
+      "moderate": "Moderate",
+      "challenging": "Challenging"
+    },
+    "yearRound": "Year-round",
+    "springAutumn": "Spring and Autumn",
+    "springToAutumn": "Spring to Autumn",
+    "routes": {
+      "route1": {
+        "title": "1. Glyki Springs Walk",
+        "duration": "15 min – 1 hour",
+        "description": "Perfect for families or those wanting a gentle introduction to Acheron's beauty. The path follows the river under the cool shade of plane trees. Marvel at the impressive springs where crystal-clear, yet cool water bubbles directly from the earth. An ideal spot for relaxation and – why not? – dipping your feet in the legendary waters!"
+      },
+      "route2": {
+        "title": "2. Acheron Gorge Trail",
+        "duration": "2-3 hours",
+        "description": "A more adventurous route that takes you deeper into the Acheron gorge. Walk along the river, cross small bridges, and discover hidden pools with crystal-clear waters. The trail offers stunning gorge views and photo opportunities that will remain unforgettable."
+      },
+      "route3": {
+        "title": "3. Ancient Paths Exploration",
+        "duration": "4-5 hours",
+        "description": "For more experienced hikers, this trail follows the ancient paths used by ancient Greeks. You'll pass ruins of ancient temples, traverse dense forests, and reach isolated peaks with panoramic views of the region. A truly mystical experience combining history, nature, and adventure."
+      }
+    },
+    "whatToExpect": {
+      "title": "What to Expect",
+      "guidedTreks": {
+        "title": "Guided Treks:",
+        "description": "Experienced local guides who know every trail and story"
+      },
+      "safetyEquipment": {
+        "title": "Safety Equipment:",
+        "description": "All necessary safety equipment provided"
+      },
+      "smallGroups": {
+        "title": "Small Groups:",
+        "description": "Maximum 8 people per group for personal experience"
+      },
+      "photography": {
+        "title": "Photography:",
+        "description": "Professional photos of your experience"
+      }
+    },
+    "whatToBring": {
+      "title": "What to Bring",
+      "items": [
+        "Comfortable hiking shoes",
+        "Hat and sunscreen",
+        "Water and light snacks",
+        "Camera"
+      ]
+    }
   }
 }

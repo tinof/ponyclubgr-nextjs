@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import type { ReactNode } from 'react';
 import '../../index.css';
 import { notFound } from 'next/navigation';
+import { DesktopNav } from '../../components/DesktopNav';
 import { ErrorBoundary } from '../../components/ErrorBoundary';
 import {
   getDictionary,
@@ -22,7 +23,6 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
-  userScalable: false,
 };
 
 // Generate metadata dynamically based on locale
@@ -174,6 +174,7 @@ export default async function LocaleLayout({
         >
           {dictionary.common.skipToMainContent}
         </a>
+        <DesktopNav dictionary={dictionary} locale={locale as Locale} />
         <ErrorBoundary>
           <div id="root">{children}</div>
         </ErrorBoundary>

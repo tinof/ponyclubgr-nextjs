@@ -11,7 +11,7 @@ interface PackageCardsProps {
 
 export function PackageCards({ dictionary }: PackageCardsProps) {
   return (
-    <div className="space-y-6 px-4">
+    <div className="space-y-6 px-4 md:px-0 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 mt-6">
       {/* Package 1 - Premium Card */}
       <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden relative transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1">
         {/* Premium tag */}
@@ -19,9 +19,9 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           {dictionary.packages.raftingRiding.tag}
         </div>
 
-        {/* Image section with dots indicator */}
+        {/* Image section */}
         <div className="relative">
-          <div className="relative h-56">
+          <div className="relative h-56 md:h-64 lg:h-72">
             <ImageSlider
               images={[
                 '/images/packages/Package1/rafting.jpeg',
@@ -32,7 +32,6 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
             />
           </div>
 
-          {/* Dots indicator overlay */}
           <div className="absolute bottom-4 right-4 flex gap-1">
             <div className="w-2 h-2 bg-white rounded-full" />
             <div className="w-2 h-2 bg-white/50 rounded-full" />
@@ -165,7 +164,7 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
       {/* Package 2 - Standard Card */}
       <div className="bg-white rounded-3xl shadow-card border border-white/60 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1">
         <div className="relative">
-          <div className="relative h-56">
+          <div className="relative h-56 md:h-64 lg:h-72">
             <ImageSlider
               images={[
                 '/images/packages/Package2/kayak.jpg',
@@ -178,7 +177,6 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
             />
           </div>
 
-          {/* Dots indicator overlay */}
           <div className="absolute bottom-4 right-4 flex gap-1">
             <div className="w-2 h-2 bg-white rounded-full" />
             <div className="w-2 h-2 bg-white/50 rounded-full" />

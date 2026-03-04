@@ -27,3 +27,4 @@ next-env.d.ts
 *.sln
 *.sw?
 design-update.md
+.vercel

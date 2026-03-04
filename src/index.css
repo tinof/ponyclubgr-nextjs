@@ -34,11 +34,11 @@
   --shadow-soft:
     0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   --shadow-layered:
-    0 10px 15px -3px rgba(90, 111, 90, 0.2), 0 4px 6px -4px
-    rgba(90, 111, 90, 0.1);
+    0 10px 15px -3px rgba(90, 111, 90, 0.2),
+    0 4px 6px -4px rgba(90, 111, 90, 0.1);
   --shadow-premium:
-    0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.025), 0
-    0 0 1px rgba(255, 255, 255, 0.2);
+    0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.025),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
   --shadow-card:
     0 4px 12px -2px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
   --shadow-elevated:
@@ -68,7 +68,7 @@
 
 body {
   background-color: var(--sage-50);
-  min-height: max(884px, 100vh);
+  min-height: 100vh;
   /* Prevent pull-to-refresh gesture */
   overscroll-behavior: none;
 }
@@ -127,11 +127,23 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
-/* Typography utilities */
+/* Typography utilities — responsive scaling */
 .text-heading-lg {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.3;
+}
+
+@media (min-width: 1024px) {
+  .text-heading-lg {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .text-heading-lg {
+    font-size: 2.25rem;
+  }
 }
 
 .text-heading-md {
@@ -140,10 +152,22 @@ body {
   line-height: 1.4;
 }
 
+@media (min-width: 1024px) {
+  .text-heading-md {
+    font-size: 1.5rem;
+  }
+}
+
 .text-heading-sm {
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.4;
+}
+
+@media (min-width: 1024px) {
+  .text-heading-sm {
+    font-size: 1.25rem;
+  }
 }
 
 .text-body-lg {
@@ -309,4 +333,60 @@ mux-player.mux-no-bars::part(video) {
 mux-player.mux-no-bars {
   /* kill the 56.25% padding hack */
   padding-top: 0 !important;
+}
+
+/* Floating decoration animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes float-delayed {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+}
+
+/* Scroll indicator bounce */
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-scroll-hint {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* Reduced motion: disable all custom animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-scroll-hint {
+    animation: none;
+  }
 }

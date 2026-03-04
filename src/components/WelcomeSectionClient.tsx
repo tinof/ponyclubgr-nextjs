@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import type { Dictionary, Locale } from '../lib/dictionaries';
 
 // Dynamically import client components to reduce initial bundle size
@@ -12,8 +13,8 @@ const LanguageSelector = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="bg-white/90 backdrop-blur-sm p-2 rounded-2xl shadow-soft border border-white/40">
-        <div className="w-8 h-8 bg-gray-200 rounded animate-pulse"></div>
+      <div className="bg-white/15 backdrop-blur-md p-2 rounded-xl border border-white/20">
+        <div className="w-7 h-7 bg-white/20 rounded animate-pulse" />
       </div>
     ),
   },
@@ -25,13 +26,10 @@ const WeatherWidget = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-soft border border-white/40 animate-pulse">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-6 h-6 bg-gray-200 rounded"></div>
-            <div className="w-8 h-4 bg-gray-200 rounded"></div>
-          </div>
-          <div className="w-12 h-3 bg-gray-200 rounded"></div>
+      <div className="bg-white/15 backdrop-blur-md px-3 py-2 rounded-xl border border-white/20 animate-pulse">
+        <div className="flex items-center gap-2">
+          <div className="w-5 h-5 bg-white/20 rounded" />
+          <div className="w-10 h-3 bg-white/20 rounded" />
         </div>
       </div>
     ),
@@ -49,12 +47,22 @@ export function WelcomeSectionClient({
 }: WelcomeSectionClientProps) {
   return (
     <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-20">
-      {/* Weather Widget and Language Selector */}
-      <div className="relative z-10 flex flex-col items-end space-y-3 ml-auto">
+      {/* Logo — left side */}
+      <div className="bg-white/90 backdrop-blur-sm p-2.5 rounded-2xl shadow-soft border border-white/40">
+        <Image
+          src="/images/logo.png"
+          alt={dictionary.header.logoAlt}
+          width={120}
+          height={40}
+          className="h-9 w-auto"
+          priority
+        />
+      </div>
+
+      {/* Weather + Language — right side */}
+      <div className="flex flex-col items-end gap-2">
         <WeatherWidget dictionary={dictionary} />
-        <div className="mr-1">
-          <LanguageSelector currentLocale={locale} />
-        </div>
+        <LanguageSelector currentLocale={locale} />
       </div>
     </div>
   );

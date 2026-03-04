@@ -21,7 +21,7 @@ export function BottomNav({ dictionary, locale = 'en' }: BottomNavProps) {
   const isHomePage = pathname === `/${locale}` || pathname === '/';
 
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[calc(24rem-2rem)] z-50">
+    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-lg z-50 lg:hidden">
       <nav className="bg-white/90 backdrop-blur-md rounded-2xl shadow-elevated flex items-center justify-around p-2 border border-white/60">
         <NavItem
           icon={<Home size={20} />}
@@ -78,7 +78,7 @@ export function BottomNav({ dictionary, locale = 'en' }: BottomNavProps) {
                         role="img"
                         aria-label="Riding activities"
                       >
-                        <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 5.5L8 22h8l-1-8.5c1.5-1 3-3 3-5.5 0-3.5-2.5-6-6-6z" />
+                        <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 5.5L8 22h8l-1-8.5c1.5-1 3-3 3-5.5 0-3.5-2.5-6-6z" />
                         <path d="M8 8h8" />
                         <path d="M10 6h4" />
                       </svg>

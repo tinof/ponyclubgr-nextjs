@@ -10,11 +10,6 @@ const nextConfig = {
   // Vercel handles deployment automatically without static export
   trailingSlash: true, // Ensures compatibility with static hosting
 
-  // Disable ESLint checking during builds since we're using Biome
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
   // Note: i18n config is not compatible with app router
   // Using manual locale routing with [locale] folder structure instead
   images: {
@@ -38,22 +33,6 @@ const nextConfig = {
     // Cache optimization for Vercel
     minimumCacheTTL: 60,
   },
-
-  // Webpack configuration to handle module resolution issues
-  webpack: (config, { isServer }) => {
-    // Fix for module resolution issues in Next.js 15
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        net: false,
-        tls: false,
-      };
-    }
-
-    return config;
-  },
-
 
 }
 

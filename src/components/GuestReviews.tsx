@@ -30,20 +30,18 @@ interface GuestReviewsProps {
   reviewsData: ReviewsData;
 }
 
-export function GuestReviews({
-  dictionary: _dictionary,
-  reviewsData,
-}: GuestReviewsProps) {
+export function GuestReviews({ dictionary, reviewsData }: GuestReviewsProps) {
   const { reviews, averageRating, totalReviews } = reviewsData;
 
   return (
-    <div className="px-4 mt-8 mb-20">
+    <div className="px-4 md:px-6 mt-8 mb-20">
       <ReviewsHeader
         averageRating={averageRating}
         totalReviews={totalReviews}
+        dictionary={dictionary}
       />
 
-      <div className="space-y-4">
+      <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4">
         {reviews.map((review, index) => {
           const displayName =
             review.reviewer?.displayName || `Guest ${index + 1}`;
@@ -82,7 +80,7 @@ export function GuestReviews({
                   <p className="text-xs text-gray-500">
                     {review.createTime
                       ? new Date(review.createTime).toLocaleDateString()
-                      : 'Recent guest'}
+                      : dictionary.reviews.recentGuest}
                   </p>
                 </div>
                 <div className="ml-auto text-xs text-gray-400">

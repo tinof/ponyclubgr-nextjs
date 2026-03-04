@@ -11,7 +11,7 @@ const PackageCards = dynamic(
     })),
   {
     loading: () => (
-      <div className="px-3">
+      <div className="px-4 md:px-0">
         <div className="bg-white/90 backdrop-blur-sm p-5 rounded-2xl shadow-premium border border-white/40 animate-pulse">
           <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
           <div className="h-3 bg-gray-200 rounded w-1/2"></div>
