@@ -17,7 +17,7 @@ export function WelcomeSection({ dictionary, locale }: WelcomeSectionProps) {
         playbackId="tj7rc9I9w5wOyuk0079M3dMMW8stwyzSRBkBt01Bpnyt8"
         fallbackImage="/images/hero-image.webp"
         fallbackImageAlt="Acheron River Adventure"
-        className="min-h-[55vh] max-h-[80vh] aspect-[9/16] sm:aspect-[16/10] md:aspect-auto md:h-[32rem] lg:h-[40rem] xl:h-[44rem]"
+        className="w-full h-[70vh] sm:h-[60vh] md:h-[32rem] lg:h-[40rem] xl:h-[44rem]"
         priority={true}
       >
         {/* Layered gradient overlay */}
@@ -40,127 +40,160 @@ export function WelcomeSection({ dictionary, locale }: WelcomeSectionProps) {
         </div>
 
         {/* Hero text */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
-          <div className="text-white max-w-md lg:max-w-2xl flex flex-col items-center gap-4">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-6 z-10 w-full font-sans">
+          <div className="text-white w-full max-w-[90%] sm:max-w-xl lg:max-w-4xl flex flex-col items-center gap-5 sm:gap-6 bg-black/15 backdrop-blur-md border border-white/20 p-6 sm:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl">
             {/* Est. badge */}
-            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 rounded-full px-4 py-1.5">
-              <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-4 sm:px-5 py-1.5 sm:py-2 shadow-sm">
+              <span className="text-white text-xs sm:text-sm font-semibold tracking-[0.2em] sm:tracking-widest uppercase drop-shadow-sm">
                 Est. 1998
               </span>
             </div>
 
             {/* Location caption */}
-            <div className="flex items-center gap-2">
-              <span className="block w-8 h-px bg-white/50" aria-hidden="true" />
-              <p className="text-white/70 text-xs font-semibold tracking-[0.2em] uppercase">
+            <div className="flex items-center gap-3 sm:gap-4 w-full justify-center">
+              <span
+                className="block flex-1 sm:flex-none sm:w-16 h-px bg-white/60"
+                aria-hidden="true"
+              />
+              <p className="text-white text-[10px] sm:text-sm lg:text-base font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase shrink-0 drop-shadow-sm px-2">
                 {dictionary.header.location}
               </p>
-              <span className="block w-8 h-px bg-white/50" aria-hidden="true" />
+              <span
+                className="block flex-1 sm:flex-none sm:w-16 h-px bg-white/60"
+                aria-hidden="true"
+              />
             </div>
 
             {/* Main description */}
-            <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed font-medium [text-shadow:0_2px_12px_rgba(0,0,0,0.4)]">
+            <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-[2.5rem] leading-[1.6] md:leading-relaxed lg:leading-[1.4] font-semibold text-white mt-2 max-w-full drop-shadow-md">
               {dictionary.welcome.description}
-            </p>
+            </h1>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1">
+        <div className="absolute bottom-24 sm:bottom-32 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1">
           <ChevronDown
-            size={28}
-            className="text-white animate-scroll-hint"
+            size={36}
+            className="text-white/80 animate-scroll-hint"
             aria-label="Scroll down"
           />
         </div>
 
         {/* Curved Bottom Transition — taller for more drama */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-36 overflow-hidden pointer-events-none z-0">
           <svg
-            viewBox="0 0 1200 120"
+            viewBox="0 0 1440 320"
             preserveAspectRatio="none"
-            className="w-full h-full"
+            className="w-full h-full text-sage-50/95"
+            style={{ transform: 'translateY(1px)' }}
             role="img"
             aria-label="Decorative curved transition"
           >
             <path
-              d="M0,0 C300,80 900,80 1200,0 L1200,120 L0,120 Z"
-              fill="rgb(247, 250, 248)"
+              d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              fill="currentColor"
             />
           </svg>
         </div>
       </MuxVideoBackground>
 
-      {/* Welcome card — constrained width, deeper overlap, glassmorphic */}
-      <div className="px-4 sm:px-6 lg:px-8 -mt-10 relative z-10 max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto">
-        <div className="bg-white/70 backdrop-blur-xl rounded-[2rem] shadow-elevated border border-white/50 overflow-hidden">
-          <div className="p-6 lg:p-8">
-            <div className="bg-gradient-to-br from-sage-primary via-sage-600 to-sage-700 rounded-2xl p-5 lg:p-6 text-white relative overflow-hidden">
-              {/* Decorative circles inside card */}
-              <div
-                aria-hidden="true"
-                className="absolute top-3 right-4 w-8 h-8 bg-white/20 rounded-full"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute bottom-4 left-3 w-16 h-16 bg-white/10 rounded-full"
-              />
-
-              <h3 className="text-lg lg:text-xl font-bold mb-3">
-                {dictionary.welcome.title}
-              </h3>
-
-              <div className="space-y-3 text-sm lg:text-base leading-relaxed text-white/90 lg:grid lg:grid-cols-2 lg:gap-4 lg:space-y-0">
-                <p>{dictionary.welcome.intro}</p>
-                <p>{dictionary.welcome.history}</p>
-                <p className="font-medium text-white lg:col-span-2">
-                  {dictionary.welcome.callToAction}
-                </p>
+      {/* Welcome Section - Wide modern overlapping card */}
+      <div className="px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto -mt-20 sm:-mt-28 lg:-mt-36 pb-24 font-sans">
+        <div className="bg-white/90 backdrop-blur-2xl rounded-[2.5rem] sm:rounded-[3rem] shadow-[0_20px_50px_-15px_rgba(42,57,42,0.1)] border border-white overflow-hidden group">
+          <div className="flex flex-col lg:flex-row">
+            {/* Left Content / Text */}
+            <div className="p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center flex-1">
+              <div className="inline-flex items-center gap-4 mb-8">
+                <span className="w-12 h-[2px] bg-sage-primary"></span>
+                <span className="text-sage-primary font-bold tracking-[0.2em] uppercase text-sm">
+                  Our Story
+                </span>
               </div>
 
-              {/* Feature highlights */}
-              <div className="mt-5 grid grid-cols-3 gap-3 lg:gap-6">
-                <div className="flex flex-col items-center text-center">
-                  <div className="bg-white/20 ring-2 ring-white/10 p-2.5 rounded-full mb-2">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
+                {dictionary.welcome.title}
+              </h2>
+
+              <div className="space-y-6 sm:space-y-8 text-gray-600">
+                <p className="text-xl sm:text-2xl font-medium text-sage-800 leading-relaxed font-serif">
+                  "{dictionary.welcome.intro}"
+                </p>
+                <p className="text-base sm:text-lg leading-relaxed text-gray-600">
+                  {dictionary.welcome.history}
+                </p>
+                <div className="pt-6 sm:pt-8 mt-2">
+                  <p className="font-semibold text-white bg-sage-primary inline-block px-6 py-3 rounded-full text-sm sm:text-base cursor-pointer hover:bg-sage-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                    {dictionary.welcome.callToAction}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Content / Features Grid */}
+            <div className="bg-gradient-to-br from-sage-50 to-sage-100/50 p-8 sm:p-12 lg:p-16 xl:p-20 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-white/80 w-full lg:w-[45%] xl:w-[40%] shrink-0">
+              <div className="w-full max-w-sm flex flex-col gap-4 sm:gap-6">
+                {/* Feature 1 */}
+                <div className="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-white/60 flex items-center gap-5 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-14 h-14 bg-sage-primary text-white rounded-[1.25rem] flex items-center justify-center shrink-0 shadow-inner">
                     <Image
                       src="/images/figma-assets/shield-icon.svg"
                       alt=""
-                      width={16}
-                      height={16}
+                      width={24}
+                      height={24}
                       className="filter brightness-0 invert"
                     />
                   </div>
-                  <span className="text-xs lg:text-sm text-white/90">
-                    {dictionary.welcome.features.safety}
-                  </span>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-gray-900 text-lg sm:text-xl">
+                      {dictionary.welcome.features.safety}
+                    </h3>
+                    <p className="text-sm text-gray-500 mt-1 font-medium">
+                      Professional standard
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center text-center">
-                  <div className="bg-white/20 ring-2 ring-white/10 p-2.5 rounded-full mb-2">
+
+                {/* Feature 2 */}
+                <div className="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-white/60 flex items-center gap-5 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-14 h-14 bg-sage-primary text-white rounded-[1.25rem] flex items-center justify-center shrink-0 shadow-inner">
                     <Image
                       src="/images/figma-assets/users-icon-1.svg"
                       alt=""
-                      width={16}
-                      height={16}
+                      width={24}
+                      height={24}
                       className="filter brightness-0 invert"
                     />
                   </div>
-                  <span className="text-xs lg:text-sm text-white/90">
-                    {dictionary.welcome.features.family}
-                  </span>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-gray-900 text-lg sm:text-xl">
+                      {dictionary.welcome.features.family}
+                    </h3>
+                    <p className="text-sm text-gray-500 mt-1 font-medium">
+                      For all ages
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center text-center">
-                  <div className="bg-white/20 ring-2 ring-white/10 p-2.5 rounded-full mb-2">
+
+                {/* Feature 3 */}
+                <div className="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-white/60 flex items-center gap-5 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-14 h-14 bg-sage-primary text-white rounded-[1.25rem] flex items-center justify-center shrink-0 shadow-inner">
                     <Image
                       src="/images/figma-assets/heart-icon.svg"
                       alt=""
-                      width={16}
-                      height={16}
+                      width={24}
+                      height={24}
                       className="filter brightness-0 invert"
                     />
                   </div>
-                  <span className="text-xs lg:text-sm text-white/90">
-                    {dictionary.welcome.features.memorable}
-                  </span>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-gray-900 text-lg sm:text-xl">
+                      {dictionary.welcome.features.memorable}
+                    </h3>
+                    <p className="text-sm text-gray-500 mt-1 font-medium">
+                      Unique experiences
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

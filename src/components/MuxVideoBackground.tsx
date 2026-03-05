@@ -151,7 +151,7 @@ export function MuxVideoBackground({
         src={fallbackImage}
         alt={fallbackImageAlt}
         fill={true}
-        className={`object-cover transition-opacity duration-500 ${
+        className={`object-cover object-center transition-opacity duration-500 ${
           videoLoaded && !videoError ? 'opacity-0' : 'opacity-100'
         }`}
         priority={priority}
@@ -178,11 +178,12 @@ export function MuxVideoBackground({
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: 'center center',
+                objectPosition: 'center',
                 '--media-object-fit': 'cover',
+                '--media-object-position': 'center',
               } as React.CSSProperties & Record<`--${string}`, string>
             }
-            className="mobile-video-scale mux-no-bars"
+            className="mux-no-bars w-full h-full"
             onLoadedData={handleLoadedData}
             onCanPlay={handleVideoLoad}
             onError={handleVideoError}

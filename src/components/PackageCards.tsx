@@ -41,27 +41,15 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
 
         <div className="p-6">
           {/* Header with package info and rating */}
-          <div className="flex justify-between items-start mb-3">
+          <div className="flex justify-between items-start mb-1">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-gray-500 mb-1">
                 Package 1
               </p>
-              <div className="flex items-center gap-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Image
-                    key={star}
-                    src="/images/figma-assets/star-rating-1.svg"
-                    alt=""
-                    width={14}
-                    height={14}
-                    className="text-yellow-400"
-                  />
-                ))}
-              </div>
             </div>
           </div>
           {/* Title and family-friendly badge */}
-          <h3 className="text-xl font-bold text-gray-800 mb-2">
+          <h3 className="text-lg font-bold text-gray-800 mb-2">
             {dictionary.packages.raftingRiding.title}
           </h3>
 
@@ -84,11 +72,11 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           <div className="space-y-3 mb-4">
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
               <Image
-                src="/icons/dist/rafting.svg"
+                src="/icons/sage_rafting.png"
                 alt=""
                 width={24}
                 height={24}
-                className="flex-shrink-0"
+                className="flex-shrink-0 w-6 h-6 object-contain"
               />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.raftingRiding.activities.rafting}
@@ -96,11 +84,11 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
             </div>
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
               <Image
-                src="/icons/dist/group.svg"
+                src="/icons/sage_horse.png"
                 alt=""
                 width={24}
                 height={24}
-                className="flex-shrink-0"
+                className="flex-shrink-0 w-6 h-6 object-contain"
               />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.raftingRiding.activities.riding}
@@ -108,11 +96,11 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
             </div>
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
               <Image
-                src="/icons/dist/trekking.svg"
+                src="/icons/sage_trekking.png"
                 alt=""
                 width={24}
                 height={24}
-                className="flex-shrink-0"
+                className="flex-shrink-0 w-6 h-6 object-contain"
               />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.raftingRiding.activities.hiking}
@@ -186,34 +174,15 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
         </div>
 
         <div className="p-6">
-          <div className="flex justify-between items-start mb-3">
+          <div className="flex justify-between items-start mb-1">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-gray-500 mb-1">
                 Package 2
               </p>
-              <div className="flex items-center gap-1">
-                {[1, 2, 3, 4].map((star) => (
-                  <Image
-                    key={star}
-                    src="/images/figma-assets/star-rating-1.svg"
-                    alt=""
-                    width={14}
-                    height={14}
-                    className="text-yellow-400"
-                  />
-                ))}
-                <Image
-                  src="/images/figma-assets/star-rating-1.svg"
-                  alt=""
-                  width={14}
-                  height={14}
-                  className="text-gray-300"
-                />
-              </div>
             </div>
           </div>
           {/* Title and family-friendly badge */}
-          <h3 className="text-xl font-bold text-gray-800 mb-2">
+          <h3 className="text-lg font-bold text-gray-800 mb-2">
             {dictionary.packages.kayakingRidingTrekking.title}
           </h3>
 
@@ -236,11 +205,11 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
           <div className="space-y-3 mb-4">
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
               <Image
-                src="/icons/dist/kayak.svg"
+                src="/icons/sage_kayak.png"
                 alt=""
                 width={24}
                 height={24}
-                className="flex-shrink-0"
+                className="flex-shrink-0 w-6 h-6 object-contain"
               />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.activities.kayak}
@@ -248,11 +217,11 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
             </div>
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
               <Image
-                src="/icons/dist/group.svg"
+                src="/icons/sage_horse.png"
                 alt=""
                 width={24}
                 height={24}
-                className="flex-shrink-0"
+                className="flex-shrink-0 w-6 h-6 object-contain"
               />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.activities.riding}
@@ -260,11 +229,11 @@ export function PackageCards({ dictionary }: PackageCardsProps) {
             </div>
             <div className="flex items-center gap-3 text-sm bg-sage-50 rounded-lg p-3 border border-sage-100">
               <Image
-                src="/icons/dist/trekking.svg"
+                src="/icons/sage_trekking.png"
                 alt=""
                 width={24}
                 height={24}
-                className="flex-shrink-0"
+                className="flex-shrink-0 w-6 h-6 object-contain"
               />
               <span className="text-gray-700 font-medium">
                 {dictionary.packages.kayakingRidingTrekking.activities.trekking}

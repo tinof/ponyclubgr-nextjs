@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, Phone, Waves } from 'lucide-react';
+import { ChevronDown, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -45,67 +45,53 @@ export function DesktopNav({ dictionary, locale }: DesktopNavProps) {
     {
       href: `/${locale}/rafting`,
       label: dictionary.navigation.activityPages.rafting,
-      icon: <Waves size={16} />,
+      icon: (
+        <Image
+          src="/icons/sage_rafting.png"
+          alt=""
+          width={16}
+          height={16}
+          className="w-4 h-4 object-contain"
+        />
+      ),
     },
     {
       href: `/${locale}/riding`,
       label: dictionary.navigation.activityPages.riding,
       icon: (
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 5.5L8 22h8l-1-8.5c1.5-1 3-3 3-5.5 0-3.5-2.5-6-6z" />
-          <path d="M8 8h8" />
-          <path d="M10 6h4" />
-        </svg>
+        <Image
+          src="/icons/sage_horse.png"
+          alt=""
+          width={16}
+          height={16}
+          className="w-4 h-4 object-contain"
+        />
       ),
     },
     {
       href: `/${locale}/kayaking`,
       label: dictionary.navigation.activityPages.kayaking,
       icon: (
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M3 12h18" />
-          <path d="M8 8l4-4 4 4" />
-          <path d="M8 16l4 4 4-4" />
-        </svg>
+        <Image
+          src="/icons/sage_kayak.png"
+          alt=""
+          width={16}
+          height={16}
+          className="w-4 h-4 object-contain"
+        />
       ),
     },
     {
       href: `/${locale}/trekking`,
       label: dictionary.navigation.activityPages.trekking,
       icon: (
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M3 17l4-8 4 4 3-6 4 10" />
-        </svg>
+        <Image
+          src="/icons/sage_trekking.png"
+          alt=""
+          width={16}
+          height={16}
+          className="w-4 h-4 object-contain"
+        />
       ),
     },
   ];
@@ -210,7 +196,7 @@ export function DesktopNav({ dictionary, locale }: DesktopNavProps) {
           aria-label={`Switch to ${locale === 'en' ? 'Greek' : 'English'}`}
         >
           <span className="text-base" role="img" aria-hidden="true">
-            {locale === 'en' ? '🇬🇷' : '🇺🇸'}
+            {locale === 'en' ? '🇬🇷' : '🇬🇧'}
           </span>
           <span>{locale === 'en' ? 'ΕΛ' : 'EN'}</span>
         </Link>

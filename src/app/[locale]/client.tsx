@@ -73,6 +73,25 @@ const BottomNav = dynamic(
   },
 );
 
+const ContactAndLocation = dynamic(
+  () =>
+    import('../../components/ContactAndLocation').then((mod) => ({
+      default: mod.ContactAndLocation,
+    })),
+  {
+    loading: () => (
+      <div className="px-4 mt-8 mb-8">
+        <div className="bg-white rounded-2xl shadow-card p-5 border border-white/60 animate-pulse">
+          <div className="h-4 bg-gray-200 rounded w-1/3 mb-4"></div>
+          <div className="h-48 bg-gray-200 rounded w-full mb-4"></div>
+          <div className="h-3 bg-gray-200 rounded w-full"></div>
+        </div>
+      </div>
+    ),
+    ssr: false,
+  },
+);
+
 interface Reviewer {
   displayName: string;
   profilePhotoUrl: string;
@@ -108,6 +127,7 @@ export function LocalizedClientPage({
     <>
       <PackageCards dictionary={dictionary} />
       <WhyChooseUs dictionary={dictionary} />
+      <ContactAndLocation />
       <GuestReviews dictionary={dictionary} reviewsData={reviewsData} />
       <BottomNav dictionary={dictionary} locale={locale} />
     </>
